@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | My Website</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="description" content="Get in touch with us - We'd love to hear from you and discuss your next project">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">My Website</a>
+        <nav class="nav-container">
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="contact.html" class="nav-link active">Contact</a></li>
+          </ul>
+          <div class="menu-toggle" id="menuToggle">
+            <div class="hamburger"></div>
+            <div class="hamburger"></div>
+            <div class="hamburger"></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">Get In Touch</h1>
+        <p class="hero-subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="content-section">
+      <div class="container">
+        <h2 class="section-title">Send Us A Message</h2>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name" class="form-label">Full Name *</label>
+            <input type="text" id="name" name="name" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address *</label>
+            <input type="email" id="email" name="email" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" id="phone" name="phone" class="form-input">
+          </div>
+          
+          <div class="form-group">
+            <label for="subject" class="form-label">Subject *</label>
+            <input type="text" id="subject" name="subject" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label">Message *</label>
+            <textarea id="message" name="message" class="form-textarea" rows="6" required placeholder="Tell us about your project or inquiry..."></textarea>
+          </div>
+          
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="content-section">
+      <div class="container">
+        <h2 class="section-title">Other Ways to Reach Us</h2>
+        <div class="contact-info">
+          <div class="contact-item animate-fade-in-up">
+            <div class="contact-icon">
+              <span>📧</span>
+            </div>
+            <h3 class="mb-2" style="color: var(--primary-color);">Email</h3>
+            <p class="content-text">
+              <a href="mailto:contact@mywebsite.com" style="color: var(--text-secondary); text-decoration: none;">
+                contact@mywebsite.com
+              </a>
+            </p>
+            <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">
+              We typically respond within 24 hours
+            </p>
+          </div>
+          
+          <div class="contact-item animate-fade-in-up">
+            <div class="contact-icon">
+              <span>📞</span>
+            </div>
+            <h3 class="mb-2" style="color: var(--primary-color);">Phone</h3>
+            <p class="content-text">
+              <a href="tel:+1234567890" style="color: var(--text-secondary); text-decoration: none;">
+                +1 (234) 567-890
+              </a>
+            </p>
+            <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">
+              Mon-Fri, 9:00 AM - 6:00 PM EST
+            </p>
+          </div>
+          
+          <div class="contact-item animate-fade-in-up">
+            <div class="contact-icon">
+              <span>📍</span>
+            </div>
+            <h3 class="mb-2" style="color: var(--primary-color);">Office</h3>
+            <p class="content-text">
+              123 Business Street<br>
+              Suite 100<br>
+              City, State 12345
+            </p>
+            <p style="color: var(--text-secondary); font-size: var(--font-size-sm);">
+              Available for in-person meetings
+            </p>
+          </div>
+          
+          <div class="contact-item animate-fade-in-up">
+            <div class="contact-icon">
+              <span>💬</span>
+            </div>
+            <h3 class="mb-2" style="color: var(--primary-color);">Social Media</h3>
+            <p class="content-text">
+              Follow us for updates and insights
+            </p>
+            <div class="mt-4" style="display: flex; justify-content: center; gap: var(--space-4);">
+              <a href="#" style="color: var(--primary-color); text-decoration: none; font-size: var(--font-size-sm);">LinkedIn</a>
+              <a href="#" style="color: var(--primary-color); text-decoration: none; font-size: var(--font-size-sm);">Twitter</a>
+              <a href="#" style="color: var(--primary-color); text-decoration: none; font-size: var(--font-size-sm);">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="content-section">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="card-grid">
+          <div class="card animate-fade-in-up">
+            <h3 class="mb-4" style="color: var(--primary-color); font-size: var(--font-size-lg);">How quickly do you respond?</h3>
+            <p class="content-text">
+              We aim to respond to all inquiries within 24 hours during business days. For urgent matters, 
+              please call us directly.
+            </p>
+          </div>
+          <div class="card animate-fade-in-up">
+            <h3 class="mb-4" style="color: var(--primary-color); font-size: var(--font-size-lg);">What information should I include?</h3>
+            <p class="content-text">
+              Please provide as much detail as possible about your project, including timeline, budget range, 
+              and any specific requirements or preferences.
+            </p>
+          </div>
+          <div class="card animate-fade-in-up">
+            <h3 class="mb-4" style="color: var(--primary-color); font-size: var(--font-size-lg);">Do you offer consultations?</h3>
+            <p class="content-text">
+              Yes! We offer free initial consultations to discuss your project needs and how we can help 
+              bring your vision to life.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="about.html" class="footer-link">About</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+        <p class="footer-text">&copy; 2025 My Website. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Contact form handling
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData);
+      
+      // Simple validation
+      if (!data.name || !data.email || !data.subject || !data.message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // Simulate form submission
+      alert('Thank you for your message! We\'ll get back to you soon.');
+      contactForm.reset();
+    });
+
+    // Smooth scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 1s ease-out forwards';
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const animatedElements = document.querySelectorAll('.card, .contact-item');
+      animatedElements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
+</body>
+</html>

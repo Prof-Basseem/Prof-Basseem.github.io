@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | My Website</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="description" content="Learn more about our story, mission, and the team behind My Website">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">My Website</a>
+        <nav class="nav-container">
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link active">About</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="menu-toggle" id="menuToggle">
+            <div class="hamburger"></div>
+            <div class="hamburger"></div>
+            <div class="hamburger"></div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">About Us</h1>
+        <p class="hero-subtitle">Passionate about creating exceptional digital experiences that make a difference</p>
+      </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="content-section">
+      <div class="container">
+        <h2 class="section-title">Our Story</h2>
+        <div class="section-content">
+          <p class="content-text">
+            Founded with a vision to create beautiful, functional, and user-friendly digital experiences, 
+            we have been dedicated to pushing the boundaries of web design and development. Our journey 
+            began with a simple belief: great design should be accessible to everyone.
+          </p>
+          <p class="content-text">
+            Over the years, we've grown from a small team of passionate designers and developers into 
+            a full-service digital agency. We've had the privilege of working with clients across various 
+            industries, helping them bring their visions to life through innovative web solutions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="content-section">
+      <div class="container">
+        <h2 class="section-title">What We Believe In</h2>
+        <div class="card-grid">
+          <div class="card animate-fade-in-up">
+            <div class="contact-icon mb-4">
+              <span>💡</span>
+            </div>
+            <h3 class="mb-4" style="color: var(--primary-color); font-size: var(--font-size-xl);">Innovation</h3>
+            <p class="content-text">
+              We constantly explore new technologies and design trends to deliver cutting-edge solutions 
+              that keep our clients ahead of the competition.
+            </p>
+          </div>
+          <div class="card animate-fade-in-up">
+            <div class="contact-icon mb-4">
+              <span>🎯</span>
+            </div>
+            <h3 class="mb-4" style="color: var(--primary-color); font-size: var(--font-size-xl);">Quality</h3>
+            <p class="content-text">
+              Every project we undertake is crafted with meticulous attention to detail, ensuring the highest 
+              standards of quality in both design and functionality.
+            </p>
+          </div>
+          <div class="card animate-fade-in-up">
+            <div class="contact-icon mb-4">
+              <span>🤝</span>
+            </div>
+            <h3 class="mb-4" style="color: var(--primary-color); font-size: var(--font-size-xl);">Collaboration</h3>
+            <p class="content-text">
+              We believe in working closely with our clients, treating every project as a partnership 
+              to achieve shared goals and create meaningful results.
+            </p>
+          </div>
+          <div class="card animate-fade-in-up">
+            <div class="contact-icon mb-4">
+              <span>🚀</span>
+            </div>
+            <h3 class="mb-4" style="color: var(--primary-color); font-size: var(--font-size-xl);">Performance</h3>
+            <p class="content-text">
+              Fast, reliable, and optimized solutions are at the core of everything we build, ensuring 
+              exceptional user experiences across all devices and platforms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="content-section">
+      <div class="container">
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+          <h2 class="section-title mb-6">Our Mission</h2>
+          <p class="content-text" style="font-size: var(--font-size-lg); line-height: 1.8;">
+            To empower businesses and individuals with exceptional digital solutions that not only look great 
+            but also deliver measurable results. We strive to make the web a more beautiful, accessible, 
+            and functional place, one project at a time.
+          </p>
+          <div class="mt-8">
+            <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="about.html" class="footer-link">About</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+        <p class="footer-text">&copy; 2025 My Website. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Smooth scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 1s ease-out forwards';
+        }
+      });
+    }, observerOptions);
+
+    // Observe cards for animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        observer.observe(card);
+      });
+    });
+  </script>
+</body>
+</html>
