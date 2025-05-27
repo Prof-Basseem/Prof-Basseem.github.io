@@ -1,4 +1,4 @@
-# Dr. Mahmoud Bassem Academic Website
+# Dr. Mahmoud Basseem Academic Website
 
 A professional academic website built with Bootstrap 5, featuring a responsive design and modern UI for showcasing academic achievements, research, and teaching portfolio.
 
@@ -189,7 +189,7 @@ emailjs.sendForm('service_id', 'template_id', this)
 
 ## License
 
-This website template is created for Dr. Mahmoud Bassem I. Mohamed. Modify and adapt as needed for personal or academic use.
+This website template is created for Dr. Mahmoud Basseem I. Mohamed. Modify and adapt as needed for personal or academic use.
 
 ---
 

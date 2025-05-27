@@ -1,4 +1,4 @@
-// Main JavaScript for Dr. Mahmoud Bassem Academic Website
+// Main JavaScript for Dr. Mahmoud Basseem Academic Website
 
 document.addEventListener('DOMContentLoaded', function() {
     

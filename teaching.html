@@ -1,22 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+<head>    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Mahmoud Bassem - Teaching</title>
+    <title>Dr. Mahmoud Basseem - Teaching</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Teaching Methodologies Infographic Styles */
+        .methodology-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .methodology-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .methodology-card:nth-child(2) .methodology-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .methodology-card:nth-child(3) .methodology-card {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .methodology-card:nth-child(4) .methodology-card {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .methodology-card h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .methodology-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+            opacity: 0.95;
+        }
+
+        .card-number {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            backdrop-filter: blur(10px);
+        }
+
+        .methodology-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .methodology-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Individual card colors */
+        .col-lg-6:nth-child(1) .methodology-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .col-lg-6:nth-child(2) .methodology-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .col-lg-6:nth-child(3) .methodology-card {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .col-lg-6:nth-child(4) .methodology-card {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .methodology-card {
+                padding: 2rem 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .card-icon {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">        <div class="container">
             <a class="navbar-brand" href="index.html">
-                <i class="fas fa-graduation-cap me-2"></i>Dr. Mahmoud Bassem
+                <i class="fas fa-graduation-cap me-2"></i>Dr. Mahmoud Basseem
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -68,18 +180,10 @@
                             <div class="row">
                                 <div class="col-md-3 text-center mb-3">
                                     <i class="fas fa-lightbulb fa-4x text-primary"></i>
-                                </div>
-                                <div class="col-md-9">
+                                </div>                                <div class="col-md-9">
                                     <p class="lead">My teaching philosophy centers on creating an engaging, inclusive, and innovative learning environment that fosters critical thinking and scientific curiosity.</p>
                                     
-                                    <p>I believe that effective chemistry education should combine theoretical knowledge with practical applications, encouraging students to see the relevance of chemistry in solving real-world problems. My approach emphasizes:</p>
-                                    
-                                    <ul class="list-unstyled mt-3">
-                                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i><strong>Active Learning:</strong> Engaging students through interactive demonstrations, problem-solving sessions, and hands-on laboratory experiences.</li>
-                                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i><strong>Technology Integration:</strong> Utilizing modern educational technology and computational tools to enhance understanding of complex chemical concepts.</li>
-                                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i><strong>Research-Based Teaching:</strong> Incorporating current research findings and methodologies into the curriculum to keep content relevant and exciting.</li>
-                                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i><strong>Collaborative Learning:</strong> Promoting teamwork and peer-to-peer learning to develop communication and leadership skills.</li>
-                                    </ul>
+                                    <p>I believe that effective chemistry education should combine theoretical knowledge with practical applications, encouraging students to see the relevance of chemistry in solving real-world problems.</p>
                                 </div>
                             </div>
                         </div>
@@ -89,8 +193,62 @@
         </div>
     </section>
 
-    <!-- Courses Taught Section -->
+    <!-- Teaching Methodologies Infographic -->
     <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Teaching Methodologies</h2>
+            <div class="row g-4">
+                <!-- Active Learning Card -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="methodology-card h-100">
+                        <div class="card-icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h4>Active Learning</h4>
+                        <p>Engaging students through interactive demonstrations, problem-solving sessions, and hands-on laboratory experiences.</p>
+                        <div class="card-number">01</div>
+                    </div>
+                </div>
+
+                <!-- Technology Integration Card -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="methodology-card h-100">
+                        <div class="card-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4>Technology Integration</h4>
+                        <p>Utilizing modern educational technology and computational tools to enhance understanding of complex chemical concepts.</p>
+                        <div class="card-number">02</div>
+                    </div>
+                </div>
+
+                <!-- Research-Based Teaching Card -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="methodology-card h-100">
+                        <div class="card-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h4>Research-Based Teaching</h4>
+                        <p>Incorporating current research findings and methodologies into the curriculum to keep content relevant and exciting.</p>
+                        <div class="card-number">03</div>
+                    </div>
+                </div>
+
+                <!-- Collaborative Learning Card -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="methodology-card h-100">
+                        <div class="card-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>Collaborative Learning</h4>
+                        <p>Promoting teamwork and peer-to-peer learning to develop communication and leadership skills.</p>
+                        <div class="card-number">04</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Back to Courses Section -->
+    <section class="section-padding">
         <div class="container">
             <h2 class="section-title">Courses Taught</h2>
             <div class="row g-4">
@@ -424,21 +582,22 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <h5><i class="fas fa-graduation-cap me-2"></i>Dr. Mahmoud Bassem</h5>
-                    <p>Assistant Professor of Applied Organic Chemistry at Al-Azhar University, Cairo, Egypt.</p>
-                    <div class="social-links">
+            <div class="row g-4">                <div class="col-lg-4">
+                    <h5><i class="fas fa-graduation-cap me-2"></i>Dr. Mahmoud Basseem</h5>
+                    <p>Assistant Professor of Applied Organic Chemistry at Al-Azhar University, Cairo, Egypt.</p>                    <div class="social-links">
                         <a href="mailto:mahmoudbasseem@azhar.edu.eg" title="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        <a href="#" title="LinkedIn">
+                        <a href="https://linkedin.com/in/mahmoud-basseem-i-mohamed-38a77293" title="LinkedIn" target="_blank">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" title="ResearchGate">
+                        <a href="https://www.researchgate.net/profile/Mahmoud_Basseem3" title="ResearchGate" target="_blank">
                             <i class="fab fa-researchgate"></i>
                         </a>
-                        <a href="#" title="Google Scholar">
+                        <a href="https://orcid.org/0000-0001-5558-6342" title="ORCID" target="_blank">
+                            <i class="fab fa-orcid"></i>
+                        </a>
+                        <a href="https://scholar.google.com.eg/citations?user=V6_4ZtcAAAAJ&hl" title="Google Scholar" target="_blank">
                             <i class="fas fa-graduation-cap"></i>
                         </a>
                     </div>
@@ -472,9 +631,8 @@
                     <p><i class="fas fa-map-marker-alt me-2"></i>Al-Azhar University, Cairo, Egypt</p>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Dr. Mahmoud Bassem I. Mohamed. All rights reserved.</p>
+              <div class="footer-bottom">
+                <p>&copy; 2025 Dr. Mahmoud Basseem I. Mohamed. All rights reserved.</p>
             </div>
         </div>
     </footer>
