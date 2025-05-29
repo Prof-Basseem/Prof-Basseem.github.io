@@ -258,6 +258,11 @@ body {
     text-align: center;
 }
 
+/* Footer Links */
+.col-lg-2 a:hover {
+                        color: skyblue !important;
+                    }
+                    
 /* Social Links */
 .social-links a {
     display: inline-block;
