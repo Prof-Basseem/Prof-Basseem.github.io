@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate PNG Favicons</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        canvas { border: 1px solid #ccc; margin: 10px; }
+        .size-label { text-align: center; margin-top: 5px; font-size: 12px; }
+        .download-section { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h2>Favicon Generator for Dr. Mahmoud Basseem Website</h2>
+    
+    <div class="download-section">
+        <h3>Generated Favicons:</h3>
+        
+        <div style="display: inline-block; margin: 10px;">
+            <canvas id="favicon16" width="16" height="16"></canvas>
+            <div class="size-label">16x16</div>
+            <button onclick="downloadFavicon('favicon16', 'favicon-16x16.png')">Download</button>
+        </div>
+        
+        <div style="display: inline-block; margin: 10px;">
+            <canvas id="favicon32" width="32" height="32"></canvas>
+            <div class="size-label">32x32</div>
+            <button onclick="downloadFavicon('favicon32', 'favicon-32x32.png')">Download</button>
+        </div>
+        
+        <div style="display: inline-block; margin: 10px;">
+            <canvas id="favicon180" width="180" height="180"></canvas>
+            <div class="size-label">180x180 (Apple Touch)</div>
+            <button onclick="downloadFavicon('favicon180', 'apple-touch-icon.png')">Download</button>
+        </div>
+    </div>
+
+    <script>
+        function drawFavicon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            
+            // Draw background circle
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size/2 - 1, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Draw graduation cap in white
+            ctx.fillStyle = 'white';
+            ctx.strokeStyle = 'white';
+            
+            const scale = size / 32; // Base scale on 32px size
+            ctx.lineWidth = Math.max(1, scale);
+            
+            // Cap base
+            const centerX = size / 2;
+            const centerY = size / 2;
+            
+            ctx.beginPath();
+            ctx.moveTo(centerX - 10*scale, centerY + 2*scale);
+            ctx.lineTo(centerX, centerY - 2*scale);
+            ctx.lineTo(centerX + 10*scale, centerY + 2*scale);
+            ctx.lineTo(centerX + 10*scale, centerY + 6*scale);
+            ctx.lineTo(centerX + 8*scale, centerY + 7*scale);
+            ctx.lineTo(centerX + 8*scale, centerY + 10*scale);
+            ctx.quadraticCurveTo(centerX + 8*scale, centerY + 12*scale, centerX, centerY + 12*scale);
+            ctx.quadraticCurveTo(centerX - 8*scale, centerY + 12*scale, centerX - 8*scale, centerY + 10*scale);
+            ctx.lineTo(centerX - 8*scale, centerY + 7*scale);
+            ctx.lineTo(centerX - 10*scale, centerY + 6*scale);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Cap top stick
+            ctx.fillRect(centerX - scale, centerY - 6*scale, 2*scale, 6*scale);
+            
+            // Cap top button
+            ctx.beginPath();
+            ctx.arc(centerX, centerY - 6*scale, 2*scale, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Tassel
+            if (size >= 32) {
+                ctx.beginPath();
+                ctx.moveTo(centerX + 2*scale, centerY - 6*scale);
+                ctx.lineTo(centerX + 6*scale, centerY - 10*scale);
+                ctx.moveTo(centerX + 2*scale, centerY - 6*scale);
+                ctx.lineTo(centerX + 6*scale, centerY - 2*scale);
+                ctx.stroke();
+            }
+        }
+        
+        function downloadFavicon(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Generate all favicons on page load
+        window.onload = function() {
+            drawFavicon('favicon16', 16);
+            drawFavicon('favicon32', 32);
+            drawFavicon('favicon180', 180);
+        };
+    </script>
+</body>
+</html>

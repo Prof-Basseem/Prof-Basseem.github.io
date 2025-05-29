@@ -11,6 +11,10 @@ Basseem-Website/
 ├── research.html       # Research portfolio and publications
 ├── teaching.html       # Teaching philosophy and courses
 ├── contact.html        # Contact form and information
+├── publications.html   # Publications list
+├── favicon.svg         # Primary favicon (SVG format)
+├── site.webmanifest   # Web app manifest for mobile support
+├── generate-favicons.html # Tool to generate PNG favicons
 ├── css/
 │   └── style.css       # Custom styles and Bootstrap enhancements
 ├── js/
