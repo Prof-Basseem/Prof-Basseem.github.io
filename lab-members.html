@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mahmoud Basseem - Lab Members</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-graduation-cap me-2"></i>Dr. Mahmoud Basseem
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="research.html">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="publications.html">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teaching.html">Teaching</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="lab-members.html">Lab Members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>    
+    <!-- Page Header -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">Lab Members</h1>
+                    <p class="lead">Supervision of Graduate Students</p>
+                    
+                    <!-- Auto-fetch controls -->
+                    <div class="mt-4">
+                        <button id="fetchDataBtn" class="btn btn-light btn-lg me-3" onclick="fetchFromExcel()">
+                            <i class="fas fa-download me-2"></i>Fetch Latest Data from Excel
+                        </button>
+                        <button class="btn btn-outline-light" onclick="openSheetConfig()">
+                            <i class="fas fa-cog me-2"></i>Configure Sheet
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+    <!-- Ph.D. Students Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Ph.D. Students</h2>
+            
+            <div class="row" id="phd-students-container">
+                <!-- Content will be dynamically loaded from Excel -->
+                <!-- Ph.D. Student 1 -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div class="card custom-card h-100">
+                        <div class="card-body text-center">                            
+                            <div class="member-photo mb-3">
+                                <img src="assets/img/phd-student-1.jpg" alt="Ahmed Ezzat Mostafa Mostafa" 
+                                     class="member-img"
+                                     onerror="this.src='https://ui-avatars.com/api/?name=Ahmed+Ezzat&background=667eea&color=ffffff&size=150&bold=true'">
+                            </div>
+                            <h5 class="card-title mb-3">Ahmed Ezzat Mostafa Mostafa</h5>
+                            <div class="degree-badge">
+                                <span class="badge bg-primary mb-3">Ph.D. Student</span>
+                            </div>
+                            
+                            <div class="thesis-info text-start">
+                                <h6 class="fw-bold mb-2">Thesis Title (Arabic):</h6>
+                                <p class="text-muted mb-3" style="font-size: 0.9rem; direction: rtl;">
+                                    تطوير مستشعرات كيميائية ماصة صلبة تعتمد على المواد العضوية وغير العضوية لكشف وإزالة المعادن الثقيلة من مياه الصرف الصحي
+                                </p>
+                                
+                                <h6 class="fw-bold mb-2">Thesis Title (English):</h6>
+                                <p class="text-muted" style="font-size: 0.9rem; font-style: italic;">
+                                    Development of Solid Adsorbent Chemosensors Based on Organic and Inorganic Materials for the Detection and Removal of Heavy Metals from Wastewater
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ph.D. Student 2 -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div class="card custom-card h-100">
+                        <div class="card-body text-center">                            <div class="member-photo mb-3">
+                                <img src="assets/img/phd-student-2.jpg" alt="Abdelrahman Sayed Ahmed Gaber" 
+                                     class="member-img"
+                                     onerror="this.src='https://ui-avatars.com/api/?name=Abdelrahman+Gaber&background=667eea&color=ffffff&size=150&bold=true'">
+                            </div>
+                            <h5 class="card-title mb-3">Abdelrahman Sayed Ahmed Gaber</h5>
+                            <div class="degree-badge">
+                                <span class="badge bg-primary mb-3">Ph.D. Student</span>
+                            </div>
+                            
+                            <div class="thesis-info text-start">
+                                <h6 class="fw-bold mb-2">Thesis Title (Arabic):</h6>
+                                <p class="text-muted mb-3" style="font-size: 0.9rem; direction: rtl;">
+                                    تحضير وتقييم بعض المركبات العضوية لاستخدامها فى التطبيقات الكهروكيميائية
+                                </p>
+                                
+                                <h6 class="fw-bold mb-2">Thesis Title (English):</h6>
+                                <p class="text-muted" style="font-size: 0.9rem; font-style: italic;">
+                                    Synthesis and Evaluation of Some Organic Compounds for Their Use in Electrochemical Applications
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ph.D. Student 3 -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div class="card custom-card h-100">
+                        <div class="card-body text-center">                            
+                            <div class="member-photo mb-3">
+                                <img src="assets/img/phd-student-3.jpg" alt="Al-Ghazaly Saad Abd-Elfataah Al-Gazairi" 
+                                     class="member-img"
+                                     onerror="this.src='https://ui-avatars.com/api/?name=Al-Ghazaly+Al-Gazairi&background=667eea&color=ffffff&size=150&bold=true'">
+                            </div>
+                            <h5 class="card-title mb-3">Al-Ghazaly Saad Abd-Elfataah Al-Gazairi</h5>
+                            <div class="degree-badge">
+                                <span class="badge bg-primary mb-3">Ph.D. Student</span>
+                            </div>
+                            
+                            <div class="thesis-info text-start">
+                                <h6 class="fw-bold mb-2">Thesis Title (Arabic):</h6>
+                                <p class="text-muted mb-3" style="font-size: 0.9rem; direction: rtl;">
+                                    تشييد بعض مركبات النيتروجين العضوية ودراسة تطبيقاتها المختلفة
+                                </p>
+                                
+                                <h6 class="fw-bold mb-2">Thesis Title (English):</h6>
+                                <p class="text-muted" style="font-size: 0.9rem; font-style: italic;">
+                                    Synthesis of Some Organonitrogen Compounds and Study of Their Different Applications
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <!-- Ph.D. Student 4 -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <div class="card custom-card h-100">
+                        <div class="card-body text-center">                            
+                            <div class="member-photo mb-3">
+                                <img src="https://drive.google.com/open?id=1d0P2PJE6MprUJkO3B_ygy57dWnLR1lXo" alt="Mohamed Attia Abdel-Monem" 
+                                     class="member-img"
+                                     data-fallback="https://ui-avatars.com/api/?name=Mohamed+Attia&background=667eea&color=ffffff&size=150&bold=true">
+                            </div>
+                            <h5 class="card-title mb-3">محمد عطية عبدالمنعم</h5>
+                            <h6 class="text-muted mb-2">Mohamed Attia Abdel-Monem</h6>
+                            <div class="degree-badge">
+                                <span class="badge bg-primary mb-3">Ph.D. Student</span>
+                            </div>
+                            
+                            <div class="contact-info mb-3">
+                                <p class="small mb-1"><i class="fas fa-briefcase me-2"></i>R&D Chemist (Lab Supervisor)</p>
+                                <p class="small mb-1"><i class="fas fa-building me-2"></i>Jazeera Paints Company</p>
+                                <p class="small mb-1"><i class="fas fa-envelope me-2"></i>mohamedattya6666@gmail.com</p>
+                                <p class="small mb-1"><i class="fas fa-phone me-2"></i>01201965469</p>
+                            </div>
+                            
+                            <div class="thesis-info text-start">
+                                <h6 class="fw-bold mb-2">عنوان البحث (باللغة العربية):</h6>
+                                <p class="text-muted mb-3" style="font-size: 0.9rem; direction: rtl;">
+                                    تصميم وتحضير بوليمر أكريليت يحتوي على الفوسفور لتحسين مقاومة التآكل في الطلاءات المعالجة بالأشعة فوق البنفسجية
+                                </p>
+                                
+                                <h6 class="fw-bold mb-2">Research Title (English):</h6>
+                                <p class="text-muted" style="font-size: 0.9rem; font-style: italic;">
+                                    Design and synthesis of a phosphorus-containing acrylic polymer for improving corrosion resistance in UV-cured coatings
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Master's Students Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Master's Students</h2>
+            
+            <div class="row" id="masters-students-container">
+                <!-- Content will be dynamically loaded from Excel -->
+                <!-- Master's Student 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card custom-card h-100">
+                        <div class="card-body text-center">
+                            <div class="member-photo mb-3">
+                                <img src="assets/img/masters-student-1.jpg" alt="Sameh Sobhy Mohamed Ali" 
+                                     class="member-img"
+                                     onerror="this.src='https://ui-avatars.com/api/?name=Sameh+Sobhy&background=28a745&color=ffffff&size=150&bold=true'">
+                            </div>
+                            <h5 class="card-title mb-3">Sameh Sobhy Mohamed Ali</h5>
+                            <div class="degree-badge">
+                                <span class="badge bg-success mb-3">Master's Student</span>
+                            </div>
+                            
+                            <div class="thesis-info text-start">
+                                <h6 class="fw-bold mb-2">Thesis Title (Arabic):</h6>
+                                <p class="text-muted mb-3" style="font-size: 0.9rem; direction: rtl;">
+                                    تحضير وتوصيف بعض المتراكبات الفلزية داخل تجويفات الزيوليت NaY
+                                </p>
+                                
+                                <h6 class="fw-bold mb-2">Thesis Title (English):</h6>
+                                <p class="text-muted" style="font-size: 0.9rem; font-style: italic;">
+                                    Preparation and Characterization of Some Incorporated Metal Complexes Inside Supercages of NaY Zeolite
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Master's Student 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card custom-card h-100">
+                        <div class="card-body text-center">
+                            <div class="member-photo mb-3">
+                                <img src="assets/img/masters-student-2.jpg" alt="Ahmed Abdelaal Abdellatif Abdelaal" 
+                                     class="member-img"
+                                     onerror="this.src='https://ui-avatars.com/api/?name=Ahmed+Abdelaal&background=28a745&color=ffffff&size=150&bold=true'">
+                            </div>
+                            <h5 class="card-title mb-3">Ahmed Abdelaal Abdellatif Abdelaal</h5>
+                            <div class="degree-badge">
+                                <span class="badge bg-success mb-3">Master's Student</span>
+                            </div>
+                            
+                            <div class="thesis-info text-start">
+                                <h6 class="fw-bold mb-2">Thesis Title (Arabic):</h6>
+                                <p class="text-muted mb-3" style="font-size: 0.9rem; direction: rtl;">
+                                    تطوير وتوصيف الجسيمات النانوية المكونة من البوليمر/أكسيد المعدن لاستخدامها فى تطبيقات الحفز الضوئي
+                                </p>
+                                
+                                <h6 class="fw-bold mb-2">Thesis Title (English):</h6>
+                                <p class="text-muted" style="font-size: 0.9rem; font-style: italic;">
+                                    Development and Characterization of Polymer/Metal-Oxide Nanocomposites for Photocatalytic Applications
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Master's Student 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card custom-card h-100">
+                        <div class="card-body text-center">
+                            <div class="member-photo mb-3">
+                                <img src="assets/img/masters-student-3.jpg" alt="Mohamed Zaghloul Mohamed Abdul-Aziz" 
+                                     class="member-img"
+                                     onerror="this.src='https://ui-avatars.com/api/?name=Mohamed+Zaghloul&background=28a745&color=ffffff&size=150&bold=true'">
+                            </div>
+                            <h5 class="card-title mb-3">Mohamed Zaghloul Mohamed Abdul-Aziz</h5>
+                            <div class="degree-badge">
+                                <span class="badge bg-success mb-3">Master's Student</span>
+                            </div>
+                            
+                            <div class="thesis-info text-start">
+                                <h6 class="fw-bold mb-2">Thesis Title (Arabic):</h6>
+                                <p class="text-muted mb-3" style="font-size: 0.9rem; direction: rtl;">
+                                    تطوير جسيمات البوليمر النانومترية شبه الموصلة كمحفزات ضوئية لمعالجة مياه الصرف الصحي
+                                </p>
+                                
+                                <h6 class="fw-bold mb-2">Thesis Title (English):</h6>
+                                <p class="text-muted" style="font-size: 0.9rem; font-style: italic;">
+                                    Developing Semiconducting Polymer Nanoparticles as Photocatalysts for Wastewater Treatment
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Survey Status Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body text-center p-5">
+                            <i class="fas fa-clipboard-list fa-3x text-primary mb-4"></i>
+                            <h3 class="card-title mb-4">Student Survey Status</h3>
+                            <p class="lead mb-4">
+                                We regularly collect feedback from our graduate students to track research progress and improve supervision quality.
+                            </p>
+                            
+                            <div class="survey-stats row text-center">
+                                <div class="col-md-4 mb-3">
+                                    <div class="stat-item">
+                                        <h4 class="text-success mb-2">1</h4>
+                                        <p class="small text-muted">Responses Received</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="stat-item">
+                                        <h4 class="text-warning mb-2">6</h4>
+                                        <p class="small text-muted">Pending Responses</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="stat-item">
+                                        <h4 class="text-info mb-2">7</h4>
+                                        <p class="small text-muted">Total Students</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="progress mb-4" style="height: 10px;">
+                                <div class="progress-bar bg-gradient" role="progressbar" style="width: 14.3%;" aria-valuenow="14.3" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                              <p class="small text-muted survey-status-text">
+                                <strong>Last Updated:</strong> June 2, 2025 | 
+                                <strong>Survey Completion Rate:</strong> 14.3%
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Dr. Mahmoud Basseem. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <div class="social-links">
+                        <a href="mailto:mahmoudbasseem@azhar.edu.eg" class="text-white me-3">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/mahmoud-basseem-i-mohamed-38a77293" class="text-white me-3" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Mahmoud_Basseem3" class="text-white me-3" target="_blank">
+                            <i class="fab fa-researchgate"></i>
+                        </a>
+                        <a href="https://orcid.org/0000-0001-5558-6342" class="text-white me-3" target="_blank">
+                            <i class="fab fa-orcid"></i>
+                        </a>
+                        <a href="https://scholar.google.com.eg/citations?user=V6_4ZtcAAAAJ&hl" class="text-white" target="_blank">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/enhanced-image-loader.js"></script>
+    <script src="js/lab-members.js"></script>
+</body>
+</html>
