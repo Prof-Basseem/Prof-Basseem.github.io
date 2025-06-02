@@ -619,3 +619,188 @@ body {
 .member-img[title] {
     cursor: help;
 }
+
+/* Infographic Section Styles */
+.stats-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.stats-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.stats-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.stats-icon {
+    opacity: 0.9;
+}
+
+.research-area-card {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.research-area-card:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.progress-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.progress-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.progress-overview {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animation for counting numbers */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stats-number {
+    animation: countUp 0.8s ease-out;
+}
+
+/* Responsive adjustments for infographic */
+@media (max-width: 768px) {
+    .stats-number {
+        font-size: 2.5rem;
+    }
+    
+    .progress-circle {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .progress-text {
+        font-size: 1rem;
+    }
+    
+    .research-area-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Flip Card Styles */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 350px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(26, 38, 65, 0.1);
+}
+
+.flip-card-front {
+    background-color: #fff;
+}
+
+.flip-card-back {
+    background-color: #2c3e50;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back .card {
+    border: none;
+    box-shadow: 0 8px 16px rgba(33, 30, 89, 0.2);
+}
+
+.flip-card-back ul li {
+    color: #f8f9fa;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.flip-card-back .btn-light {
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+    color: #2c3e50;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.flip-card-back .btn-light:hover {
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments for flip cards */
+@media (max-width: 768px) {
+    .flip-card {
+        height: 300px;
+    }
+    
+    .flip-card-back ul li {
+        font-size: 0.8rem;
+    }
+    
+    .flip-card-back h4 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Add subtle animation for card fronts */
+.flip-card-front .card {
+    transition: transform 0.3s ease;
+}
+
+.flip-card:hover .flip-card-front .card {
+    transform: scale(0.98);
+}

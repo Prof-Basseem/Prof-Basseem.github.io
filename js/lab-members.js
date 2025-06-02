@@ -171,6 +171,44 @@ const sampleMemberData = {
     }
 };
 
+// Infographic Animation Functions
+function animateCounters() {
+    const counters = document.querySelectorAll('.stats-number[data-count]');
+    
+    const animateCounter = (counter) => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        const increment = target / 50; // Animation duration control
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            counter.textContent = Math.floor(current);
+        }, 30); // Update every 30ms
+    };
+    
+    // Intersection Observer to trigger animation when section comes into view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                animateCounter(counter);
+                observer.unobserve(counter); // Only animate once
+            }
+        });
+    }, {
+        threshold: 0.5 // Trigger when 50% of element is visible
+    });
+    
+    // Observe all counter elements
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+}
+
 // Initialize page when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Lab Members page loaded');
@@ -195,7 +233,51 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Test Google Drive image accessibility
     testGoogleDriveImages();
+    
+    // Animate counters
+    animateCounters();
+    
+    // Add hover effects to stats cards
+    const statsCards = document.querySelectorAll('.stats-card');
+    statsCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // Add click effects to research area cards
+    const researchCards = document.querySelectorAll('.research-area-card');
+    researchCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Add a pulse effect
+            this.style.animation = 'pulse 0.6s';
+            setTimeout(() => {
+                this.style.animation = '';
+            }, 600);
+        });
+    });
 });
+
+// CSS animation for pulse effect (add to inline styles if needed)
+const pulseKeyframes = `
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+`;
+
+// Add pulse animation to document head
+if (!document.querySelector('#pulse-animation')) {
+    const style = document.createElement('style');
+    style.id = 'pulse-animation';
+    style.textContent = pulseKeyframes;
+    document.head.appendChild(style);
+}
 
 // Function to test if Google Drive images are accessible
 function testGoogleDriveImages() {

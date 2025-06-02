@@ -234,8 +234,7 @@ function showErrorMessage(message) {
 function initializeSmoothScrolling() {
     const links = document.querySelectorAll('a[href^="#"]');
     
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
+    links.forEach(link => { link.addEventListener('click', function(e) {
             e.preventDefault();
             
             const targetId = this.getAttribute('href').substring(1);
@@ -273,6 +272,47 @@ function initializeAnimations() {
     animatedElements.forEach(el => {
         observer.observe(el);
     });
+    
+    // Initialize counter animations
+    initializeCounterAnimations();
+}
+
+// Counter animation functionality
+function initializeCounterAnimations() {
+    const counters = document.querySelectorAll('.stats-number');
+    const counterObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                animateCounter(entry.target);
+                entry.target.classList.add('animated');
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+    
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+}
+
+// Animate individual counter
+function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-count'));
+    const suffix = element.getAttribute('data-suffix') || '';
+    const duration = 2000; // 2 seconds
+    const increment = target / (duration / 16); // 60fps
+    let current = 0;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current) + suffix;
+    }, 16);
 }
 
 // Initialize research paper downloads
@@ -790,29 +830,6 @@ function initializeSmoothScrolling() {
                 });
             }
         });
-    });
-}
-
-// Animation on scroll
-function initializeAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.custom-card, .research-item, .publication-item, .contact-info');
-    animatedElements.forEach(el => {
-        observer.observe(el);
     });
 }
 
