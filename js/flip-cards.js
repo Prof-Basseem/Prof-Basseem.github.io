@@ -12,6 +12,8 @@ function initializeFlipCards() {
     flipCards.forEach(card => {
         let isFlipped = false;
         let touchStartTime = 0;
+        let touchStartY = 0;
+        let touchStartX = 0;
         let isTouchDevice = false;
         
         // Detect if device supports touch
@@ -30,58 +32,53 @@ function initializeFlipCards() {
         // Handle touch start
         card.addEventListener('touchstart', function(e) {
             touchStartTime = Date.now();
-            // Don't prevent default - let the browser handle it naturally
+            const touch = e.touches[0];
+            touchStartY = touch.clientY;
+            touchStartX = touch.clientX;
         }, { passive: true });
         
-        // Handle touch end for mobile devices
+        // Handle touch end for mobile devices - optimized for speed
         card.addEventListener('touchend', function(e) {
             const touchDuration = Date.now() - touchStartTime;
             
-            // Only proceed if it's a quick tap (not a scroll or long press)
-            if (touchDuration < 500 && isTouchDevice) {
-                e.preventDefault();
-                e.stopPropagation();
+            // Check if it's a quick tap and not a scroll gesture
+            if (touchDuration < 300 && isTouchDevice) { // Reduced from 500ms to 300ms
+                const touch = e.changedTouches[0];
+                const deltaY = Math.abs(touch.clientY - touchStartY);
+                const deltaX = Math.abs(touch.clientX - touchStartX);
                 
-                // Toggle flip state
-                isFlipped = !isFlipped;
-                
-                if (isFlipped) {
-                    this.classList.add('flipped');
-                } else {
-                    this.classList.remove('flipped');
-                }
-                
-                // Optional: Add haptic feedback if available
-                if (navigator.vibrate) {
-                    navigator.vibrate(50);
+                // Only flip if it's a tap, not a scroll (movement < 10px)
+                if (deltaY < 10 && deltaX < 10) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Use requestAnimationFrame for smoother animation
+                    requestAnimationFrame(() => {
+                        // Toggle flip state
+                        isFlipped = !isFlipped;
+                        
+                        if (isFlipped) {
+                            this.classList.add('flipped');
+                        } else {
+                            this.classList.remove('flipped');
+                        }
+                    });
+                    
+                    // Optional: Add haptic feedback if available
+                    if (navigator.vibrate) {
+                        navigator.vibrate(30); // Reduced vibration duration
+                    }
                 }
             }
-        });
+        }, { passive: false });
         
-        // Handle click for desktop or as fallback
+        // Simplified click handler for better performance
         card.addEventListener('click', function(e) {
-            // Only handle click if not a touch device or if touch events failed
+            // Only handle click if not a touch device
             if (!isTouchDevice) {
-                // For desktop with mouse, do nothing - let CSS hover handle it
-                return;
+                return; // Let CSS hover handle desktop
             }
-            
-            // Fallback for touch devices where touchend didn't work
-            const timeSinceTouch = Date.now() - touchStartTime;
-            if (timeSinceTouch > 500) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                // Toggle flip state
-                isFlipped = !isFlipped;
-                
-                if (isFlipped) {
-                    this.classList.add('flipped');
-                } else {
-                    this.classList.remove('flipped');
-                }
-            }
-        });
+        }, { passive: true });
         
         // For desktop, remove the flipped class when mouse leaves
         card.addEventListener('mouseleave', function() {

@@ -764,8 +764,16 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.6s;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* Performance optimizations for mobile devices */
+@media (max-width: 768px) {
+    .flip-card-inner {
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 }
 
 /* Desktop hover support */
@@ -789,16 +797,19 @@ body {
     backface-visibility: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(26, 38, 65, 0.1);
+    will-change: transform;
+    transform: translateZ(0); /* Force GPU acceleration */
 }
 
 .flip-card-front {
     background-color: #fff;
+    transform: translateZ(0);
 }
 
 .flip-card-back {
     background-color: #2c3e50;
     color: white;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(0);
 }
 
 .flip-card-back .card {
@@ -839,6 +850,9 @@ body {
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
+        /* GPU acceleration for better performance */
+        transform: translateZ(0);
+        will-change: transform;
     }
     
     .flip-card-back ul li {
@@ -849,19 +863,24 @@ body {
         font-size: 1.2rem;
     }
     
-    /* Add visual feedback for touch */
+    /* Add visual feedback for touch - faster transition */
     .flip-card:active {
-        transform: scale(0.98);
+        transform: scale(0.98) translateZ(0);
         transition: transform 0.1s ease;
     }
 }
 
-/* Additional mobile optimizations */
+/* Additional mobile optimizations for low-end devices */
 @media (max-width: 480px) {
     .flip-card {
         height: 280px;
         /* Ensure touch events work properly on small screens */
         touch-action: none;
+    }
+    
+    /* Optimize for lower-end devices */
+    .flip-card-inner {
+        transition: transform 0.2s ease-out;
     }
     
     .flip-card-back .card-body {
@@ -874,11 +893,30 @@ body {
     }
 }
 
-/* Add subtle animation for card fronts */
-.flip-card-front .card {
-    transition: transform 0.3s ease;
+/* Performance optimizations for devices with limited GPU capabilities */
+@media (max-width: 480px) and (max-height: 800px) {
+    /* Further optimize for budget Android devices like Samsung A15 */
+    .flip-card-inner {
+        transition: transform 0.15s ease-out;
+        /* Reduce hardware acceleration on very low-end devices */
+        transform: translate3d(0, 0, 0);
+    }
+    
+    .flip-card-front, .flip-card-back {
+        /* Simplify shadows for better performance */
+        box-shadow: 0 2px 4px rgba(26, 38, 65, 0.08);
+    }
+    
+    /* Disable complex animations on touch for better responsiveness */
+    .flip-card:active {
+        transform: scale(0.99) translate3d(0, 0, 0);
+        transition: transform 0.05s ease;
+    }
 }
 
-.flip-card:hover .flip-card-front .card {
-    transform: scale(0.98);
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .flip-card-inner {
+        transition: transform 0.1s ease;
+    }
 }
