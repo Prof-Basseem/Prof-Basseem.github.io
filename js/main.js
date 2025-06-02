@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize research paper downloads
     initializePaperDownloads();
+    
+    // Initialize flip cards for mobile devices
+    initializeFlipCards();
 });
 
 // Navbar functionality
@@ -356,6 +359,56 @@ function showDownloadNotification(paperTitle) {
             alertDiv.remove();
         }
     }, 3000);
+}
+
+// Initialize flip cards for mobile touch support
+function initializeFlipCards() {
+    const flipCards = document.querySelectorAll('.flip-card');
+    
+    flipCards.forEach(card => {
+        let isFlipped = false;
+        
+        // Add touch event support for mobile devices
+        card.addEventListener('touchstart', function(e) {
+            // Prevent scrolling when touching the card
+            e.preventDefault();
+        });
+        
+        card.addEventListener('click', function(e) {
+            // Only handle click on touch devices or when hover is not supported
+            if (window.matchMedia('(hover: none)').matches || window.matchMedia('(pointer: coarse)').matches) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Toggle flip state
+                isFlipped = !isFlipped;
+                
+                if (isFlipped) {
+                    this.classList.add('flipped');
+                } else {
+                    this.classList.remove('flipped');
+                }
+            }
+        });
+        
+        // For desktop, remove the flipped class when mouse leaves
+        card.addEventListener('mouseleave', function() {
+            if (window.matchMedia('(hover: hover)').matches) {
+                this.classList.remove('flipped');
+                isFlipped = false;
+            }
+        });
+        
+        // Handle orientation changes on mobile
+        window.addEventListener('orientationchange', function() {
+            setTimeout(() => {
+                // Reset flip state on orientation change
+                flipCards.forEach(flipCard => {
+                    flipCard.classList.remove('flipped');
+                });
+            }, 100);
+        });
+    });
 }
 
 // Utility functions
