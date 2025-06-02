@@ -146,12 +146,55 @@
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
-        
-        .facilities-item i {
+          .facilities-item i {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+        
+        /* Patent Section Styles */
+        .patent-timeline {
+            border-left: 2px solid #ffc107;
+            padding-left: 15px;
+            margin-top: 10px;
+        }
+        
+        .patent-timeline .timeline-item {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .patent-timeline .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: #ffc107;
+            border-radius: 50%;
+        }
+        
+        .patent-details {
+            background: rgba(102, 126, 234, 0.05);
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .inventor-name {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin: 2px;
+        }
+        
+        .patent-applications ul li {
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -532,21 +575,64 @@
         <div class="container">
             <h2 class="section-title">Patents & Intellectual Property</h2>
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="custom-card card">
+                <div class="col-lg-8 mx-auto">                    <div class="custom-card card">
                         <div class="card-body">
-                            <div class="row align-items-center">
+                            <div class="row align-items-start">
                                 <div class="col-md-2 text-center">
-                                    <i class="fas fa-patent fa-4x text-warning"></i>
+                                    <i class="fas fa-patent fa-4x text-warning mb-3"></i>
+                                    <div class="patent-timeline">
+                                        <div class="timeline-item">
+                                            <small class="text-muted">Filed: 2019</small>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <small class="text-muted">Accepted: Aug 30, 2023</small>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <small class="text-success fw-bold">Issued: Sep 2023</small>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-10">
                                     <h5 class="card-title">Patent #865 (2023)</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Fluorescence probe based on fluorescein derivatives</h6>
-                                    <p class="card-text">A novel fluorescence probe system for chemical detection applications, featuring enhanced sensitivity and selectivity for target analytes. This innovative technology represents a significant advancement in chemical sensing capabilities.</p>
+                                    <h6 class="card-subtitle mb-3 text-primary">"Fluorescence probe based on fluorescein derivatives for monitoring pH changes and their application in bio-imaging for the detection of dangerous bacteria"</h6>
+                                    
+                                    <div class="patent-details mb-3">
+                                        <p class="mb-2"><strong>Application Number:</strong> 2019050760</p>
+                                        <p class="mb-2"><strong>Filing Date:</strong> 2019</p>
+                                        <p class="mb-2"><strong>Acceptance Date:</strong> August 30, 2023</p>
+                                        <p class="mb-3"><strong>Issue Date:</strong> September 2023</p>
+                                    </div>
+                                    
+                                    <div class="inventors mb-3">
+                                        <h6 class="text-muted mb-2">Inventors:</h6>
+                                        <div class="inventor-list">
+                                            <span class="inventor-name">Mahmoud Basseem I. Mohamed</span>, 
+                                            <span class="inventor-name">Tarek S. Aysha</span>, 
+                                            <span class="inventor-name">Mervat S. El-Sedik</span>, 
+                                            <span class="inventor-name">Omaima M. T. Kandil</span>, 
+                                            <span class="inventor-name">Shimaa T. A. Omara</span>, 
+                                            <span class="inventor-name">Taha M. Elmorsi</span>, 
+                                            <span class="inventor-name">Ahmed H. Bedair</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="card-text">This innovative patent describes a novel fluorescence probe system based on fluorescein derivatives designed for monitoring pH changes with applications in bio-imaging for detecting dangerous bacteria. The technology represents a significant advancement in chemical sensing capabilities with direct applications in medical diagnostics and environmental monitoring.</p>
+                                    
+                                    <div class="patent-applications mt-3">
+                                        <h6 class="text-muted mb-2">Applications:</h6>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fas fa-check text-success me-2"></i>pH Monitoring Systems</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Bio-imaging Technology</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Bacterial Detection</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>Medical Diagnostics</li>
+                                        </ul>
+                                    </div>
+                                    
                                     <div class="mt-3">
-                                        <span class="badge bg-success">Granted</span>
-                                        <span class="badge bg-info ms-2">International Application</span>
-                                        <span class="badge bg-primary ms-2">Commercial Potential</span>
+                                        <span class="badge bg-success">Granted Patent</span>
+                                        <span class="badge bg-info ms-2">Bio-imaging Application</span>
+                                        <span class="badge bg-primary ms-2">Medical Technology</span>
+                                        <span class="badge bg-warning ms-2">pH Monitoring</span>
                                     </div>
                                 </div>
                             </div>
