@@ -490,11 +490,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="js/main.js"></script>    <style>
-        /* Professional Experience Infographic Timeline Styles */
-        .career-timeline {
+        /* Professional Experience Infographic Timeline Styles */        .career-timeline {
             position: relative;
             max-width: 900px;
             margin: 0 auto;
+            width: 100%;
         }
         
         .career-milestone {
@@ -520,8 +520,7 @@
         .career-milestone.start-position {
             background: linear-gradient(135deg, #fff3cd 0%, #ffffff 100%);
         }
-        
-        .year-badge {
+          .year-badge {
             position: absolute;
             top: -15px;
             left: 30px;
@@ -532,6 +531,8 @@
             font-weight: 600;
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
             z-index: 2;
+            white-space: nowrap;
+            min-width: fit-content;
         }
         
         .current-position .year-badge {
@@ -638,12 +639,17 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
-        .achievements {
+          .achievements {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 15px;
             margin-top: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .achievements {
+                grid-template-columns: 1fr;
+            }
         }
         
         .achievement-item {
@@ -742,38 +748,211 @@
             height: 60px;
             background: rgba(255, 255, 255, 0.3);
         }
-        
-        /* Responsive Design */
+          /* Responsive Design */
         @media (max-width: 768px) {
+            .career-timeline {
+                max-width: 100%;
+                padding: 0 10px;
+            }
+            
+            .career-milestone {
+                margin-bottom: 2rem;
+                border-radius: 15px;
+            }
+            
             .position-header {
                 flex-direction: column;
                 text-align: center;
                 gap: 15px;
             }
             
+            .position-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5em;
+            }
+            
+            .position-info h3 {
+                font-size: 1.4em;
+                margin-bottom: 5px;
+            }
+            
+            .institution {
+                font-size: 1em;
+            }
+            
+            .experience-years {
+                padding: 10px;
+                min-width: 70px;
+            }
+            
+            .years-count {
+                font-size: 1.5em;
+            }
+            
+            .years-label {
+                font-size: 0.8em;
+            }
+            
             .achievements {
                 grid-template-columns: 1fr;
+                gap: 10px;
+                margin-top: 15px;
+            }
+            
+            .achievement-item {
+                padding: 10px 12px;
+                font-size: 0.9em;
+            }
+            
+            .achievement-item i {
+                font-size: 1em;
+                margin-right: 10px;
+            }
+            
+            .timeline-arrow i {
+                font-size: 1.5em;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .career-summary {
+                margin-top: 30px;
+                padding: 25px 20px;
+                border-radius: 15px;
             }
             
             .summary-stats {
                 flex-direction: column;
-                gap: 30px;
+                gap: 20px;
+            }
+            
+            .stat-item {
+                margin-bottom: 0;
+            }
+            
+            .stat-number {
+                font-size: 2.5em;
+            }
+            
+            .stat-label {
+                font-size: 1em;
             }
             
             .stat-divider {
                 width: 60px;
                 height: 2px;
+                margin: 0 auto;
             }
-            
-            .year-badge {
+              .year-badge {
                 position: relative;
                 top: 0;
                 left: 0;
                 display: inline-block;
-                margin-bottom: 20px;
+                margin-bottom: 15px;
+                padding: 6px 15px;
+                font-size: 0.9em;
+                text-align: center;
+                min-width: auto;
+                width: auto;
             }
-              .milestone-content {
-                padding: 20px;
+            
+            .milestone-content {
+                padding: 20px 15px 15px;
+            }
+        }
+        
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .career-timeline {
+                padding: 0 5px;
+            }
+            
+            .career-milestone {
+                margin-bottom: 1.5rem;
+                border-radius: 12px;
+            }
+            
+            .position-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3em;
+            }
+            
+            .position-info h3 {
+                font-size: 1.2em;
+            }
+            
+            .institution {
+                font-size: 0.9em;
+                line-height: 1.3;
+            }
+            
+            .experience-years {
+                padding: 8px;
+                min-width: 60px;
+            }
+            
+            .years-count {
+                font-size: 1.3em;
+            }
+            
+            .years-label {
+                font-size: 0.75em;
+            }
+            
+            .achievement-item {
+                padding: 8px 10px;
+                font-size: 0.85em;
+                border-radius: 8px;
+            }
+            
+            .achievement-item i {
+                font-size: 0.9em;
+                margin-right: 8px;
+                width: 16px;
+            }
+            
+            .timeline-arrow {
+                margin: 15px 0;
+            }
+            
+            .timeline-arrow i {
+                font-size: 1.3em;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .career-summary {
+                margin-top: 25px;
+                padding: 20px 15px;
+                border-radius: 12px;
+            }
+            
+            .stat-number {
+                font-size: 2.2em;
+            }
+            
+            .stat-label {
+                font-size: 0.9em;
+            }
+            
+            .year-badge {
+                padding: 5px 12px;
+                font-size: 0.8em;
+                margin-bottom: 12px;
+            }
+            
+            .year-badge .year {
+                font-size: 1em;
+            }
+            
+            .year-badge .duration {
+                font-size: 0.85em;
+            }
+            
+            .milestone-content {
+                padding: 15px 12px 12px;
             }
         }
         

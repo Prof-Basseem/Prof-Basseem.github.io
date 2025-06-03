@@ -678,6 +678,12 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+#lab-statistics{
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+}
+
+
 /* Animation for counting numbers */
 @keyframes countUp {
     from {
@@ -739,7 +745,7 @@ body {
         z-index: 10;
         opacity: 0.9;
         pointer-events: none;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease; /* Faster transition for mobile */
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
     
@@ -755,6 +761,7 @@ body {
             right: 10px;
             padding: 4px 8px;
             font-size: 0.7rem;
+            transition: all 0.1s ease; /* Even faster for low-end devices */
         }
     }
 }
@@ -772,7 +779,30 @@ body {
 /* Performance optimizations for mobile devices */
 @media (max-width: 768px) {
     .flip-card-inner {
-        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+/* Optimizations for budget Android devices */
+@media (max-width: 480px) {
+    .flip-card-inner {
+        transition: transform 0.15s ease-out;
+    }
+}
+
+/* Specific optimizations for very low-end devices like Samsung A15 */
+@media (max-width: 480px) and (max-device-pixel-ratio: 2) {
+    .flip-card-inner {
+        transition: transform 0.1s ease-out;
+        /* Use 2D transforms as fallback for very low-end devices */
+        transform-style: flat;
+    }
+    
+    /* Simplified hover states for better performance */
+    .flip-card:hover .flip-card-inner,
+    .flip-card.flipped .flip-card-inner {
+        transform: rotateY(180deg);
+        transform-style: flat;
     }
 }
 
@@ -843,7 +873,7 @@ body {
     .flip-card {
         height: 300px;
         /* Improve touch target and responsiveness */
-        touch-action: none;
+        touch-action: manipulation; /* Changed from none to manipulation for better link support */
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -866,7 +896,13 @@ body {
     /* Add visual feedback for touch - faster transition */
     .flip-card:active {
         transform: scale(0.98) translateZ(0);
-        transition: transform 0.1s ease;
+        transition: transform 0.08s ease;
+    }
+    
+    /* Ensure links in flipped cards work properly */
+    .flip-card.flipped .flip-card-back a {
+        pointer-events: auto;
+        touch-action: manipulation;
     }
 }
 
@@ -875,12 +911,12 @@ body {
     .flip-card {
         height: 280px;
         /* Ensure touch events work properly on small screens */
-        touch-action: none;
+        touch-action: manipulation;
     }
     
     /* Optimize for lower-end devices */
     .flip-card-inner {
-        transition: transform 0.2s ease-out;
+        transition: transform 0.12s ease-out;
     }
     
     .flip-card-back .card-body {
@@ -891,32 +927,122 @@ body {
         font-size: 0.75rem;
         margin-bottom: 0.3rem;
     }
+    
+    /* Make sure links are easily tappable */
+    .flip-card-back a {
+        min-height: 44px; /* iOS minimum touch target */
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 12px;
+    }
 }
 
 /* Performance optimizations for devices with limited GPU capabilities */
 @media (max-width: 480px) and (max-height: 800px) {
     /* Further optimize for budget Android devices like Samsung A15 */
     .flip-card-inner {
-        transition: transform 0.15s ease-out;
-        /* Reduce hardware acceleration on very low-end devices */
-        transform: translate3d(0, 0, 0);
+        transition: transform 0.08s ease-out;
+        /* Use 2D transforms for very low-end devices */
+        transform-style: flat;
     }
     
     .flip-card-front, .flip-card-back {
         /* Simplify shadows for better performance */
         box-shadow: 0 2px 4px rgba(26, 38, 65, 0.08);
+        /* Disable 3D acceleration on very low-end devices */
+        transform: none;
+    }
+    
+    /* Specific transform for flipped state on low-end devices */
+    .flip-card.flipped .flip-card-inner {
+        transform: rotateY(180deg);
+        transform-style: flat;
+    }
+    
+    .flip-card.flipped .flip-card-back {
+        transform: rotateY(180deg);
+    }
+    
+    .flip-card.flipped .flip-card-front {
+        transform: rotateY(0deg);
     }
     
     /* Disable complex animations on touch for better responsiveness */
     .flip-card:active {
-        transform: scale(0.99) translate3d(0, 0, 0);
+        transform: scale(0.99);
         transition: transform 0.05s ease;
+    }
+    
+    /* Ensure links work properly on budget devices */
+    .flip-card-back a {
+        position: relative;
+        z-index: 10;
+        display: block;
+        padding: 10px 15px;
+        margin: 5px 0;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        text-decoration: none;
+        touch-action: manipulation;
+    }
+    
+    .flip-card-back a:active {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(0.95);
     }
 }
 
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
     .flip-card-inner {
+        transition: transform 0.1s ease;
+    }
+}
+
+/* Additional optimizations for Samsung A15 and similar budget devices */
+@media (max-width: 480px) and (-webkit-max-device-pixel-ratio: 2) {
+    /* Use simpler 2D transforms for devices with lower pixel density */
+    .flip-card-inner {
+        transition: opacity 0.1s ease, transform 0.1s ease;
+        transform-style: flat;
+    }
+    
+    /* Alternative flip effect using opacity for very low-end devices */
+    .flip-card.flipped .flip-card-front {
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .flip-card.flipped .flip-card-back {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .flip-card-front, .flip-card-back {
+        transition: opacity 0.1s ease;
+        backface-visibility: visible; /* Override 3D properties */
+    }
+    
+    .flip-card-back {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+/* Improve link visibility and interaction on mobile */
+@media (max-width: 768px) {
+    .flip-card-back .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+        margin: 0.3rem;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .flip-card-back .btn:active {
+        transform: scale(0.95);
         transition: transform 0.1s ease;
     }
 }
