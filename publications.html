@@ -105,10 +105,90 @@
             font-size: 1.1rem;
             color: #666;
             font-weight: 500;
-        }
-        .col-lg-2 a:hover {
+        }        .col-lg-2 a:hover {
                         color: skyblue !important;
                     }
+
+        /* Chart Section Styles */
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+
+        #publicationsChart {
+            height: 350px !important;
+        }
+
+        .analysis-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+
+        .insight-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+        }
+
+        .insight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .bg-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        }
+
+        .chart-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1rem;
+        }
+
+        .chart-stat-item {
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .chart-stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }        .chart-stat-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Recent Publications Specific Styles */
+        .insight-item {
+            background: rgba(40, 167, 69, 0.05);
+            padding: 0.75rem;
+            border-radius: 8px;
+            border-left: 3px solid #28a745;
+        }
+
+        .recent-stat {
+            padding: 1rem;
+            background: rgba(248, 249, 250, 0.5);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .recent-stat:hover {
+            transform: translateY(-2px);
+            background: rgba(40, 167, 69, 0.05);
+        }
+
+        #recentPublicationsChart {
+            height: 300px !important;
+        }
+
+        .bg-gradient-success {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+        }
     </style>
 </head>
 <body>
@@ -167,17 +247,16 @@
 
     <!-- Statistics Section -->
     <section class="stats-section">
-        <div class="container">
-            <div class="row">                <div class="col-md-3">
+        <div class="container">            <div class="row">                <div class="col-md-3">
                     <div class="stat-item">
-                        <span class="stat-number">23</span>
-                        <span class="stat-label">Total Publications</span>
+                        <span class="stat-number">21</span>
+                        <span class="stat-label">Post-Ph.D. Publications</span>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="stat-item">
-                        <span class="stat-number">11</span>
-                        <span class="stat-label">Years Active</span>
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Years Since Ph.D.</span>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -188,8 +267,155 @@
                 </div>
                 <div class="col-md-3">
                     <div class="stat-item">
-                        <span class="stat-number">2025</span>
-                        <span class="stat-label">Latest Publication</span>
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Peak Year (2022)</span>
+                    </div>
+                </div>
+            </div>
+        </div>    </section>    <!-- Publications Analysis Chart Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-title">Publications Analysis</h2>
+                    <p class="lead">Publications since Ph.D. completion (2017) - Total: 21 Journal Publications</p>
+                </div>
+            </div>
+            
+            <!-- Last 5 Years Focus Section -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="card shadow-lg border-0 bg-white">
+                        <div class="card-header bg-gradient text-white text-center" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;">
+                            <h4 class="mb-0"><i class="fas fa-calendar-alt me-2"></i>Last 5 Years Focus (2020-2025)</h4>
+                            <p class="mb-0 mt-2 opacity-90">Recent Research Output: 17 Publications</p>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="chart-container">
+                                        <canvas id="recentPublicationsChart"></canvas>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <h5 class="fw-bold mb-3 text-success">Key Insights</h5>
+                                    <div class="insight-item mb-3">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-trophy text-warning me-2"></i>
+                                            <strong>Peak Performance</strong>
+                                        </div>
+                                        <p class="text-muted small mb-0">2022 was the most productive year with 8 publications (47% of recent output)</p>
+                                    </div>
+                                    <div class="insight-item mb-3">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-chart-line text-success me-2"></i>
+                                            <strong>Consistency</strong>
+                                        </div>
+                                        <p class="text-muted small mb-0">Average of 3.4 publications per year in the last 5 years</p>
+                                    </div>
+                                    <div class="insight-item mb-3">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-trending-up text-info me-2"></i>
+                                            <strong>Recent Growth</strong>
+                                        </div>
+                                        <p class="text-muted small mb-0">Strong recovery in 2024 with 4 publications after 2023</p>
+                                    </div>
+                                    <div class="insight-item">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-bullseye text-primary me-2"></i>
+                                            <strong>Current Trend</strong>
+                                        </div>
+                                        <p class="text-muted small mb-0">2025 already showing 2 publications (on track for strong year)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Quick Stats for Recent Years -->
+                            <div class="row mt-4 pt-3 border-top">
+                                <div class="col-md-3 text-center">
+                                    <div class="recent-stat">
+                                        <h4 class="text-success fw-bold">17</h4>
+                                        <p class="text-muted small mb-0">Total (2020-2025)</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <div class="recent-stat">
+                                        <h4 class="text-warning fw-bold">47%</h4>
+                                        <p class="text-muted small mb-0">Published in 2022</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <div class="recent-stat">
+                                        <h4 class="text-info fw-bold">3.4</h4>
+                                        <p class="text-muted small mb-0">Avg per Year</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <div class="recent-stat">
+                                        <h4 class="text-primary fw-bold">81%</h4>
+                                        <p class="text-muted small mb-0">of Post-Ph.D. Total</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-header bg-gradient text-white text-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <h4 class="mb-0"><i class="fas fa-chart-bar me-2"></i>Publications by Year (Post-Ph.D.)</h4>
+                        </div>                        <div class="card-body p-4">
+                            <div class="chart-container">
+                                <canvas id="publicationsChart"></canvas>
+                            </div>
+                            
+                            <!-- Quick Stats Below Chart -->
+                            <div class="chart-stats mt-4 pt-3 border-top">
+                                <div class="chart-stat-item">
+                                    <div class="chart-stat-number">21</div>
+                                    <div class="chart-stat-label">Total Publications</div>
+                                </div>
+                                <div class="chart-stat-item">
+                                    <div class="chart-stat-number">2.6</div>
+                                    <div class="chart-stat-label">Avg per Year</div>
+                                </div>
+                                <div class="chart-stat-item">
+                                    <div class="chart-stat-number">38%</div>
+                                    <div class="chart-stat-label">in 2022</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-10 mx-auto">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="text-center p-3 bg-white rounded shadow-sm">
+                                <i class="fas fa-graduation-cap fa-3x text-primary mb-2"></i>
+                                <h5 class="fw-bold">Ph.D. Completion</h5>
+                                <p class="text-muted mb-0">2017 - Al-Azhar University</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center p-3 bg-white rounded shadow-sm">
+                                <i class="fas fa-chart-line fa-3x text-success mb-2"></i>
+                                <h5 class="fw-bold">Most Productive Year</h5>
+                                <p class="text-muted mb-0">2022 - 8 Publications</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center p-3 bg-white rounded shadow-sm">
+                                <i class="fas fa-trophy fa-3x text-warning mb-2"></i>
+                                <h5 class="fw-bold">Research Impact</h5>
+                                <p class="text-muted mb-0">21 Publications in 8 Years</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -749,9 +975,249 @@
                 <p>&copy; 2025 Dr. Mahmoud Basseem I. Mohamed. All rights reserved.</p>
             </div>
         </div>
-    </footer>
+    </footer>    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Publications Chart Script -->
+    <script>
+        // Publications data since Ph.D. (2017)
+        const publicationsData = {
+            labels: ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            datasets: [{
+                label: 'Journal Publications',
+                data: [2, 0, 2, 1, 1, 8, 1, 4, 2],
+                backgroundColor: [
+                    'rgba(102, 126, 234, 0.8)',
+                    'rgba(118, 75, 162, 0.8)',
+                    'rgba(255, 107, 107, 0.8)',
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 206, 84, 0.8)',
+                    'rgba(75, 192, 192, 0.8)',
+                    'rgba(153, 102, 255, 0.8)',
+                    'rgba(255, 159, 64, 0.8)',
+                    'rgba(199, 199, 199, 0.8)'
+                ],
+                borderColor: [
+                    'rgba(102, 126, 234, 1)',
+                    'rgba(118, 75, 162, 1)',
+                    'rgba(255, 107, 107, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 84, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(199, 199, 199, 1)'
+                ],
+                borderWidth: 2,
+                borderRadius: 8,
+                borderSkipped: false
+            }]
+        };
+
+        // Recent publications data (Last 5 years: 2020-2025)
+        const recentPublicationsData = {
+            labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+            datasets: [{
+                label: 'Recent Publications',
+                data: [1, 1, 8, 1, 4, 2],
+                backgroundColor: [
+                    'rgba(40, 167, 69, 0.8)',
+                    'rgba(32, 201, 151, 0.8)',
+                    'rgba(255, 193, 7, 0.9)',
+                    'rgba(23, 162, 184, 0.8)',
+                    'rgba(108, 117, 125, 0.8)',
+                    'rgba(220, 53, 69, 0.8)'
+                ],
+                borderColor: [
+                    'rgba(40, 167, 69, 1)',
+                    'rgba(32, 201, 151, 1)',
+                    'rgba(255, 193, 7, 1)',
+                    'rgba(23, 162, 184, 1)',
+                    'rgba(108, 117, 125, 1)',
+                    'rgba(220, 53, 69, 1)'
+                ],
+                borderWidth: 3,
+                borderRadius: 12,
+                borderSkipped: false
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: publicationsData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 9,
+                        ticks: {
+                            stepSize: 1,
+                            font: {
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            color: '#333'
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        titleColor: 'white',
+                        bodyColor: 'white',
+                        borderColor: 'rgba(102, 126, 234, 1)',
+                        borderWidth: 1,
+                        callbacks: {
+                            label: function(context) {
+                                const year = context.label;
+                                const count = context.parsed.y;
+                                if (count === 0) {
+                                    return `${year}: No publications`;
+                                } else if (count === 1) {
+                                    return `${year}: 1 publication`;
+                                } else {
+                                    return `${year}: ${count} publications`;
+                                }
+                            },
+                            afterLabel: function(context) {
+                                const year = context.label;
+                                if (year === '2017') {
+                                    return 'Ph.D. graduation year';
+                                } else if (year === '2022') {
+                                    return 'Most productive year';
+                                }
+                                return '';
+                            }
+                        }
+                    }
+                },
+                animation: {
+                    duration: 2000,
+                    easing: 'easeInOutQuart'
+                }
+            }
+        };
+
+        // Recent publications chart configuration
+        const recentConfig = {
+            type: 'bar',
+            data: recentPublicationsData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 9,
+                        ticks: {
+                            stepSize: 1,
+                            font: {
+                                size: 13,
+                                weight: 'bold'
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(40, 167, 69, 0.1)'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 13,
+                                weight: 'bold'
+                            }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            color: '#28a745'
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(40, 167, 69, 0.9)',
+                        titleColor: 'white',
+                        bodyColor: 'white',
+                        borderColor: 'rgba(40, 167, 69, 1)',
+                        borderWidth: 2,
+                        callbacks: {
+                            label: function(context) {
+                                const year = context.label;
+                                const count = context.parsed.y;
+                                const total = recentPublicationsData.datasets[0].data.reduce((a, b) => a + b, 0);
+                                const percentage = Math.round((count / total) * 100);
+                                
+                                if (count === 1) {
+                                    return `${year}: 1 publication (${percentage}%)`;
+                                } else {
+                                    return `${year}: ${count} publications (${percentage}%)`;
+                                }
+                            },
+                            afterLabel: function(context) {
+                                const year = context.label;
+                                if (year === '2022') {
+                                    return 'Peak year - 47% of recent output';
+                                } else if (year === '2025') {
+                                    return 'Current year (in progress)';
+                                }
+                                return '';
+                            }
+                        }
+                    }
+                },
+                animation: {
+                    duration: 2500,
+                    easing: 'easeInOutBounce'
+                }
+            }
+        };
+
+        // Initialize the charts when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('publicationsChart').getContext('2d');
+            new Chart(ctx, config);
+            
+            const recentCtx = document.getElementById('recentPublicationsChart').getContext('2d');
+            new Chart(recentCtx, recentConfig);
+        });
+    </script>
+    
     <!-- Custom JS -->
     <script src="js/main.js"></script>
 </body>
