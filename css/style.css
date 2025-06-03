@@ -842,6 +842,11 @@ body {
     transform: rotateY(180deg) translateZ(0);
 }
 
+/* Fix text direction on flip card back */
+.flip-card-back .card-body {
+    transform: scaleX(-1);
+}
+
 .flip-card-back .card {
     border: none;
     box-shadow: 0 8px 16px rgba(33, 30, 89, 0.2);
