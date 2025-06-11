@@ -797,12 +797,17 @@ body {
         /* Use 2D transforms as fallback for very low-end devices */
         transform-style: flat;
     }
-    
-    /* Simplified hover states for better performance */
+      /* Simplified hover states for better performance with correct text orientation */
     .flip-card:hover .flip-card-inner,
     .flip-card.flipped .flip-card-inner {
         transform: rotateY(180deg);
         transform-style: flat;
+    }
+    
+    /* Ensure back face displays with correct text orientation */
+    .flip-card:hover .flip-card-back,
+    .flip-card.flipped .flip-card-back {
+        transform: rotateY(0deg); /* Back should appear normal when card is flipped */
     }
 }
 
@@ -840,24 +845,10 @@ body {
     background-color: #2c3e50;
     color: white;
     transform: rotateY(180deg) translateZ(0);
+    /* Ensure text appears correctly on the back face */
 }
 
-/* Fix text direction on flip card back */
-.flip-card-back .card-body {
-    transform: scaleX(-1);
-}
-
-/* Ensure text direction fix works on all devices */
-.flip-card-back * {
-    transform: scaleX(-1);
-}
-
-/* Override for elements that should not be flipped */
-.flip-card-back .btn,
-.flip-card-back .fas,
-.flip-card-back .fab {
-    transform: scaleX(-1) !important;
-}
+/* Removed problematic scaleX(-1) transforms that were causing backwards text */
 
 .flip-card-back .card {
     border: none;
@@ -901,25 +892,7 @@ body {
         transform: translateZ(0);
         will-change: transform;
     }
-    
-    /* Ensure text direction fix works on mobile */
-    .flip-card-back .card-body,
-    .flip-card-back .card-body *,
-    .flip-card-back h4,
-    .flip-card-back p,
-    .flip-card-back ul,
-    .flip-card-back li {
-        transform: scaleX(-1) !important;
-    }
-    
-    /* Fix for buttons and icons on mobile */
-    .flip-card-back .btn,
-    .flip-card-back .btn *,
-    .flip-card-back .fas,
-    .flip-card-back .fab,
-    .flip-card-back i {
-        transform: scaleX(-1) !important;
-    }
+      /* Removed mobile-specific text direction fixes that were causing backwards text */
     
     .flip-card-back ul li {
         font-size: 0.8rem;
@@ -949,21 +922,7 @@ body {
         /* Ensure touch events work properly on small screens */
         touch-action: manipulation;
     }
-    
-    /* Ensure text direction fix works on very small screens */
-    .flip-card-back .card-body,
-    .flip-card-back .card-body *,
-    .flip-card-back h4,
-    .flip-card-back p,
-    .flip-card-back ul,
-    .flip-card-back li,
-    .flip-card-back .btn,
-    .flip-card-back .btn *,
-    .flip-card-back .fas,
-    .flip-card-back .fab,
-    .flip-card-back i {
-        transform: scaleX(-1) !important;
-    }
+      /* Removed very small screen text direction fixes that were causing backwards text */
     
     /* Optimize for lower-end devices */
     .flip-card-inner {
@@ -1003,19 +962,19 @@ body {
         /* Disable 3D acceleration on very low-end devices */
         transform: none;
     }
-    
-    /* Specific transform for flipped state on low-end devices */
+      /* Specific transform for flipped state on low-end devices */
     .flip-card.flipped .flip-card-inner {
         transform: rotateY(180deg);
         transform-style: flat;
     }
     
+    /* Ensure proper text orientation on low-end devices */
     .flip-card.flipped .flip-card-back {
-        transform: rotateY(180deg);
+        transform: rotateY(0deg); /* Back face should appear normal when flipped */
     }
     
     .flip-card.flipped .flip-card-front {
-        transform: rotateY(0deg);
+        transform: rotateY(-180deg); /* Front face should be hidden when flipped */
     }
     
     /* Disable complex animations on touch for better responsiveness */
