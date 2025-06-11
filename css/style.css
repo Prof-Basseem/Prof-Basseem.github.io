@@ -1027,6 +1027,10 @@ p {
 
 /* Additional mobile optimizations */
 @media (max-width: 480px) {
+    body {
+        margin-top: 50px;
+    }
+    
     .feature-card {
         padding: 1.8rem 1.2rem;
     }
