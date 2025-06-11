@@ -116,12 +116,10 @@ class EnhancedImageLoader {
         // All URLs failed, use fallback
         console.warn(`All Google Drive URLs failed for ${studentName}, using fallback`);
         this.setFallbackImage(imgElement, fallbackUrl, originalUrl);
-    }
-
-    // Add loading visual state
+    }    // Add loading visual state
     addLoadingState(imgElement, studentName) {
         imgElement.style.opacity = '0.6';
-        imgElement.style.filter = 'blur(1px)';
+        // imgElement.style.filter = 'blur(1px)'; // Blur effect removed
         imgElement.setAttribute('data-loading', 'true');
         
         // Add loading overlay
@@ -134,12 +132,10 @@ class EnhancedImageLoader {
             container.style.position = 'relative';
             container.appendChild(loadingOverlay);
         }
-    }
-
-    // Remove loading visual state
+    }    // Remove loading visual state
     removeLoadingState(imgElement) {
         imgElement.style.opacity = '1';
-        imgElement.style.filter = 'none';
+        imgElement.style.filter = 'none'; // Ensure any existing filter is removed
         imgElement.removeAttribute('data-loading');
         
         const container = imgElement.parentElement;

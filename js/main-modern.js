@@ -676,18 +676,20 @@ function initializeEnhancedScrollSpy() {
     updateActiveNavigation(); // Initial call
 }
 
-// Initialize enhanced image lazy loading with blur effect
+// Initialize enhanced image lazy loading
 function initializeEnhancedImageLoading() {
     const images = document.querySelectorAll('img[data-src], img[loading="lazy"]');
     
-    // Add blur effect for loading images
+    // Add loading effects for images (blur removed)
     images.forEach(img => {
         if (!img.complete) {
-            img.style.filter = 'blur(10px)';
-            img.style.transition = 'filter 0.5s ease';
+            // img.style.filter = 'blur(10px)'; // Blur effect removed
+            img.style.transition = 'opacity 0.5s ease';
+            img.style.opacity = '0.7'; // Use opacity instead of blur
             
             img.addEventListener('load', () => {
-                img.style.filter = 'none';
+                // img.style.filter = 'none'; // Blur removal removed
+                img.style.opacity = '1'; // Restore full opacity
             });
         }
     });

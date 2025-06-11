@@ -298,27 +298,25 @@ class PerformanceMonitor {
             };
             testImg.src = webpSrc;
         });
-    }
-
-    setupProgressiveLoading() {
-        // Implement blur-to-clear loading effect
+    }    setupProgressiveLoading() {
+        // Implement progressive loading without blur effect
         const images = document.querySelectorAll('img');
         
         images.forEach(img => {
-            const placeholder = this.createBlurPlaceholder(img);
+            const placeholder = this.createPlaceholder(img);
             
             if (placeholder) {
-                img.style.filter = 'blur(5px)';
+                // img.style.filter = 'blur(5px)'; // Blur effect removed
+                img.style.opacity = '0.7'; // Use opacity instead of blur
                 img.addEventListener('load', () => {
-                    img.style.filter = 'none';
-                    img.style.transition = 'filter 0.3s ease';
+                    img.style.filter = 'none'; // Ensure no filter remains
+                    img.style.opacity = '1'; // Restore full opacity
+                    img.style.transition = 'opacity 0.3s ease';
                 });
             }
         });
-    }
-
-    createBlurPlaceholder(img) {
-        // Create a low-quality placeholder
+    }    createPlaceholder(img) {
+        // Create a placeholder (no longer blurred)
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
         canvas.width = 10;
