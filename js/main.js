@@ -1,9 +1,12 @@
-// Main JavaScript for Dr. Mahmoud Basseem Academic Website
+// Modern JavaScript for Dr. Mahmoud Basseem Academic Website
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Initialize navbar functionality
-    initializeNavbar();
+    // Initialize modern navbar functionality
+    initializeModernNavbar();
+    
+    // Initialize scroll effects
+    initializeScrollEffects();
     
     // Initialize form validation
     initializeFormValidation();
@@ -17,15 +20,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize research paper downloads
     initializePaperDownloads();
     
-    // Initialize flip cards for mobile devices
-    // initializeFlipCards(); // Now handled by flip-cards.js
+    // Initialize performance optimizations
+    initializePerformanceOptimizations();
 });
 
-// Navbar functionality
-function initializeNavbar() {
+// Modern Navbar functionality
+function initializeModernNavbar() {
+    const navbar = document.querySelector('.navbar-modern');
+    
+    // Navbar scroll effect
+    function handleNavbarScroll() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }
+    
+    // Throttled scroll listener for better performance
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (!scrollTimeout) {
+            scrollTimeout = setTimeout(function() {
+                handleNavbarScroll();
+                scrollTimeout = null;
+            }, 10);
+        }
+    });
+    
     // Highlight active navigation link
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle)');
     
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
@@ -39,12 +64,91 @@ function initializeNavbar() {
     const navbarCollapse = document.querySelector('.navbar-collapse');
     
     if (navbarToggler && navbarCollapse) {
+        // Close on navigation link click
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (navbarCollapse.classList.contains('show')) {
                     navbarToggler.click();
                 }
             });
+        });
+        
+        // Close on dropdown item click
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            });
+        });
+        
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (navbarCollapse.classList.contains('show') && 
+                !navbarCollapse.contains(e.target) && 
+                !navbarToggler.contains(e.target)) {
+                navbarToggler.click();
+            }
+        });
+    }
+}
+
+// Scroll effects for modern animations
+function initializeScrollEffects() {
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements for animation
+    const animateElements = document.querySelectorAll('.modern-card, .stat-card-modern, .feature-card');
+    animateElements.forEach(el => {
+        el.classList.add('animate-on-scroll');
+        observer.observe(el);
+    });
+}
+
+// Performance optimizations
+function initializePerformanceOptimizations() {
+    // Preload critical images
+    const criticalImages = [
+        'assets/img/dr-mahmoud.jpg'
+    ];
+    
+    criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+    });
+    
+    // Lazy load non-critical images
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
         });
     }
 }
