@@ -1028,7 +1028,19 @@ p {
 /* Additional mobile optimizations */
 @media (max-width: 480px) {
     body {
-        margin-top: 50px;
+        margin-top: 80px;
+    }
+    
+    /* Hero sections need additional top margin/padding for navbar clearance */
+    .hero-section-modern,
+    .hero-section-contact,
+    .hero-section-small {
+        padding-top: 6rem;
+    }
+    
+    /* Main content areas need additional top spacing */
+    main#main-content {
+        padding-top: 1rem;
     }
     
     .feature-card {
