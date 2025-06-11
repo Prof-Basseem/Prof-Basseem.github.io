@@ -542,14 +542,16 @@ p {
 }
 
 .hero-badge .badge-academic {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.25);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: var(--radius-lg);
     font-weight: var(--font-weight-medium);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .hero-title {
@@ -557,37 +559,44 @@ p {
     font-weight: var(--font-weight-extrabold);
     margin-bottom: 1rem;
     line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 .hero-subtitle {
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     font-weight: var(--font-weight-light);
-    opacity: 0.9;
+    opacity: 0.95;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 .hero-description {
     font-size: clamp(1.1rem, 2vw, 1.3rem);
     font-weight: var(--font-weight-normal);
-    line-height: 1.6;
+    line-height: 1.7;
     opacity: 0.95;
     max-width: 600px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 .highlight {
-    background: rgba(253, 203, 110, 0.3);
+    background: rgba(253, 203, 110, 0.4);
     padding: 0.2rem 0.4rem;
     border-radius: var(--radius-sm);
     font-weight: var(--font-weight-medium);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Academic Stats */
 .academic-stats .stat-badge {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
     padding: 0.75rem 1rem;
     border-radius: var(--radius-lg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -595,6 +604,8 @@ p {
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .academic-stats .stat-badge::before {
@@ -604,15 +615,16 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     transform: translateX(-100%);
     transition: transform var(--transition-normal);
 }
 
 .academic-stats .stat-badge:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .academic-stats .stat-badge:hover::before {
@@ -623,6 +635,7 @@ p {
     font-size: 1.1rem;
     opacity: 0.9;
     transition: all var(--transition-normal);
+    color: white;
 }
 
 .academic-stats .stat-badge:hover i {
@@ -636,7 +649,7 @@ p {
 }
 
 .btn-primary-modern {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     color: var(--primary-color);
     border: none;
     padding: 0.875rem 2rem;
@@ -646,10 +659,13 @@ p {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 .btn-primary-modern::before {
@@ -667,7 +683,7 @@ p {
     background: white;
     color: var(--primary-color);
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary-modern:hover::before {
@@ -682,7 +698,7 @@ p {
 .btn-outline-modern {
     background: transparent;
     color: white;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.6);
     padding: 0.875rem 2rem;
     font-weight: var(--font-weight-semibold);
     border-radius: var(--radius-lg);
@@ -690,15 +706,20 @@ p {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 .btn-outline-modern:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     color: white;
     border-color: white;
     transform: translateY(-3px);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .btn-cv-download {
@@ -712,18 +733,25 @@ p {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 .btn-cv-download:hover {
     color: white;
     transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Hero Contact */
 .hero-contact {
     font-size: 1rem;
-    opacity: 0.9;
+    opacity: 0.95;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .contact-link {
@@ -731,11 +759,13 @@ p {
     text-decoration: none;
     font-weight: var(--font-weight-medium);
     transition: all var(--transition-normal);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .contact-link:hover {
     color: var(--accent-color);
     text-decoration: underline;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Hero Image */
@@ -876,7 +906,7 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--gradient-primary);
+    background: linear-gradient(135deg, #4F94FE 0%, #0EA5E9 50%, #3B82F6 100%);
     opacity: 0;
     transition: all var(--transition-slow);
     z-index: -1;
@@ -895,114 +925,112 @@ p {
 .feature-card:hover .card-title,
 .feature-card:hover .card-description,
 .feature-card:hover .feature-list,
+.feature-card:hover .feature-list li,
 .feature-card:hover .btn-feature-link {
-    color: white;
+    color: white !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.card-icon {
-    width: 80px;
-    height: 80px;
-    background: var(--gradient-primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    transition: all var(--transition-normal);
+/* Additional improvements for feature cards text readability */
+.feature-card .card-content {
     position: relative;
-    overflow: hidden;
+    z-index: 2;
 }
 
-.card-icon::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    transform: scale(0);
-    transition: transform var(--transition-normal);
+/* Ensure text remains readable during transitions */
+.feature-card * {
+    transition: color var(--transition-normal), text-shadow var(--transition-normal);
 }
 
-.card-icon i {
-    font-size: 2rem;
-    color: white;
-    transition: all var(--transition-normal);
-    position: relative;
-    z-index: 1;
+/* Improve mobile touch feedback */
+@media (hover: none) and (pointer: coarse) {
+    .feature-card:hover {
+        transform: none;
+    }
+    
+    .feature-card:active {
+        transform: translateY(-4px) scale(0.98);
+        transition: transform 0.1s ease;
+    }
+    
+    .feature-card:active::before {
+        opacity: 0.9;
+    }
 }
 
-.feature-card:hover .card-icon {
-    transform: scale(1.1) rotate(5deg);
+/* Ensure proper text wrapping in hero section */
+.hero-title,
+.hero-subtitle,
+.hero-description {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
-.feature-card:hover .card-icon::before {
-    transform: scale(1);
+/* Improve contact info readability */
+.hero-contact p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
 }
 
-.feature-card:hover .card-icon i {
-    transform: scale(1.1);
+/* Enhanced focus states for better accessibility */
+.feature-card:focus-within {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 2px;
+    transform: translateY(-4px);
 }
 
-.card-title {
-    font-size: 1.5rem;
-    font-weight: var(--font-weight-semibold);
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    transition: all var(--transition-normal);
+.feature-card:focus-within::before {
+    opacity: 0.1;
 }
 
-.card-description {
-    color: var(--text-medium);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-    transition: all var(--transition-normal);
+/* Improve text contrast in dark mode */
+[data-theme="dark"] .feature-card:hover .card-title,
+[data-theme="dark"] .feature-card:hover .card-description,
+[data-theme="dark"] .feature-card:hover .feature-list li {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
 }
 
-.feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 2rem 0;
-}
-
-.feature-list li {
-    padding: 0.5rem 0;
-    color: var(--text-medium);
-    transition: all var(--transition-normal);
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.feature-list li::before {
-    content: '•';
-    color: var(--secondary-color);
-    font-size: 1.2rem;
-    position: absolute;
-    left: 0;
-    top: 0.5rem;
-}
-
-.btn-feature-link {
-    background: transparent;
-    color: var(--secondary-color);
-    border: 2px solid var(--secondary-color);
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius-lg);
-    text-decoration: none;
-    font-weight: var(--font-weight-semibold);
-    transition: all var(--transition-normal);
-    display: inline-flex;
-    align-items: center;
-}
-
-.btn-feature-link:hover,
-.feature-card:hover .btn-feature-link {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    border-color: white;
-    transform: translateY(-2px);
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+    .feature-card {
+        padding: 1.8rem 1.2rem;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+        line-height: 1.25;
+    }
+    
+    .card-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .feature-list li {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        padding: 0.35rem 0;
+    }
+    
+    .btn-feature-link {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .hero-badge .badge-academic {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .academic-stats .stat-badge {
+        padding: 0.5rem 0.6rem;
+        font-size: 0.8rem;
+    }
 }
 
 /* Modern Statistics Section */
@@ -1721,15 +1749,47 @@ p {
     content: '';
     position: absolute;
     top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #4F94FE 0%, #0EA5E9 50%, #3B82F6 100%);
+    opacity: 0;
+    transition: all var(--transition-slow);
+    z-index: -1;
+}
+
+.modern-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s ease;
+    z-index: 0;
+}
+
+.modern-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
 }
 
 .modern-card:hover::before {
+    opacity: 1;
+}
+
+.modern-card:hover::after {
     left: 100%;
+}
+
+.modern-card:hover .card-icon,
+.modern-card:hover .card-title,
+.modern-card:hover .card-description,
+.modern-card:hover .feature-list,
+.modern-card:hover .feature-list li {
+    color: white !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Magnetic Button Effect */
@@ -1987,6 +2047,75 @@ p {
         padding-right: var(--container-padding);
     }
     
+    /* Hero section text improvements */
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+        line-height: 1.15;
+        margin-bottom: 0.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1.2rem, 6vw, 1.8rem);
+        line-height: 1.2;
+    }
+    
+    .hero-description {
+        font-size: clamp(1rem, 4vw, 1.1rem);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Feature cards text improvements */
+    .feature-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+        line-height: 1.25;
+        margin-bottom: 0.8rem;
+    }
+    
+    .card-description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1.2rem;
+    }
+    
+    .feature-list li {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        padding: 0.4rem 0;
+    }
+    
+    .btn-feature-link {
+        font-size: 0.9rem;
+        padding: 0.65rem 1.2rem;
+    }
+    
+    /* Academic stats responsive */
+    .academic-stats .stat-badge {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.3rem;
+    }
+    
+    .academic-stats .stat-badge i {
+        font-size: 1rem;
+    }
+    
+    /* Hero buttons responsive */
+    .btn-primary-modern,
+    .btn-outline-modern,
+    .btn-cv-download {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+        line-height: 1.3;
+    }
+    
     /* Navigation adjustments */
     .navbar-brand {
         font-size: 1.125rem;
@@ -2066,6 +2195,47 @@ p {
 @media (min-width: 768px) and (max-width: 991.98px) {
     .hero-section {
         padding: clamp(6rem, 8vw, 8rem) 0 clamp(3rem, 4vw, 4rem);
+    }
+    
+    /* Feature cards optimization for tablets */
+    .feature-card {
+        padding: 2.2rem 1.8rem;
+    }
+    
+    .card-title {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+    
+    .card-description {
+        font-size: 0.98rem;
+        line-height: 1.55;
+    }
+    
+    .feature-list li {
+        font-size: 0.93rem;
+        line-height: 1.45;
+    }
+    
+    /* Hero text optimization */
+    .hero-title {
+        font-size: clamp(2.2rem, 6vw, 3.5rem);
+        line-height: 1.12;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1.4rem, 4vw, 2.2rem);
+    }
+    
+    .hero-description {
+        font-size: clamp(1.05rem, 3vw, 1.25rem);
+        line-height: 1.65;
+    }
+    
+    /* Academic stats for tablets */
+    .academic-stats .stat-badge {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
     }
     
     /* Grid adjustments for tablets */
