@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mahmoud Basseem - YouTube Courses</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* YouTube Courses Specific Styles */
+        .course-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            height: 100%;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .course-header {
+            background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .course-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="youtube-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23youtube-pattern)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .course-header h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .course-stats {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .course-body {
+            padding: 2rem;
+        }
+
+        .course-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .course-summary {
+            background: #f8f9fa;
+            border-left: 4px solid #FF0000;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .course-summary h5 {
+            color: #FF0000;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-summary p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .youtube-btn {
+            background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .youtube-btn:hover {
+            background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,0,0,0.3);
+        }
+
+        .channel-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .channel-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .channel-stat {
+            text-align: center;
+        }
+
+        .channel-stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .channel-stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .last-updated {
+            color: #999;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .subject-tag {
+            display: inline-block;
+            background: rgba(255,0,0,0.1);
+            color: #CC0000;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+
+        .language-indicator {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .course-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .channel-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .course-stats {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-graduation-cap me-2"></i>Dr. Mahmoud Basseem
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="research.html">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="publications.html">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teaching.html">Teaching</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lab-members.html">Lab Members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="youtube-courses.html">YouTube Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="assets/files/CV/CV.pdf" target="_blank">
+                            <i class="fas fa-file-pdf me-1"></i>CV
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">
+                        <i class="fab fa-youtube me-3" style="color: #FF0000;"></i>
+                        YouTube Courses
+                    </h1>
+                    <p class="lead">Free Chemistry Education Through Video Learning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Channel Information -->
+    <section class="channel-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-3">
+                        <i class="fab fa-youtube me-2"></i>
+                        Dr. Mahmoud Basseem Channel
+                    </h2>
+                    <p class="lead mb-4">
+                        Comprehensive chemistry education delivered through carefully structured video playlists, 
+                        covering fundamental concepts in biochemistry and organic chemistry.
+                    </p>
+                    <a href="https://www.youtube.com/c/MahmoudBasseem" target="_blank" class="btn btn-light btn-lg">
+                        <i class="fab fa-youtube me-2"></i>Visit Channel
+                    </a>
+                    
+                    <div class="channel-stats">
+                        <div class="channel-stat">
+                            <span class="channel-stat-number">3</span>
+                            <span class="channel-stat-label">Course Playlists</span>
+                        </div>
+                        <div class="channel-stat">
+                            <span class="channel-stat-number">20</span>
+                            <span class="channel-stat-label">Total Videos</span>
+                        </div>
+                        <div class="channel-stat">
+                            <span class="channel-stat-number">9.3K</span>
+                            <span class="channel-stat-label">Total Views</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="section-title text-center mb-5">Available Courses</h2>
+                    
+                    <div class="course-grid">
+                        <!-- Course 1: Principles of Carbohydrate -->
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="language-indicator">Arabic/English</div>
+                                <h3>مبادئ الكيمياء الحيوية</h3>
+                                <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">(Principles of Carbohydrate)</p>
+                                
+                                <div class="course-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">8</span>
+                                        <span class="stat-label">Videos</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">831</span>
+                                        <span class="stat-label">Views</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="course-body">
+                                <div class="mb-3">
+                                    <span class="subject-tag">Biochemistry</span>
+                                    <span class="subject-tag">Carbohydrates</span>
+                                    <span class="subject-tag">Fundamentals</span>
+                                </div>
+                                
+                                <div class="course-description">
+                                    <p>A comprehensive introduction to the fundamental principles of carbohydrate biochemistry. This course covers the basic concepts, structures, and functions of carbohydrates in biological systems.</p>
+                                </div>
+                                
+                                <div class="course-summary">
+                                    <h5><i class="fas fa-book-open me-2"></i>Course Content</h5>
+                                    <p>This playlist provides a solid foundation in carbohydrate chemistry, covering molecular structures, classification, metabolic pathways, and their roles in biological processes. Perfect for students beginning their journey in biochemistry.</p>
+                                </div>
+                                
+                                <div class="last-updated">
+                                    <i class="fas fa-calendar-alt me-1"></i>
+                                    Last updated: June 21, 2023
+                                </div>
+                                  <div class="mt-4">
+                                    <a href="https://www.youtube.com/playlist?list=PLFsMqmhq6VE0e7c1phU5Ybbi2cCzTvfCr" target="_blank" class="youtube-btn">
+                                        <i class="fab fa-youtube"></i>
+                                        Watch Playlist
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course 2: Carbohydrate -->
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="language-indicator">Arabic</div>
+                                <h3>الكربوهيدرات</h3>
+                                <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">(Carbohydrate)</p>
+                                
+                                <div class="course-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">7</span>
+                                        <span class="stat-label">Videos</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">3,581</span>
+                                        <span class="stat-label">Views</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="course-body">
+                                <div class="mb-3">
+                                    <span class="subject-tag">Organic Chemistry</span>
+                                    <span class="subject-tag">Carbohydrates</span>
+                                    <span class="subject-tag">Advanced</span>
+                                </div>
+                                
+                                <div class="course-description">
+                                    <p>An in-depth exploration of carbohydrate chemistry focusing on structure, properties, reactions, and biological significance. This advanced course builds upon fundamental concepts to provide comprehensive understanding.</p>
+                                </div>
+                                
+                                <div class="course-summary">
+                                    <h5><i class="fas fa-microscope me-2"></i>Course Content</h5>
+                                    <p>Detailed study of monosaccharides, disaccharides, and polysaccharides. Covers stereochemistry, glycosidic bonds, carbohydrate metabolism, and analytical techniques. Includes practical applications in biochemistry and medicine.</p>
+                                </div>
+                                
+                                <div class="last-updated">
+                                    <i class="fas fa-calendar-alt me-1"></i>
+                                    Last updated: November 28, 2023
+                                </div>
+                                  <div class="mt-4">
+                                    <a href="https://www.youtube.com/playlist?list=PLFsMqmhq6VE2JrRWE9fDDmh266OhfmR0z" target="_blank" class="youtube-btn">
+                                        <i class="fab fa-youtube"></i>
+                                        Watch Playlist
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course 3: Isomerism -->
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="language-indicator">Arabic</div>
+                                <h3>الآيزوميرزم</h3>
+                                <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">(Isomerism)</p>
+                                
+                                <div class="course-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">5</span>
+                                        <span class="stat-label">Videos</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">4,883</span>
+                                        <span class="stat-label">Views</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="course-body">
+                                <div class="mb-3">
+                                    <span class="subject-tag">Stereochemistry</span>
+                                    <span class="subject-tag">Isomerism</span>
+                                    <span class="subject-tag">Organic Chemistry</span>
+                                </div>
+                                
+                                <div class="course-description">
+                                    <p>A focused study on the concept of isomerism in organic chemistry, covering different types of isomers, their properties, and significance in chemical and biological systems.</p>
+                                </div>
+                                
+                                <div class="course-summary">
+                                    <h5><i class="fas fa-atom me-2"></i>Course Content</h5>
+                                    <p>Comprehensive coverage of structural isomerism, stereoisomerism, geometric isomerism, and optical isomerism. Includes practical examples, nomenclature, and the biological importance of stereochemistry in drug design and enzyme function.</p>
+                                </div>
+                                
+                                <div class="last-updated">
+                                    <i class="fas fa-calendar-alt me-1"></i>
+                                    Last updated: March 21, 2022
+                                </div>
+                                  <div class="mt-4">
+                                    <a href="https://www.youtube.com/playlist?list=PLFsMqmhq6VE3yhzCSMeRS6olb1h-JqRAl" target="_blank" class="youtube-btn">
+                                        <i class="fab fa-youtube"></i>
+                                        Watch Playlist
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Resources Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title text-center mb-5">Why Choose Our YouTube Courses?</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-play-circle fa-3x text-danger me-3"></i>
+                                </div>
+                                <div>
+                                    <h5>Free Access</h5>
+                                    <p>All courses are completely free and accessible 24/7 on YouTube, making quality chemistry education available to everyone.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-language fa-3x text-danger me-3"></i>
+                                </div>
+                                <div>
+                                    <h5>Bilingual Content</h5>
+                                    <p>Courses delivered in Arabic with English terminology, catering to Arabic-speaking chemistry students worldwide.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-list-ol fa-3x text-danger me-3"></i>
+                                </div>
+                                <div>
+                                    <h5>Structured Learning</h5>
+                                    <p>Well-organized playlists that follow a logical progression from basic concepts to advanced topics.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-certificate fa-3x text-danger me-3"></i>
+                                </div>
+                                <div>
+                                    <h5>Expert Instruction</h5>
+                                    <p>Content created by Dr. Mahmoud Basseem, bringing years of academic and research experience to online education.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-4">Start Your Chemistry Learning Journey</h2>
+                    <p class="lead mb-4">
+                        Join thousands of students who have enhanced their understanding of chemistry through our comprehensive video courses.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="https://www.youtube.com/c/MahmoudBasseem" target="_blank" class="btn btn-danger btn-lg">
+                            <i class="fab fa-youtube me-2"></i>Subscribe to Channel
+                        </a>
+                        <a href="contact.html" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-envelope me-2"></i>Get in Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">                
+                <div class="col-lg-4">
+                    <h5><i class="fas fa-graduation-cap me-2"></i>Dr. Mahmoud Basseem</h5>
+                    <p>Assistant Professor of Applied Organic Chemistry at Al-Azhar University, Cairo, Egypt.</p>                    <div class="social-links">
+                        <a href="mailto:mahmoudbasseem@azhar.edu.eg" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/mahmoud-basseem-i-mohamed-38a77293" title="LinkedIn" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Mahmoud_Basseem3" title="ResearchGate" target="_blank">
+                            <i class="fab fa-researchgate"></i>
+                        </a>
+                        <a href="https://orcid.org/0000-0001-5558-6342" title="ORCID" target="_blank">
+                            <i class="fab fa-orcid"></i>
+                        </a>
+                        <a href="https://scholar.google.com.eg/citations?user=V6_4ZtcAAAAJ&hl" title="Google Scholar" target="_blank">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="https://www.youtube.com/c/MahmoudBasseem" title="YouTube Channel" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none text-white" style="transition: color 0.3s;">Home</a></li>
+                        <li><a href="about.html" class="text-decoration-none text-white" style="transition: color 0.3s;">About</a></li>
+                        <li><a href="research.html" class="text-decoration-none text-white" style="transition: color 0.3s;">Research</a></li>
+                        <li><a href="teaching.html" class="text-decoration-none text-white" style="transition: color 0.3s;">Teaching</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-white" style="transition: color 0.3s;">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3">
+                    <h5>Research Areas</h5>
+                    <ul class="list-unstyled">
+                        <li>Chemosensors</li>
+                        <li>AI in Chemistry</li>
+                        <li>Nanomaterials</li>
+                        <li>Supramolecular Chemistry</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-envelope me-2"></i>mahmoudbasseem@azhar.edu.eg</p>
+                    <p><i class="fas fa-phone me-2"></i>+2 01123781102</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Al-Azhar University, Cairo, Egypt</p>
+                </div>
+            </div>
+              <div class="footer-bottom">
+                <p>&copy; 2025 Dr. Mahmoud Basseem I. Mohamed. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>  
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Add smooth scrolling and interactive features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate course cards on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Initially hide course cards
+            const courseCards = document.querySelectorAll('.course-card');
+            courseCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`;
+                observer.observe(card);
+            });
+
+            // Add click tracking for YouTube links
+            const youtubeLinks = document.querySelectorAll('.youtube-btn');
+            youtubeLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // You can add analytics tracking here
+                    console.log('YouTube playlist clicked:', this.href);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
