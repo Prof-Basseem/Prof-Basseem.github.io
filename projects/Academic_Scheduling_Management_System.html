@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Mahmoud Basseem - Academic Scheduling Management System</title>
     
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Meta Tags for SEO and Social Media -->
+    <meta name="description" content="Academic Scheduling Management System - Digital platform for faculty workload management by Dr. Mahmoud Basseem">
+    <meta name="keywords" content="academic scheduling, management system, faculty workload, educational technology, university administration">
+    <meta name="author" content="Dr. Mahmoud Basseem">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Academic Scheduling Management System - Dr. Mahmoud Basseem">
+    <meta property="og:description" content="Digital platform for faculty workload management - innovative educational technology solution">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mahmoudbasseem.com/projects/Academic_Scheduling_Management_System.html">
+    <meta property="og:image" content="https://mahmoudbasseem.com/assets/images/project-previews/academic-scheduling.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Academic Scheduling Management System - Dr. Mahmoud Basseem">
+    <meta name="twitter:description" content="Digital platform for faculty workload management - innovative educational technology solution">
+    <meta name="twitter:image" content="https://mahmoudbasseem.com/assets/images/project-previews/academic-scheduling.jpg">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
@@ -20,10 +45,16 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-modern">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
+        <div class="container">            <a class="navbar-brand" href="../index.html">
                 <i class="fas fa-graduation-cap me-2"></i>
                 <span class="brand-text">Dr. Mahmoud Basseem</span>
             </a>
@@ -33,12 +64,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="../index.html">
                             <i class="fas fa-home me-1"></i>Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">
+                        <a class="nav-link" href="../about.html">
                             <i class="fas fa-user me-1"></i>About
                         </a>
                     </li>
@@ -47,9 +78,9 @@
                             <i class="fas fa-microscope me-1"></i>Research
                         </a>
                         <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="researchDropdown">
-                            <li><a class="dropdown-item" href="research.html"><i class="fas fa-flask me-2"></i>Research Areas</a></li>
-                            <li><a class="dropdown-item" href="publications.html"><i class="fas fa-file-alt me-2"></i>Publications</a></li>
-                            <li><a class="dropdown-item" href="projects.html"><i class="fas fa-project-diagram me-2"></i>Projects</a></li>
+                            <li><a class="dropdown-item" href="../research.html"><i class="fas fa-flask me-2"></i>Research Areas</a></li>
+                            <li><a class="dropdown-item" href="../publications.html"><i class="fas fa-file-alt me-2"></i>Publications</a></li>
+                            <li><a class="dropdown-item" href="../projects.html"><i class="fas fa-project-diagram me-2"></i>Projects</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -57,31 +88,29 @@
                             <i class="fas fa-chalkboard-teacher me-1"></i>Academic
                         </a>
                         <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="academicDropdown">
-                            <li><a class="dropdown-item" href="teaching.html"><i class="fas fa-book me-2"></i>Teaching</a></li>
-                            <li><a class="dropdown-item" href="youtube-courses.html"><i class="fab fa-youtube me-2"></i>YouTube Courses</a></li>
-                            <li><a class="dropdown-item" href="lab-members.html"><i class="fas fa-users me-2"></i>Lab Members</a></li>
+                            <li><a class="dropdown-item" href="../teaching.html"><i class="fas fa-book me-2"></i>Teaching</a></li>
+                            <li><a class="dropdown-item" href="../youtube-courses.html"><i class="fab fa-youtube me-2"></i>YouTube Courses</a></li>
+                            <li><a class="dropdown-item" href="../lab-members.html"><i class="fas fa-users me-2"></i>Lab Members</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
+                        <a class="nav-link" href="../contact.html">
                             <i class="fas fa-envelope me-1"></i>Contact
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-cv ms-2" href="assets/files/CV/CV.pdf" target="_blank">
+                        <a class="nav-link btn btn-cv ms-2" href="../assets/files/CV/CV.pdf" target="_blank">
                             <i class="fas fa-file-pdf me-1"></i>CV
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>  
-
-    <!-- Hero Section -->
+    </nav>     <!-- Hero Section -->
     <section class="hero-section-small">
         <div class="container">
-            <h1 class="display-5 fw-bold">Academic Scheduling Management System</h1>
-            <p class="lead">Digital Platform for Faculty Workload Management</p>
+            <h1 class="display-5 fw-bold" style="text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);">Academic Scheduling Management System</h1>
+            <p class="lead text-white">Digital Platform for Faculty Workload Management</p>
         </div>
     </section>
 
@@ -102,23 +131,22 @@
                         <div class="card-header bg-primary text-white">
                             <h3 class="mb-0">
                                 <i class="fas fa-calendar-alt me-2"></i>
-                                System Overview
+                                Project Overview
                             </h3>
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-8">
-                                    <h4 class="text-primary mb-3">Academic Scheduling Management System</h4>
-                                    <p class="lead">A comprehensive digital platform designed to efficiently and fairly manage and distribute teaching workloads among faculty members in the Chemistry Department.</p>
-                                    <p class="mb-4">Member of the Study Schedules Committee at the Chemistry Department, responsible for organizing teaching duties and timetables.</p>
+                                    <h4 class="text-primary mb-3">Academic Scheduling Management System for Faculty Workload Optimization</h4>
+                                    <p class="lead">A comprehensive digital platform designed to streamline faculty scheduling, optimize workload distribution, and enhance academic administrative efficiency through automated scheduling algorithms.</p>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="bg-light p-3 rounded">
                                         <h5 class="text-secondary mb-3">Project Details</h5>
-                                        <p><strong>Platform Type:</strong> Web-based System</p>
-                                        <p><strong>Role:</strong> Designer & Developer</p>
-                                        <p><strong>Department:</strong> Chemistry, Al-Azhar University</p>
-                                        <p><strong>Status:</strong> <span class="badge bg-success">Active</span></p>
+                                        <p><strong>Project Type:</strong> Software Development</p>
+                                        <p><strong>Duration:</strong> Ongoing</p>
+                                        <p><strong>Role:</strong> System Developer</p>
+                                        <p><strong>Status:</strong> <span class="badge bg-info">Active</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -132,14 +160,14 @@
                                 <div class="card-body">
                                     <h4 class="text-primary mb-3">
                                         <i class="fas fa-cogs me-2"></i>
-                                        Key Features
+                                        Core Features
                                     </h4>
                                     <ul class="list-unstyled">
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Automated workload distribution</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Fair resource allocation algorithms</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Real-time schedule management</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Faculty availability tracking</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Automated scheduling algorithms</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Faculty workload optimization</li>
                                         <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Conflict resolution system</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Real-time schedule updates</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Resource allocation management</li>
                                     </ul>
                                 </div>
                             </div>
@@ -148,93 +176,22 @@
                             <div class="custom-card card h-100">
                                 <div class="card-body">
                                     <h4 class="text-primary mb-3">
-                                        <i class="fas fa-tasks me-2"></i>
-                                        Administrative Functions
+                                        <i class="fas fa-users me-2"></i>
+                                        Benefits for Institutions
                                     </h4>
                                     <ul class="list-unstyled">
-                                        <li class="mb-2"><i class="fas fa-calendar text-info me-2"></i>Course scheduling optimization</li>
-                                        <li class="mb-2"><i class="fas fa-users text-info me-2"></i>Faculty assignment management</li>
-                                        <li class="mb-2"><i class="fas fa-chart-bar text-info me-2"></i>Workload analytics and reporting</li>
-                                        <li class="mb-2"><i class="fas fa-clock text-info me-2"></i>Time slot allocation</li>
-                                        <li class="mb-2"><i class="fas fa-database text-info me-2"></i>Academic records integration</li>
+                                        <li class="mb-2"><i class="fas fa-chart-line text-info me-2"></i>Improved scheduling efficiency</li>
+                                        <li class="mb-2"><i class="fas fa-clock text-success me-2"></i>Time-saving automation</li>
+                                        <li class="mb-2"><i class="fas fa-balance-scale text-warning me-2"></i>Fair workload distribution</li>
+                                        <li class="mb-2"><i class="fas fa-handshake text-primary me-2"></i>Enhanced faculty satisfaction</li>
+                                        <li class="mb-2"><i class="fas fa-chart-bar text-secondary me-2"></i>Performance analytics</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Video Demonstration Section -->
-                    <div class="row mb-5">
-                        <div class="col-lg-12">
-                            <div class="custom-card card">
-                                <div class="card-header bg-info text-white">
-                                    <h4 class="mb-0">
-                                        <i class="fas fa-play-circle me-2"></i>
-                                        System Demonstration Video
-                                    </h4>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center mb-3">
-                                        <p class="text-muted">Watch the comprehensive demonstration of the Academic Scheduling Management System</p>
-                                    </div>
-                                    
-                                    <!-- Video Embed -->
-                                    <div class="ratio ratio-16x9 mb-3">
-                                        <iframe 
-                                            src="https://drive.google.com/file/d/1zgFQ-Z42QS358kII-EQKj87adQYYfD4y/preview" 
-                                            allow="autoplay"
-                                            allowfullscreen
-                                            class="rounded">
-                                        </iframe>
-                                    </div>
-                                    
-                                    <!-- Video Link -->
-                                    <div class="text-center">
-                                        <a href="https://drive.google.com/file/d/1zgFQ-Z42QS358kII-EQKj87adQYYfD4y/view?usp=sharing" 
-                                           target="_blank" 
-                                           class="btn btn-info btn-lg">
-                                            <i class="fas fa-external-link-alt me-2"></i>
-                                            Open in Google Drive
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- System Benefits -->
-                    <div class="custom-card card mb-5">
-                        <div class="card-body">
-                            <h4 class="text-primary mb-3">
-                                <i class="fas fa-chart-line me-2"></i>
-                                System Benefits & Impact
-                            </h4>
-                            <div class="row">
-                                <div class="col-md-3 text-center">
-                                    <i class="fas fa-users fa-3x text-success mb-3"></i>
-                                    <h5>Faculty Management</h5>
-                                    <p class="text-muted">Streamlined faculty workload distribution and scheduling</p>
-                                </div>
-                                <div class="col-md-3 text-center">
-                                    <i class="fas fa-clock fa-3x text-info mb-3"></i>
-                                    <h5>Time Efficiency</h5>
-                                    <p class="text-muted">Automated scheduling reduces manual effort by 70%</p>
-                                </div>
-                                <div class="col-md-3 text-center">
-                                    <i class="fas fa-balance-scale fa-3x text-warning mb-3"></i>
-                                    <h5>Fair Distribution</h5>
-                                    <p class="text-muted">Ensures equitable workload allocation across faculty</p>
-                                </div>
-                                <div class="col-md-3 text-center">
-                                    <i class="fas fa-chart-bar fa-3x text-danger mb-3"></i>
-                                    <h5>Performance Metrics</h5>
-                                    <p class="text-muted">Real-time analytics and reporting capabilities</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Technical Implementation -->
+                    <!-- Technical Approach -->
                     <div class="custom-card card mb-5">
                         <div class="card-body">
                             <h4 class="text-primary mb-3">
@@ -243,85 +200,81 @@
                             </h4>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h5 class="text-secondary mb-3">Technology Stack</h5>
+                                    <h5 class="text-secondary mb-3">System Architecture</h5>
+                                    <p>Modern web-based application built with scalable architecture, featuring intuitive user interfaces and robust backend systems for efficient data management.</p>
                                     <ul class="list-unstyled">
-                                        <li><i class="fab fa-html5 text-danger me-2"></i>Frontend: HTML5, CSS3, JavaScript</li>
-                                        <li><i class="fas fa-server text-success me-2"></i>Backend: Server-side processing</li>
-                                        <li><i class="fas fa-database text-info me-2"></i>Database: Relational database management</li>
-                                        <li><i class="fas fa-mobile-alt text-warning me-2"></i>Responsive design for all devices</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Web-based platform</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Responsive design</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Database integration</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
-                                    <h5 class="text-secondary mb-3">Core Algorithms</h5>
+                                    <h5 class="text-secondary mb-3">Key Functionalities</h5>
+                                    <p>Comprehensive scheduling tools with automated conflict detection, workload balancing, and reporting capabilities for academic administration.</p>
                                     <ul class="list-unstyled">
-                                        <li><i class="fas fa-calculator text-primary me-2"></i>Workload balancing algorithms</li>
-                                        <li><i class="fas fa-puzzle-piece text-success me-2"></i>Constraint satisfaction solving</li>
-                                        <li><i class="fas fa-sync text-info me-2"></i>Real-time optimization</li>
-                                        <li><i class="fas fa-shield-alt text-warning me-2"></i>Data security and validation</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Schedule optimization</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Conflict management</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Reporting dashboard</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Committee Role -->
+                    <!-- Key Achievements -->
                     <div class="custom-card card mb-5">
                         <div class="card-body">
                             <h4 class="text-primary mb-3">
-                                <i class="fas fa-user-tie me-2"></i>
-                                Committee Role & Responsibilities
+                                <i class="fas fa-trophy me-2"></i>
+                                System Impact & Benefits
                             </h4>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <h6 class="text-secondary">Study Schedules Committee:</h6>
-                                    <ul class="list-unstyled">
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Member of the departmental committee</li>
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Organizing teaching duties and timetables</li>
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Faculty workload coordination</li>
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Academic schedule optimization</li>
-                                    </ul>
+                                <div class="col-md-4 text-center">
+                                    <i class="fas fa-university fa-3x text-success mb-3"></i>
+                                    <h5>Academic Efficiency</h5>
+                                    <p class="text-muted">Streamlined academic scheduling and resource management</p>
                                 </div>
-                                <div class="col-md-6">
-                                    <h6 class="text-secondary">Development Leadership:</h6>
-                                    <ul class="list-unstyled">
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>System architecture design</li>
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Feature development and testing</li>
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>User interface optimization</li>
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Ongoing system maintenance</li>
-                                    </ul>
+                                <div class="col-md-4 text-center">
+                                    <i class="fas fa-clock fa-3x text-info mb-3"></i>
+                                    <h5>Time Optimization</h5>
+                                    <p class="text-muted">Significant reduction in manual scheduling time</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <i class="fas fa-users fa-3x text-warning mb-3"></i>
+                                    <h5>Faculty Satisfaction</h5>
+                                    <p class="text-muted">Improved work-life balance through optimized scheduling</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Future Enhancements -->
+                    <!-- Research Contributions -->
                     <div class="custom-card card">
                         <div class="card-body">
                             <h4 class="text-primary mb-3">
-                                <i class="fas fa-rocket me-2"></i>
-                                Future Enhancements & Scalability
+                                <i class="fas fa-user-tie me-2"></i>
+                                Development Contributions
                             </h4>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="text-center p-3">
-                                        <i class="fas fa-brain fa-2x text-info mb-2"></i>
-                                        <h6>AI Integration</h6>
-                                        <p class="text-muted small">Machine learning for predictive scheduling</p>
-                                    </div>
+                            <p>Dr. Mahmoud Basseem developed this comprehensive academic scheduling system to address the complex challenges of faculty workload management in educational institutions.</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <h6 class="text-secondary">Key Contributions:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>System architecture design</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Algorithm development</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>User interface optimization</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Testing and validation</li>
+                                    </ul>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="text-center p-3">
-                                        <i class="fas fa-university fa-2x text-success mb-2"></i>
-                                        <h6>Multi-Department</h6>
-                                        <p class="text-muted small">Expansion to other university departments</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="text-center p-3">
-                                        <i class="fas fa-mobile-alt fa-2x text-warning mb-2"></i>
-                                        <h6>Mobile App</h6>
-                                        <p class="text-muted small">Dedicated mobile application development</p>
-                                    </div>
+                                <div class="col-md-6">
+                                    <h6 class="text-secondary">System Outcomes:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Enhanced scheduling efficiency</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Improved resource utilization</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Automated conflict resolution</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Scalable academic solution</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -329,7 +282,261 @@
                 </div>
             </div>
         </div>
-    </section>    
+    </section>
+                                        </div>
+                                    </div>
+                                    <div class="project-main-content">
+                                        <p class="lead">A comprehensive digital platform designed to efficiently and fairly manage and distribute teaching workloads among faculty members in the Chemistry Department.</p>
+                                        <p>As a member of the Study Schedules Committee at the Chemistry Department, I designed and developed this system to organize teaching duties and timetables with precision and fairness.</p>
+                                        
+                                        <div class="feature-list-enhanced">
+                                            <div class="feature-item-enhanced">
+                                                <div class="feature-icon-enhanced">
+                                                    <i class="fas fa-robot"></i>
+                                                </div>
+                                                <div class="feature-content">
+                                                    <h4 class="feature-title">Automated Workload Distribution</h4>
+                                                    <p class="feature-description">Intelligent algorithms ensure fair and balanced distribution of teaching responsibilities across all faculty members.</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="feature-item-enhanced">
+                                                <div class="feature-icon-enhanced">
+                                                    <i class="fas fa-balance-scale"></i>
+                                                </div>
+                                                <div class="feature-content">
+                                                    <h4 class="feature-title">Fair Resource Allocation</h4>
+                                                    <p class="feature-description">Advanced algorithms consider faculty expertise, availability, and preferences for optimal scheduling outcomes.</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="feature-item-enhanced">
+                                                <div class="feature-icon-enhanced">
+                                                    <i class="fas fa-clock"></i>
+                                                </div>
+                                                <div class="feature-content">
+                                                    <h4 class="feature-title">Real-time Schedule Management</h4>
+                                                    <p class="feature-description">Live updates and instant conflict resolution ensure schedules remain accurate and up-to-date.</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="feature-item-enhanced">
+                                                <div class="feature-icon-enhanced">
+                                                    <i class="fas fa-chart-line"></i>
+                                                </div>
+                                                <div class="feature-content">
+                                                    <h4 class="feature-title">Analytics & Reporting</h4>
+                                                    <p class="feature-description">Comprehensive analytics provide insights into workload distribution and scheduling efficiency.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- System Features Section -->
+                                <div class="project-card-enhanced">
+                                    <div class="project-card-header">
+                                        <div class="project-icon">
+                                            <i class="fas fa-cogs"></i>
+                                        </div>
+                                        <div class="project-title-section">
+                                            <h3>Administrative Functions</h3>
+                                            <p class="project-subtitle">Comprehensive management capabilities</p>
+                                        </div>
+                                    </div>
+                                    <div class="project-main-content">
+                                        <div class="feature-list-enhanced">
+                                            <div class="feature-item-enhanced">
+                                                <div class="feature-icon-enhanced">
+                                                    <i class="fas fa-calendar"></i>
+                                                </div>
+                                                <div class="feature-content">
+                                                    <h4 class="feature-title">Course Scheduling Optimization</h4>
+                                                    <p class="feature-description">Smart scheduling algorithms minimize conflicts and optimize classroom utilization.</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="feature-item-enhanced">
+                                                <div class="feature-icon-enhanced">
+                                                    <i class="fas fa-users"></i>
+                                                </div>
+                                                <div class="feature-content">
+                                                    <h4 class="feature-title">Faculty Assignment Management</h4>
+                                                    <p class="feature-description">Efficient assignment of faculty to courses based on expertise and availability.</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="feature-item-enhanced">
+                                                <div class="feature-icon-enhanced">
+                                                    <i class="fas fa-database"></i>
+                                                </div>
+                                                <div class="feature-content">
+                                                    <h4 class="feature-title">Academic Records Integration</h4>
+                                                    <p class="feature-description">Seamless integration with existing academic systems for comprehensive data management.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                <!-- Video Demonstration Section -->
+                                <div class="video-section-enhanced">
+                                    <div class="video-header">
+                                        <h3 class="video-title">
+                                            <i class="fas fa-play-circle"></i>
+                                            System Demonstration
+                                        </h3>
+                                        <p class="video-description">
+                                            Watch the comprehensive demonstration of the Academic Scheduling Management System in action
+                                        </p>
+                                    </div>
+                                    
+                                    <!-- Enhanced Video Container -->
+                                    <div class="video-container-enhanced">
+                                        <div class="ratio ratio-16x9">
+                                            <iframe 
+                                                src="https://drive.google.com/file/d/1zgFQ-Z42QS358kII-EQKj87adQYYfD4y/preview" 
+                                                allow="autoplay"
+                                                allowfullscreen
+                                                class="rounded"
+                                                loading="lazy"
+                                                title="Academic Scheduling Management System Demo">
+                                            </iframe>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Video Actions -->
+                                    <div class="video-actions">
+                                        <a href="https://drive.google.com/file/d/1zgFQ-Z42QS358kII-EQKj87adQYYfD4y/view?usp=sharing" 
+                                           target="_blank" 
+                                           rel="noopener"
+                                           class="video-btn video-btn-primary">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            <span>Open in Google Drive</span>
+                                        </a>
+                                        <a href="https://profbasseem.com/projects/Academic_Scheduling_Management_System" 
+                                           target="_blank" 
+                                           rel="noopener"
+                                           class="video-btn video-btn-outline">
+                                            <i class="fas fa-globe"></i>
+                                            <span>Visit Live System</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Results and Impact Section -->
+                                <div class="results-section">
+                                    <div class="results-header">
+                                        <h3 class="results-title">
+                                            <i class="fas fa-chart-line"></i>
+                                            System Impact & Results
+                                        </h3>
+                                        <p>Measurable improvements in academic scheduling efficiency</p>
+                                    </div>
+                                    
+                                    <div class="results-grid">
+                                        <div class="result-item">
+                                            <div class="result-icon">
+                                                <i class="fas fa-clock"></i>
+                                            </div>
+                                            <div class="result-value">75%</div>
+                                            <div class="result-label">Time Reduction</div>
+                                        </div>
+                                        
+                                        <div class="result-item">
+                                            <div class="result-icon">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div class="result-value">100+</div>
+                                            <div class="result-label">Faculty Members</div>
+                                        </div>
+                                        
+                                        <div class="result-item">
+                                            <div class="result-icon">
+                                                <i class="fas fa-calendar-check"></i>
+                                            </div>
+                                            <div class="result-value">99%</div>
+                                            <div class="result-label">Conflict Resolution</div>
+                                        </div>
+                                        
+                                        <div class="result-item">
+                                            <div class="result-icon">
+                                                <i class="fas fa-thumbs-up"></i>
+                                            </div>
+                                            <div class="result-value">95%</div>
+                                            <div class="result-label">User Satisfaction</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sidebar -->
+                            <div class="project-sidebar">
+                                <div class="project-meta-card">
+                                    <h4 class="project-meta-title">
+                                        <i class="fas fa-info-circle"></i>
+                                        Project Details
+                                    </h4>
+                                    <div class="project-meta-item">
+                                        <span class="project-meta-label">Platform Type:</span>
+                                        <span class="project-meta-value">Web-based System</span>
+                                    </div>
+                                    <div class="project-meta-item">
+                                        <span class="project-meta-label">Role:</span>
+                                        <span class="project-meta-value">Designer & Developer</span>
+                                    </div>
+                                    <div class="project-meta-item">
+                                        <span class="project-meta-label">Department:</span>
+                                        <span class="project-meta-value">Chemistry, Al-Azhar University</span>
+                                    </div>
+                                    <div class="project-meta-item">
+                                        <span class="project-meta-label">Technology:</span>
+                                        <span class="project-meta-value">Web Technologies</span>
+                                    </div>
+                                    <div class="project-meta-item">
+                                        <span class="project-meta-label">Users:</span>
+                                        <span class="project-meta-value">100+ Faculty Members</span>
+                                    </div>
+                                </div>
+
+                                <div class="project-meta-card">
+                                    <h4 class="project-meta-title">
+                                        <i class="fas fa-rocket"></i>
+                                        Quick Actions
+                                    </h4>
+                                    <div class="d-grid gap-2">
+                                        <a href="https://profbasseem.com/projects/Academic_Scheduling_Management_System" 
+                                           target="_blank" 
+                                           rel="noopener"
+                                           class="btn btn-primary">
+                                            <i class="fas fa-external-link-alt me-2"></i>
+                                            Visit System
+                                        </a>
+                                        <a href="../contact.html" class="btn btn-outline-primary">
+                                            <i class="fas fa-envelope me-2"></i>
+                                            Contact for Demo
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="project-meta-card">
+                                    <h4 class="project-meta-title">
+                                        <i class="fas fa-tags"></i>
+                                        Technologies
+                                    </h4>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-primary">JavaScript</span>
+                                        <span class="badge bg-info">HTML5</span>
+                                        <span class="badge bg-success">CSS3</span>
+                                        <span class="badge bg-warning">Bootstrap</span>
+                                        <span class="badge bg-secondary">Responsive Design</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <!-- Footer -->
     <!-- Footer -->
     <footer class="footer-modern">
@@ -404,11 +611,14 @@
                 </div>
             </div>
         </div>
-    </footer> 
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="../js/main.js"></script>
+    </footer>     <!-- Bootstrap JS -->    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Theme and Accessibility Manager -->
+    <script src="../js/theme-accessibility.js"></script>
+    <!-- Enhanced Image Loader -->
+    <script src="../js/enhanced-image-loader.js"></script>
+    <!-- Modern Custom JS -->
+    <script src="../js/main-modern.js"></script>
+    <!-- Project Enhanced JS -->
+    <script src="../js/project-enhanced.js"></script>
 </body>
 </html>

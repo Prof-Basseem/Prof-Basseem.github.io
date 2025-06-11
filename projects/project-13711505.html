@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+<head>    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Mahmoud Basseem - Project 13711505</title>
-    
-    <!-- Favicon -->
+      <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Dr. Mahmoud Basseem - Project 13711505">
+    <meta property="og:description" content="Advanced solid polymer chemosensors research project in applied organic chemistry.">
+    <meta property="og:image" content="../assets/img/dr-mahmoud.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dr. Mahmoud Basseem - Project 13711505">
+    <meta name="twitter:description" content="Solid polymer chemosensors development">
+    <meta name="twitter:image" content="../assets/img/dr-mahmoud.jpg">
+      <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,10 +34,18 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-modern">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="../index.html">
                 <i class="fas fa-graduation-cap me-2"></i>
                 <span class="brand-text">Dr. Mahmoud Basseem</span>
             </a>
@@ -33,12 +55,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="../index.html">
                             <i class="fas fa-home me-1"></i>Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">
+                        <a class="nav-link" href="../about.html">
                             <i class="fas fa-user me-1"></i>About
                         </a>
                     </li>
@@ -47,9 +69,9 @@
                             <i class="fas fa-microscope me-1"></i>Research
                         </a>
                         <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="researchDropdown">
-                            <li><a class="dropdown-item" href="research.html"><i class="fas fa-flask me-2"></i>Research Areas</a></li>
-                            <li><a class="dropdown-item" href="publications.html"><i class="fas fa-file-alt me-2"></i>Publications</a></li>
-                            <li><a class="dropdown-item" href="projects.html"><i class="fas fa-project-diagram me-2"></i>Projects</a></li>
+                            <li><a class="dropdown-item" href="../research.html"><i class="fas fa-flask me-2"></i>Research Areas</a></li>
+                            <li><a class="dropdown-item" href="../publications.html"><i class="fas fa-file-alt me-2"></i>Publications</a></li>
+                            <li><a class="dropdown-item" href="../projects.html"><i class="fas fa-project-diagram me-2"></i>Projects</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -57,31 +79,31 @@
                             <i class="fas fa-chalkboard-teacher me-1"></i>Academic
                         </a>
                         <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="academicDropdown">
-                            <li><a class="dropdown-item" href="teaching.html"><i class="fas fa-book me-2"></i>Teaching</a></li>
-                            <li><a class="dropdown-item" href="youtube-courses.html"><i class="fab fa-youtube me-2"></i>YouTube Courses</a></li>
-                            <li><a class="dropdown-item" href="lab-members.html"><i class="fas fa-users me-2"></i>Lab Members</a></li>
+                            <li><a class="dropdown-item" href="../teaching.html"><i class="fas fa-book me-2"></i>Teaching</a></li>
+                            <li><a class="dropdown-item" href="../youtube-courses.html"><i class="fab fa-youtube me-2"></i>YouTube Courses</a></li>
+                            <li><a class="dropdown-item" href="../lab-members.html"><i class="fas fa-users me-2"></i>Lab Members</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
+                        <a class="nav-link" href="../contact.html">
                             <i class="fas fa-envelope me-1"></i>Contact
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-cv ms-2" href="assets/files/CV/CV.pdf" target="_blank">
+                        <a class="nav-link btn btn-cv ms-2" href="../assets/files/CV/CV.pdf" target="_blank">
                             <i class="fas fa-file-pdf me-1"></i>CV
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>  
+    </nav> 
 
     <!-- Hero Section -->
     <section class="hero-section-small">
         <div class="container">
-            <h1 class="display-5 fw-bold">Research Project 13711505</h1>
-            <p class="lead">Development of Solid Polymer Chemosensors</p>
+            <h1 class="display-5 fw-bold" style="text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);">Research Project 13711505</h1>
+            <p class="lead text-white">Development of Solid Polymer Chemosensors</p>
         </div>
     </section>
 
@@ -328,11 +350,14 @@
                 </div>
             </div>
         </div>
-    </footer> 
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="../js/main.js"></script>
+    </footer>     <!-- Bootstrap JS -->    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Theme and Accessibility Manager -->
+    <script src="../js/theme-accessibility.js"></script>
+    <!-- Enhanced Image Loader -->
+    <script src="../js/enhanced-image-loader.js"></script>
+    <!-- Modern Custom JS -->
+    <script src="../js/main-modern.js"></script>
+    <!-- Project Enhanced JS -->
+    <script src="../js/project-enhanced.js"></script>
 </body>
 </html>

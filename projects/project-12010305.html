@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+<head>    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Mahmoud Basseem - Project 12010305</title>
-    
-    <!-- Favicon -->
+    <title>Dr. Mahmoud Basseem - Colorimetric Chemosensors for Explosives Detection</title>
+      <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Dr. Mahmoud Basseem - Colorimetric Chemosensors for Explosives Detection">
+    <meta property="og:description" content="Advanced visual detection systems for security and safety applications using colorimetric chemosensors.">
+    <meta property="og:image" content="../assets/img/dr-mahmoud.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dr. Mahmoud Basseem - Explosives Detection Research">
+    <meta name="twitter:description" content="Advanced security applications through colorimetric sensing">
+    <meta name="twitter:image" content="../assets/img/dr-mahmoud.jpg">
+      <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,10 +34,16 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-modern">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="../index.html">
                 <i class="fas fa-graduation-cap me-2"></i>
                 <span class="brand-text">Dr. Mahmoud Basseem</span>
             </a>
@@ -33,12 +53,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="../index.html">
                             <i class="fas fa-home me-1"></i>Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">
+                        <a class="nav-link" href="../about.html">
                             <i class="fas fa-user me-1"></i>About
                         </a>
                     </li>
@@ -47,9 +67,9 @@
                             <i class="fas fa-microscope me-1"></i>Research
                         </a>
                         <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="researchDropdown">
-                            <li><a class="dropdown-item" href="research.html"><i class="fas fa-flask me-2"></i>Research Areas</a></li>
-                            <li><a class="dropdown-item" href="publications.html"><i class="fas fa-file-alt me-2"></i>Publications</a></li>
-                            <li><a class="dropdown-item" href="projects.html"><i class="fas fa-project-diagram me-2"></i>Projects</a></li>
+                            <li><a class="dropdown-item" href="../research.html"><i class="fas fa-flask me-2"></i>Research Areas</a></li>
+                            <li><a class="dropdown-item" href="../publications.html"><i class="fas fa-file-alt me-2"></i>Publications</a></li>
+                            <li><a class="dropdown-item" href="../projects.html"><i class="fas fa-project-diagram me-2"></i>Projects</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -57,30 +77,29 @@
                             <i class="fas fa-chalkboard-teacher me-1"></i>Academic
                         </a>
                         <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="academicDropdown">
-                            <li><a class="dropdown-item" href="teaching.html"><i class="fas fa-book me-2"></i>Teaching</a></li>
-                            <li><a class="dropdown-item" href="youtube-courses.html"><i class="fab fa-youtube me-2"></i>YouTube Courses</a></li>
-                            <li><a class="dropdown-item" href="lab-members.html"><i class="fas fa-users me-2"></i>Lab Members</a></li>
+                            <li><a class="dropdown-item" href="../teaching.html"><i class="fas fa-book me-2"></i>Teaching</a></li>
+                            <li><a class="dropdown-item" href="../youtube-courses.html"><i class="fab fa-youtube me-2"></i>YouTube Courses</a></li>
+                            <li><a class="dropdown-item" href="../lab-members.html"><i class="fas fa-users me-2"></i>Lab Members</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
+                        <a class="nav-link" href="../contact.html">
                             <i class="fas fa-envelope me-1"></i>Contact
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-cv ms-2" href="assets/files/CV/CV.pdf" target="_blank">
+                        <a class="nav-link btn btn-cv ms-2" href="../assets/files/CV/CV.pdf" target="_blank">
                             <i class="fas fa-file-pdf me-1"></i>CV
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>  
-    <!-- Hero Section -->
+    </nav>    <!-- Hero Section -->
     <section class="hero-section-small">
         <div class="container">
-            <h1 class="display-5 fw-bold">Research Project 12010305</h1>
-            <p class="lead">Colorimetric Chemosensors for Explosives Detection</p>
+            <h1 class="display-5 fw-bold" style="text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);">Research Project 12010305</h1>
+            <p class="lead text-white">Colorimetric Chemosensors for Explosives Detection</p>
         </div>
     </section>
 
@@ -100,44 +119,44 @@
                     <div class="custom-card card mb-5">
                         <div class="card-header bg-primary text-white">
                             <h3 class="mb-0">
-                                <i class="fas fa-eye me-2"></i>
+                                <i class="fas fa-shield-alt me-2"></i>
                                 Project Overview
                             </h3>
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-8">
-                                    <h4 class="text-primary mb-3">Colorimetric Chemosensors for Recognition of Explosives and Dangerous Materials</h4>
-                                    <p class="lead">This research project focuses on developing advanced colorimetric chemosensors capable of rapid, visual detection of explosives and other dangerous materials for security and safety applications.</p>
+                                    <h4 class="text-primary mb-3">Colorimetric Chemosensors for Explosives Detection</h4>
+                                    <p class="lead">This research project focuses on developing advanced colorimetric chemosensors for rapid, on-site detection of explosive compounds using visual color change detection technology.</p>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="bg-light p-3 rounded">
                                         <h5 class="text-secondary mb-3">Project Details</h5>
                                         <p><strong>Project Number:</strong> 12010305</p>
                                         <p><strong>Duration:</strong> 2019-2021</p>
-                                        <p><strong>Role:</strong> Research Team Member</p>
-                                        <p><strong>Status:</strong> <span class="badge bg-info">Completed</span></p>
+                                        <p><strong>Role:</strong> Principal Investigator</p>
+                                        <p><strong>Status:</strong> <span class="badge bg-success">Completed</span></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Research Focus -->
+                    <!-- Detection Technologies -->
                     <div class="row mb-5">
                         <div class="col-lg-6">
                             <div class="custom-card card h-100">
                                 <div class="card-body">
                                     <h4 class="text-primary mb-3">
-                                        <i class="fas fa-bullseye me-2"></i>
-                                        Research Objectives
+                                        <i class="fas fa-eye me-2"></i>
+                                        Detection Technologies
                                     </h4>
                                     <ul class="list-unstyled">
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Develop visual detection systems</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Enable rapid explosive identification</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Create portable sensing devices</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Achieve high sensitivity and selectivity</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Enhance security applications</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Visual color change detection</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Rapid response systems</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Portable sensing platforms</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>High selectivity sensors</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Field-deployable devices</li>
                                     </ul>
                                 </div>
                             </div>
@@ -147,102 +166,72 @@
                                 <div class="card-body">
                                     <h4 class="text-primary mb-3">
                                         <i class="fas fa-bomb me-2"></i>
-                                        Target Materials
+                                        Target Explosives
                                     </h4>
                                     <ul class="list-unstyled">
-                                        <li class="mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>TNT and nitroaromatic compounds</li>
-                                        <li class="mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>Peroxide-based explosives</li>
-                                        <li class="mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>Plastic explosives</li>
-                                        <li class="mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>Chemical warfare agents</li>
-                                        <li class="mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>Hazardous industrial chemicals</li>
+                                        <li class="mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>TNT (Trinitrotoluene)</li>
+                                        <li class="mb-2"><i class="fas fa-exclamation-triangle text-warning me-2"></i>RDX (Cyclotrimethylenetrinitramine)</li>
+                                        <li class="mb-2"><i class="fas fa-exclamation-triangle text-info me-2"></i>PETN (Pentaerythritol tetranitrate)</li>
+                                        <li class="mb-2"><i class="fas fa-exclamation-triangle text-primary me-2"></i>DNT (Dinitrotoluene)</li>
+                                        <li class="mb-2"><i class="fas fa-exclamation-triangle text-secondary me-2"></i>Nitroaromatic compounds</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Detection Mechanism -->
+                    <!-- Technical Approach -->
                     <div class="custom-card card mb-5">
                         <div class="card-body">
                             <h4 class="text-primary mb-3">
                                 <i class="fas fa-cogs me-2"></i>
-                                Detection Mechanism & Technology
+                                Technical Approach
                             </h4>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h5 class="text-secondary mb-3">Colorimetric Sensing Principle</h5>
-                                    <p>The sensors operate through visible color change mechanisms that occur when target molecules interact with specially designed chemosensor compounds, enabling immediate visual detection.</p>
+                                    <h5 class="text-secondary mb-3">Sensor Design Strategy</h5>
+                                    <p>Development of highly selective colorimetric sensors that produce distinct visual color changes upon contact with explosive compounds, enabling rapid field identification.</p>
                                     <ul class="list-unstyled">
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Molecular recognition elements</li>
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Chromophoric response systems</li>
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Real-time color transitions</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Chromogenic reaction optimization</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Molecular recognition design</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Interference minimization</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
-                                    <h5 class="text-secondary mb-3">Sensor Design Features</h5>
-                                    <p>Advanced molecular design incorporating selective binding sites and signal transduction mechanisms for enhanced performance and reliability.</p>
+                                    <h5 class="text-secondary mb-3">Security Applications</h5>
+                                    <p>Field-ready sensors for security screening, perimeter monitoring, and explosive detection in high-risk environments including airports and public spaces.</p>
                                     <ul class="list-unstyled">
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>High selectivity for target analytes</li>
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Low detection limits</li>
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Minimal false positive rates</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Airport security screening</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Border control applications</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Law enforcement tools</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Applications & Impact -->
-                    <div class="custom-card card mb-5">
-                        <div class="card-body">
-                            <h4 class="text-primary mb-3">
-                                <i class="fas fa-shield-alt me-2"></i>
-                                Security Applications & Impact
-                            </h4>
-                            <div class="row">
-                                <div class="col-md-4 text-center">
-                                    <i class="fas fa-plane fa-3x text-info mb-3"></i>
-                                    <h5>Airport Security</h5>
-                                    <p class="text-muted">Rapid screening of luggage and cargo for explosive materials</p>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <i class="fas fa-building fa-3x text-warning mb-3"></i>
-                                    <h5>Critical Infrastructure</h5>
-                                    <p class="text-muted">Protection of government buildings and public facilities</p>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <i class="fas fa-users fa-3x text-success mb-3"></i>
-                                    <h5>Public Safety</h5>
-                                    <p class="text-muted">Enhanced security for events and crowded areas</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Technical Achievements -->
+                    <!-- Key Achievements -->
                     <div class="custom-card card mb-5">
                         <div class="card-body">
                             <h4 class="text-primary mb-3">
                                 <i class="fas fa-trophy me-2"></i>
-                                Technical Achievements
+                                Key Achievements & Impact
                             </h4>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <h6 class="text-secondary">Performance Metrics:</h6>
-                                    <ul class="list-unstyled">
-                                        <li><i class="fas fa-check text-success me-2"></i>Detection limits in ppb range</li>
-                                        <li><i class="fas fa-check text-success me-2"></i>Response time under 30 seconds</li>
-                                        <li><i class="fas fa-check text-success me-2"></i>High selectivity ratios</li>
-                                        <li><i class="fas fa-check text-success me-2"></i>Stable color responses</li>
-                                    </ul>
+                                <div class="col-md-4 text-center">
+                                    <i class="fas fa-shield-alt fa-3x text-success mb-3"></i>
+                                    <h5>Enhanced Security</h5>
+                                    <p class="text-muted">Improved explosive detection capabilities for security applications</p>
                                 </div>
-                                <div class="col-md-6">
-                                    <h6 class="text-secondary">Innovation Highlights:</h6>
-                                    <ul class="list-unstyled">
-                                        <li><i class="fas fa-check text-primary me-2"></i>Novel chemosensor architectures</li>
-                                        <li><i class="fas fa-check text-primary me-2"></i>Portable detection systems</li>
-                                        <li><i class="fas fa-check text-primary me-2"></i>Cost-effective manufacturing</li>
-                                        <li><i class="fas fa-check text-primary me-2"></i>User-friendly operation</li>
-                                    </ul>
+                                <div class="col-md-4 text-center">
+                                    <i class="fas fa-stopwatch fa-3x text-info mb-3"></i>
+                                    <h5>Rapid Detection</h5>
+                                    <p class="text-muted">Fast response time for real-time security screening</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <i class="fas fa-crosshairs fa-3x text-warning mb-3"></i>
+                                    <h5>High Selectivity</h5>
+                                    <p class="text-muted">Accurate identification with minimal false positives</p>
                                 </div>
                             </div>
                         </div>
@@ -255,25 +244,25 @@
                                 <i class="fas fa-user-tie me-2"></i>
                                 Research Contributions
                             </h4>
-                            <p>As a research team member, Dr. Mahmoud Basseem contributed expertise in organic synthesis, molecular design, and sensor characterization for explosive detection applications.</p>
+                            <p>As the Principal Investigator, Dr. Mahmoud Basseem led the development of innovative colorimetric sensors for explosive detection applications.</p>
                             
                             <div class="row mt-4">
                                 <div class="col-md-6">
                                     <h6 class="text-secondary">Key Contributions:</h6>
                                     <ul class="list-unstyled">
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Chemosensor molecular design</li>
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Synthetic methodology development</li>
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Optical property characterization</li>
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Performance optimization studies</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Novel colorimetric sensor design</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Rapid detection methodology</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Security application testing</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Performance optimization</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
                                     <h6 class="text-secondary">Project Outcomes:</h6>
                                     <ul class="list-unstyled">
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Advanced colorimetric sensors</li>
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Enhanced detection capabilities</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Enhanced detection sensitivity</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Improved selectivity</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Field-ready prototypes</li>
                                         <li><i class="fas fa-arrow-right text-success me-2"></i>Security technology advancement</li>
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Scientific publications</li>
                                     </ul>
                                 </div>
                             </div>
@@ -282,8 +271,257 @@
                 </div>
             </div>
         </div>
-    </section>    
-    <!-- Footer -->
+    </section>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Content -->
+        <section class="project-content">
+            <div class="container">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-lg-8">
+                        <!-- Project Overview -->
+                        <div class="content-card" data-aos="fade-up">
+                            <h2 class="section-title">
+                                <i class="fas fa-eye me-2"></i>
+                                Project Overview
+                            </h2>
+                            <p class="lead">This research project focuses on developing advanced colorimetric chemosensors capable of rapid, visual detection of explosives and other dangerous materials for security and safety applications.</p>
+                            
+                            <p>The sensors operate through visible color change mechanisms that occur when target molecules interact with specially designed chemosensor compounds, enabling immediate visual detection without requiring sophisticated analytical equipment.</p>
+                        </div>
+
+                        <!-- Research Objectives -->
+                        <div class="content-card" data-aos="fade-up" data-aos-delay="100">
+                            <h2 class="section-title">
+                                <i class="fas fa-bullseye me-2"></i>
+                                Research Objectives
+                            </h2>
+                            <div class="feature-list">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h4>Visual Detection Systems</h4>
+                                        <p>Develop sensors that provide immediate visual feedback through color changes</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h4>Rapid Identification</h4>
+                                        <p>Enable quick explosive identification for real-time security applications</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h4>Portable Devices</h4>
+                                        <p>Create compact, field-deployable sensing systems</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-crosshairs"></i>
+                                    </div>
+                                    <div class="feature-content">
+                                        <h4>High Selectivity</h4>
+                                        <p>Achieve precise detection with minimal false positives</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detection Technology -->
+                        <div class="content-card" data-aos="fade-up" data-aos-delay="200">
+                            <h2 class="section-title">
+                                <i class="fas fa-cogs me-2"></i>
+                                Detection Technology
+                            </h2>
+                            
+                            <div class="tech-grid">
+                                <div class="tech-item">
+                                    <h4>Molecular Recognition</h4>
+                                    <p>Specialized binding sites that selectively interact with target explosive molecules</p>
+                                </div>
+                                <div class="tech-item">
+                                    <h4>Chromophoric Response</h4>
+                                    <p>Color-changing mechanisms that provide immediate visual confirmation</p>
+                                </div>
+                                <div class="tech-item">
+                                    <h4>Signal Transduction</h4>
+                                    <p>Efficient conversion of molecular binding events to optical signals</p>
+                                </div>
+                                <div class="tech-item">
+                                    <h4>Sensor Architecture</h4>
+                                    <p>Optimized molecular design for enhanced performance and stability</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Applications -->
+                        <div class="content-card" data-aos="fade-up" data-aos-delay="300">
+                            <h2 class="section-title">
+                                <i class="fas fa-shield-alt me-2"></i>
+                                Security Applications
+                            </h2>
+                            
+                            <div class="applications-grid">
+                                <div class="application-item">
+                                    <div class="app-icon">
+                                        <i class="fas fa-plane"></i>
+                                    </div>
+                                    <h4>Airport Security</h4>
+                                    <p>Rapid screening of luggage and cargo for explosive materials at transportation hubs</p>
+                                </div>
+                                <div class="application-item">
+                                    <div class="app-icon">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <h4>Critical Infrastructure</h4>
+                                    <p>Protection of government buildings, power plants, and other sensitive facilities</p>
+                                </div>
+                                <div class="application-item">
+                                    <div class="app-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <h4>Public Events</h4>
+                                    <p>Enhanced security screening for concerts, sports events, and large gatherings</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-4">
+                        <!-- Project Details -->
+                        <div class="sidebar-card" data-aos="fade-left">
+                            <h3 class="sidebar-title">Project Details</h3>
+                            <div class="detail-list">
+                                <div class="detail-item">
+                                    <span class="detail-label">Project ID</span>
+                                    <span class="detail-value">12010305</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Duration</span>
+                                    <span class="detail-value">2019-2021</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Role</span>
+                                    <span class="detail-value">Research Team Member</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Focus Area</span>
+                                    <span class="detail-value">Security Chemosensors</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Status</span>
+                                    <span class="badge status-completed">Completed</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Target Materials -->
+                        <div class="sidebar-card" data-aos="fade-left" data-aos-delay="100">
+                            <h3 class="sidebar-title">Target Materials</h3>
+                            <div class="target-list">
+                                <div class="target-item">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    TNT & Nitroaromatic Compounds
+                                </div>
+                                <div class="target-item">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    Peroxide-based Explosives
+                                </div>
+                                <div class="target-item">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    Plastic Explosives
+                                </div>
+                                <div class="target-item">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    Chemical Warfare Agents
+                                </div>
+                                <div class="target-item">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    Hazardous Industrial Chemicals
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Performance Metrics -->
+                        <div class="sidebar-card" data-aos="fade-left" data-aos-delay="200">
+                            <h3 class="sidebar-title">Performance Metrics</h3>
+                            <div class="metrics-list">
+                                <div class="metric-item">
+                                    <div class="metric-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="metric-content">
+                                        <div class="metric-value">< 30 seconds</div>
+                                        <div class="metric-label">Response Time</div>
+                                    </div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-icon">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <div class="metric-content">
+                                        <div class="metric-value">ppb range</div>
+                                        <div class="metric-label">Detection Limit</div>
+                                    </div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-icon">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <div class="metric-content">
+                                        <div class="metric-value">High</div>
+                                        <div class="metric-label">Selectivity</div>
+                                    </div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="metric-content">
+                                        <div class="metric-value">Stable</div>
+                                        <div class="metric-label">Color Response</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Related Projects -->
+                        <div class="sidebar-card" data-aos="fade-left" data-aos-delay="300">
+                            <h3 class="sidebar-title">Related Projects</h3>
+                            <div class="related-links">
+                                <a href="project-11070103.html" class="related-link">
+                                    <i class="fas fa-leaf me-2"></i>
+                                    Environmental Monitoring
+                                </a>
+                                <a href="project-13711505.html" class="related-link">
+                                    <i class="fas fa-cubes me-2"></i>
+                                    Solid Polymer Chemosensors
+                                </a>
+                                <a href="project-51011.html" class="related-link">
+                                    <i class="fas fa-filter me-2"></i>
+                                    Solid Adsorbent Systems
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <!-- Footer -->
     <footer class="footer-modern">
         <div class="container">
@@ -318,21 +556,21 @@
                 <div class="col-lg-2 col-md-6">
                     <h6 class="footer-title">Navigation</h6>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="research.html">Research</a></li>
-                        <li><a href="teaching.html">Teaching</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../research.html">Research</a></li>
+                        <li><a href="../teaching.html">Teaching</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
                     <h6 class="footer-title">Research Areas</h6>
                     <ul class="footer-links">
-                        <li><a href="research.html">Chemosensors</a></li>
-                        <li><a href="research.html">AI in Chemistry</a></li>
-                        <li><a href="research.html">Nanomaterials</a></li>
-                        <li><a href="research.html">Supramolecular Chemistry</a></li>
+                        <li><a href="../research.html">Chemosensors</a></li>
+                        <li><a href="../research.html">AI in Chemistry</a></li>
+                        <li><a href="../research.html">Nanomaterials</a></li>
+                        <li><a href="../research.html">Supramolecular Chemistry</a></li>
                     </ul>
                 </div>
                 
@@ -357,11 +595,15 @@
                 </div>
             </div>
         </div>
-    </footer> 
-
-    <!-- Bootstrap JS -->
+    </footer>     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="../js/main.js"></script>
+    <!-- Theme and Accessibility Manager -->
+    <script src="../js/theme-accessibility.js"></script>
+    <!-- Enhanced Image Loader -->
+    <script src="../js/enhanced-image-loader.js"></script>
+    <!-- Modern Custom JS -->
+    <script src="../js/main-modern.js"></script>
+    <!-- Project Enhanced JS -->
+    <script src="../js/project-enhanced.js"></script>
 </body>
 </html>

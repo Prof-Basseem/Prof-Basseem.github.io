@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+<head>    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Mahmoud Basseem - Project 11070103</title>
-    
-    <!-- Favicon -->
+    <title>Dr. Mahmoud Basseem - Environmental Monitoring Chemosensors</title>
+      <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Dr. Mahmoud Basseem - Environmental Monitoring Chemosensors">
+    <meta property="og:description" content="Advanced colorimetric and fluorescent chemosensors for comprehensive environmental monitoring of ionic pollutants and toxic gases.">
+    <meta property="og:image" content="../assets/img/dr-mahmoud.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dr. Mahmoud Basseem - Environmental Monitoring Chemosensors">
+    <meta name="twitter:description" content="Advanced dual-mode sensing systems for environmental protection">
+    <meta name="twitter:image" content="../assets/img/dr-mahmoud.jpg">
+      <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,10 +34,18 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+    
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+    <!-- Navigation -->    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-modern">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="../index.html">
                 <i class="fas fa-graduation-cap me-2"></i>
                 <span class="brand-text">Dr. Mahmoud Basseem</span>
             </a>
@@ -33,12 +55,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="../index.html">
                             <i class="fas fa-home me-1"></i>Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">
+                        <a class="nav-link" href="../about.html">
                             <i class="fas fa-user me-1"></i>About
                         </a>
                     </li>
@@ -47,9 +69,9 @@
                             <i class="fas fa-microscope me-1"></i>Research
                         </a>
                         <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="researchDropdown">
-                            <li><a class="dropdown-item" href="research.html"><i class="fas fa-flask me-2"></i>Research Areas</a></li>
-                            <li><a class="dropdown-item" href="publications.html"><i class="fas fa-file-alt me-2"></i>Publications</a></li>
-                            <li><a class="dropdown-item" href="projects.html"><i class="fas fa-project-diagram me-2"></i>Projects</a></li>
+                            <li><a class="dropdown-item" href="../research.html"><i class="fas fa-flask me-2"></i>Research Areas</a></li>
+                            <li><a class="dropdown-item" href="../publications.html"><i class="fas fa-file-alt me-2"></i>Publications</a></li>
+                            <li><a class="dropdown-item" href="../projects.html"><i class="fas fa-project-diagram me-2"></i>Projects</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -57,35 +79,31 @@
                             <i class="fas fa-chalkboard-teacher me-1"></i>Academic
                         </a>
                         <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="academicDropdown">
-                            <li><a class="dropdown-item" href="teaching.html"><i class="fas fa-book me-2"></i>Teaching</a></li>
-                            <li><a class="dropdown-item" href="youtube-courses.html"><i class="fab fa-youtube me-2"></i>YouTube Courses</a></li>
-                            <li><a class="dropdown-item" href="lab-members.html"><i class="fas fa-users me-2"></i>Lab Members</a></li>
+                            <li><a class="dropdown-item" href="../teaching.html"><i class="fas fa-book me-2"></i>Teaching</a></li>
+                            <li><a class="dropdown-item" href="../youtube-courses.html"><i class="fab fa-youtube me-2"></i>YouTube Courses</a></li>
+                            <li><a class="dropdown-item" href="../lab-members.html"><i class="fas fa-users me-2"></i>Lab Members</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
+                        <a class="nav-link" href="../contact.html">
                             <i class="fas fa-envelope me-1"></i>Contact
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-cv ms-2" href="assets/files/CV/CV.pdf" target="_blank">
+                        <a class="nav-link btn btn-cv ms-2" href="../assets/files/CV/CV.pdf" target="_blank">
                             <i class="fas fa-file-pdf me-1"></i>CV
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>  
-
-    <!-- Hero Section -->
+    </nav>    <!-- Hero Section -->
     <section class="hero-section-small">
         <div class="container">
-            <h1 class="display-5 fw-bold">Research Project 11070103</h1>
-            <p class="lead">Environmental Monitoring Chemosensors</p>
+            <h1 class="display-5 fw-bold" style="text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);">Research Project 11070103</h1>
+            <p class="lead text-white">Environmental Monitoring Chemosensors</p>
         </div>
-    </section>
-
-    <!-- Project Details Section -->
+    </section>    <!-- Project Details Section -->
     <section class="section-padding">
         <div class="container">
             <div class="row">
@@ -108,37 +126,37 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-8">
-                                    <h4 class="text-primary mb-3">Colorimetric Chemosensors and Fluorescence Probes: A Promising Strategy for Environmental Monitoring of Ionic Species and Toxic Gases</h4>
-                                    <p class="lead">This research project focuses on developing advanced colorimetric and fluorescent chemosensors for comprehensive environmental monitoring, targeting ionic pollutants and toxic gases.</p>
+                                    <h4 class="text-primary mb-3">Environmental Monitoring Chemosensors for Dual-Mode Detection</h4>
+                                    <p class="lead">This research project focuses on developing advanced colorimetric and fluorescent chemosensors for comprehensive environmental monitoring, targeting ionic pollutants and toxic gases with dual detection capabilities.</p>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="bg-light p-3 rounded">
                                         <h5 class="text-secondary mb-3">Project Details</h5>
                                         <p><strong>Project Number:</strong> 11070103</p>
                                         <p><strong>Duration:</strong> 2016-2018</p>
-                                        <p><strong>Role:</strong> Research Team Member</p>
-                                        <p><strong>Status:</strong> <span class="badge bg-info">Completed</span></p>
+                                        <p><strong>Role:</strong> Principal Investigator</p>
+                                        <p><strong>Status:</strong> <span class="badge bg-success">Completed</span></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Research Objectives -->
+                    <!-- Detection Technologies -->
                     <div class="row mb-5">
                         <div class="col-lg-6">
                             <div class="custom-card card h-100">
                                 <div class="card-body">
                                     <h4 class="text-primary mb-3">
-                                        <i class="fas fa-bullseye me-2"></i>
-                                        Research Objectives
+                                        <i class="fas fa-microscope me-2"></i>
+                                        Detection Technologies
                                     </h4>
                                     <ul class="list-unstyled">
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Develop dual-mode sensing systems</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Monitor environmental pollutants</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Detect ionic species and toxic gases</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Create field-deployable devices</li>
-                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Enhance environmental protection</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Colorimetric detection systems</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Fluorescent probe technology</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Dual-mode sensing capability</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Real-time monitoring systems</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Field-deployable sensors</li>
                                     </ul>
                                 </div>
                             </div>
@@ -147,133 +165,73 @@
                             <div class="custom-card card h-100">
                                 <div class="card-body">
                                     <h4 class="text-primary mb-3">
-                                        <i class="fas fa-microscope me-2"></i>
-                                        Detection Modalities
+                                        <i class="fas fa-exclamation-triangle me-2"></i>
+                                        Target Pollutants
                                     </h4>
                                     <ul class="list-unstyled">
-                                        <li class="mb-2"><i class="fas fa-palette text-info me-2"></i>Colorimetric detection systems</li>
-                                        <li class="mb-2"><i class="fas fa-lightbulb text-info me-2"></i>Fluorescence-based probes</li>
-                                        <li class="mb-2"><i class="fas fa-eye text-info me-2"></i>Visual observation methods</li>
-                                        <li class="mb-2"><i class="fas fa-chart-line text-info me-2"></i>Quantitative analysis tools</li>
-                                        <li class="mb-2"><i class="fas fa-mobile-alt text-info me-2"></i>Portable sensing platforms</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-danger me-2"></i>Heavy metal ions (Pb²⁺, Hg²⁺, Cd²⁺)</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-warning me-2"></i>Transition metal ions (Cu²⁺, Zn²⁺)</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-info me-2"></i>Toxic anions (F⁻, CN⁻, ClO₄⁻)</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-primary me-2"></i>Harmful gases (H₂S, NH₃, NO₂)</li>
+                                        <li class="mb-2"><i class="fas fa-circle text-secondary me-2"></i>Radioactive species (UO₂²⁺)</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Target Analytes -->
-                    <div class="custom-card card mb-5">
-                        <div class="card-body">
-                            <h4 class="text-primary mb-3">
-                                <i class="fas fa-crosshairs me-2"></i>
-                                Target Environmental Pollutants
-                            </h4>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h5 class="text-secondary mb-3">Ionic Species</h5>
-                                    <ul class="list-unstyled">
-                                        <li><i class="fas fa-circle text-warning me-2"></i>Heavy metal ions (Pb²⁺, Hg²⁺, Cd²⁺)</li>
-                                        <li><i class="fas fa-circle text-warning me-2"></i>Anions (CN⁻, F⁻, PO₄³⁻)</li>
-                                        <li><i class="fas fa-circle text-warning me-2"></i>Transition metal complexes</li>
-                                        <li><i class="fas fa-circle text-warning me-2"></i>Rare earth elements</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6">
-                                    <h5 class="text-secondary mb-3">Toxic Gases</h5>
-                                    <ul class="list-unstyled">
-                                        <li><i class="fas fa-circle text-danger me-2"></i>Industrial emissions (CO, SO₂, NOₓ)</li>
-                                        <li><i class="fas fa-circle text-danger me-2"></i>Volatile organic compounds</li>
-                                        <li><i class="fas fa-circle text-danger me-2"></i>Greenhouse gases</li>
-                                        <li><i class="fas fa-circle text-danger me-2"></i>Atmospheric pollutants</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sensing Technology -->
+                    <!-- Technical Approach -->
                     <div class="custom-card card mb-5">
                         <div class="card-body">
                             <h4 class="text-primary mb-3">
                                 <i class="fas fa-cogs me-2"></i>
-                                Sensing Technology & Innovation
+                                Technical Approach
                             </h4>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h5 class="text-secondary mb-3">Colorimetric Approach</h5>
-                                    <p>Visual detection through color changes enables rapid, on-site analysis without sophisticated instrumentation.</p>
+                                    <h5 class="text-secondary mb-3">Sensor Design Strategy</h5>
+                                    <p>Development of innovative chemosensor molecules with dual-mode detection capabilities, combining colorimetric and fluorescent responses for enhanced reliability and accuracy.</p>
                                     <ul class="list-unstyled">
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Naked-eye detection capability</li>
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Instant visual feedback</li>
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Cost-effective implementation</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Molecular design optimization</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Chromophore-fluorophore integration</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Selectivity enhancement</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
-                                    <h5 class="text-secondary mb-3">Fluorescence Detection</h5>
-                                    <p>Enhanced sensitivity through fluorescence quenching or enhancement mechanisms for trace-level detection.</p>
+                                    <h5 class="text-secondary mb-3">Environmental Applications</h5>
+                                    <p>Field-ready sensors designed for continuous environmental monitoring with applications in water quality assessment, air pollution detection, and industrial safety.</p>
                                     <ul class="list-unstyled">
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Ultra-low detection limits</li>
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>High signal-to-noise ratios</li>
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Multiplexed detection capability</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Water quality monitoring</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Air pollution detection</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Industrial safety systems</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Environmental Impact -->
-                    <div class="custom-card card mb-5">
-                        <div class="card-body">
-                            <h4 class="text-primary mb-3">
-                                <i class="fas fa-globe me-2"></i>
-                                Environmental Impact & Applications
-                            </h4>
-                            <div class="row">
-                                <div class="col-md-4 text-center">
-                                    <i class="fas fa-tint fa-3x text-info mb-3"></i>
-                                    <h5>Water Quality</h5>
-                                    <p class="text-muted">Monitoring of drinking water and wastewater treatment systems</p>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <i class="fas fa-cloud fa-3x text-success mb-3"></i>
-                                    <h5>Air Quality</h5>
-                                    <p class="text-muted">Real-time atmospheric monitoring and pollution assessment</p>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <i class="fas fa-seedling fa-3x text-warning mb-3"></i>
-                                    <h5>Soil Health</h5>
-                                    <p class="text-muted">Agricultural monitoring and contamination detection</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Research Achievements -->
+                    <!-- Key Achievements -->
                     <div class="custom-card card mb-5">
                         <div class="card-body">
                             <h4 class="text-primary mb-3">
                                 <i class="fas fa-trophy me-2"></i>
-                                Research Achievements
+                                Key Achievements & Impact
                             </h4>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <h6 class="text-secondary">Technical Milestones:</h6>
-                                    <ul class="list-unstyled">
-                                        <li><i class="fas fa-check text-success me-2"></i>Sub-micromolar detection limits</li>
-                                        <li><i class="fas fa-check text-success me-2"></i>Selective recognition systems</li>
-                                        <li><i class="fas fa-check text-success me-2"></i>Real-time monitoring capability</li>
-                                        <li><i class="fas fa-check text-success me-2"></i>Field-portable devices</li>
-                                    </ul>
+                                <div class="col-md-4 text-center">
+                                    <i class="fas fa-shield-alt fa-3x text-success mb-3"></i>
+                                    <h5>Environmental Protection</h5>
+                                    <p class="text-muted">Advanced early warning systems for environmental contamination</p>
                                 </div>
-                                <div class="col-md-6">
-                                    <h6 class="text-secondary">Innovation Highlights:</h6>
-                                    <ul class="list-unstyled">
-                                        <li><i class="fas fa-check text-primary me-2"></i>Dual-mode detection systems</li>
-                                        <li><i class="fas fa-check text-primary me-2"></i>Environmentally friendly sensors</li>
-                                        <li><i class="fas fa-check text-primary me-2"></i>Cost-effective manufacturing</li>
-                                        <li><i class="fas fa-check text-primary me-2"></i>User-friendly interfaces</li>
-                                    </ul>
+                                <div class="col-md-4 text-center">
+                                    <i class="fas fa-eye fa-3x text-info mb-3"></i>
+                                    <h5>Dual Detection</h5>
+                                    <p class="text-muted">Colorimetric and fluorescent sensing in one platform</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <i class="fas fa-chart-line fa-3x text-warning mb-3"></i>
+                                    <h5>Real-time Monitoring</h5>
+                                    <p class="text-muted">Continuous environmental assessment capabilities</p>
                                 </div>
                             </div>
                         </div>
@@ -286,25 +244,25 @@
                                 <i class="fas fa-user-tie me-2"></i>
                                 Research Contributions
                             </h4>
-                            <p>As a research team member, Dr. Mahmoud Basseem contributed expertise in chemosensor design, optical characterization, and environmental applications development.</p>
+                            <p>As the Principal Investigator, Dr. Mahmoud Basseem led the development of innovative dual-mode chemosensors for environmental monitoring applications.</p>
                             
                             <div class="row mt-4">
                                 <div class="col-md-6">
                                     <h6 class="text-secondary">Key Contributions:</h6>
                                     <ul class="list-unstyled">
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Sensor molecular architecture design</li>
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Optical properties optimization</li>
-                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Environmental testing protocols</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Novel sensor molecular design</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Dual-mode detection development</li>
+                                        <li><i class="fas fa-arrow-right text-primary me-2"></i>Environmental application testing</li>
                                         <li><i class="fas fa-arrow-right text-primary me-2"></i>Performance characterization</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
                                     <h6 class="text-secondary">Project Outcomes:</h6>
                                     <ul class="list-unstyled">
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Advanced monitoring systems</li>
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Environmental protection tools</li>
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Scientific breakthroughs</li>
-                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Technology commercialization</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Improved detection sensitivity</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Enhanced selectivity</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Field-deployable sensors</li>
+                                        <li><i class="fas fa-arrow-right text-success me-2"></i>Research publications</li>
                                     </ul>
                                 </div>
                             </div>
@@ -315,6 +273,170 @@
         </div>
     </section>    
     <!-- Footer -->
+                                        <div class="pollutant-item">
+                                            <i class="fas fa-circle text-warning"></i>
+                                            Ammonia (NH₃)
+                                        </div>
+                                        <div class="pollutant-item">
+                                            <i class="fas fa-circle text-info"></i>
+                                            Sulfur Dioxide (SO₂)
+                                        </div>
+                                        <div class="pollutant-item">
+                                            <i class="fas fa-circle text-primary"></i>
+                                            Volatile Organic Compounds
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Applications -->
+                        <div class="content-card" data-aos="fade-up" data-aos-delay="300">
+                            <h2 class="section-title">
+                                <i class="fas fa-globe me-2"></i>
+                                Environmental Applications
+                            </h2>
+                            
+                            <div class="applications-grid">
+                                <div class="application-item">
+                                    <div class="app-icon">
+                                        <i class="fas fa-tint"></i>
+                                    </div>
+                                    <h4>Water Quality Monitoring</h4>
+                                    <p>Real-time assessment of drinking water, groundwater, and surface water contamination</p>
+                                </div>
+                                <div class="application-item">
+                                    <div class="app-icon">
+                                        <i class="fas fa-wind"></i>
+                                    </div>
+                                    <h4>Air Quality Assessment</h4>
+                                    <p>Continuous monitoring of toxic gases and air pollutants in urban and industrial areas</p>
+                                </div>
+                                <div class="application-item">
+                                    <div class="app-icon">
+                                        <i class="fas fa-seedling"></i>
+                                    </div>
+                                    <h4>Soil Contamination</h4>
+                                    <p>Detection of heavy metals and ionic pollutants in agricultural and remediation sites</p>
+                                </div>
+                                <div class="application-item">
+                                    <div class="app-icon">
+                                        <i class="fas fa-industry"></i>
+                                    </div>
+                                    <h4>Industrial Monitoring</h4>
+                                    <p>Workplace safety and emission control in chemical and manufacturing facilities</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-4">
+                        <!-- Project Details -->
+                        <div class="sidebar-card" data-aos="fade-left">
+                            <h3 class="sidebar-title">Project Details</h3>
+                            <div class="detail-list">
+                                <div class="detail-item">
+                                    <span class="detail-label">Project ID</span>
+                                    <span class="detail-value">11070103</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Duration</span>
+                                    <span class="detail-value">2016-2018</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Role</span>
+                                    <span class="detail-value">Research Team Member</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Focus Area</span>
+                                    <span class="detail-value">Environmental Chemosensors</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Status</span>
+                                    <span class="badge status-completed">Completed</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Research Objectives -->
+                        <div class="sidebar-card" data-aos="fade-left" data-aos-delay="100">
+                            <h3 class="sidebar-title">Research Objectives</h3>
+                            <div class="objectives-list">
+                                <div class="objective-item">
+                                    <i class="fas fa-check-circle text-success"></i>
+                                    Develop dual-mode sensing systems
+                                </div>
+                                <div class="objective-item">
+                                    <i class="fas fa-check-circle text-success"></i>
+                                    Monitor environmental pollutants
+                                </div>
+                                <div class="objective-item">
+                                    <i class="fas fa-check-circle text-success"></i>
+                                    Detect ionic species and toxic gases
+                                </div>
+                                <div class="objective-item">
+                                    <i class="fas fa-check-circle text-success"></i>
+                                    Create field-deployable devices
+                                </div>
+                                <div class="objective-item">
+                                    <i class="fas fa-check-circle text-success"></i>
+                                    Enhance environmental protection
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Specifications -->
+                        <div class="sidebar-card" data-aos="fade-left" data-aos-delay="200">
+                            <h3 class="sidebar-title">Technical Specifications</h3>
+                            <div class="spec-list">
+                                <div class="spec-item">
+                                    <div class="spec-label">Detection Limit</div>
+                                    <div class="spec-value">μM to nM range</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Response Time</div>
+                                    <div class="spec-value">< 60 seconds</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Operating Range</div>
+                                    <div class="spec-value">pH 5.0-9.0</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Temperature</div>
+                                    <div class="spec-value">15-40°C</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-label">Selectivity</div>
+                                    <div class="spec-value">High specificity</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Related Projects -->
+                        <div class="sidebar-card" data-aos="fade-left" data-aos-delay="300">
+                            <h3 class="sidebar-title">Related Projects</h3>
+                            <div class="related-links">
+                                <a href="project-12010305.html" class="related-link">
+                                    <i class="fas fa-shield-alt me-2"></i>
+                                    Explosives Detection
+                                </a>
+                                <a href="project-13711505.html" class="related-link">
+                                    <i class="fas fa-cubes me-2"></i>
+                                    Solid Polymer Chemosensors
+                                </a>
+                                <a href="project-51011.html" class="related-link">
+                                    <i class="fas fa-filter me-2"></i>
+                                    Solid Adsorbent Systems
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <!-- Footer -->
     <footer class="footer-modern">
         <div class="container">
@@ -349,21 +471,21 @@
                 <div class="col-lg-2 col-md-6">
                     <h6 class="footer-title">Navigation</h6>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="research.html">Research</a></li>
-                        <li><a href="teaching.html">Teaching</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../research.html">Research</a></li>
+                        <li><a href="../teaching.html">Teaching</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
                     <h6 class="footer-title">Research Areas</h6>
                     <ul class="footer-links">
-                        <li><a href="research.html">Chemosensors</a></li>
-                        <li><a href="research.html">AI in Chemistry</a></li>
-                        <li><a href="research.html">Nanomaterials</a></li>
-                        <li><a href="research.html">Supramolecular Chemistry</a></li>
+                        <li><a href="../research.html">Chemosensors</a></li>
+                        <li><a href="../research.html">AI in Chemistry</a></li>
+                        <li><a href="../research.html">Nanomaterials</a></li>
+                        <li><a href="../research.html">Supramolecular Chemistry</a></li>
                     </ul>
                 </div>
                 
@@ -388,11 +510,15 @@
                 </div>
             </div>
         </div>
-    </footer> 
-
-    <!-- Bootstrap JS -->
+    </footer>     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="../js/main.js"></script>
+    <!-- Theme and Accessibility Manager -->
+    <script src="../js/theme-accessibility.js"></script>
+    <!-- Enhanced Image Loader -->
+    <script src="../js/enhanced-image-loader.js"></script>
+    <!-- Modern Custom JS -->
+    <script src="../js/main-modern.js"></script>
+    <!-- Project Enhanced JS -->
+    <script src="../js/project-enhanced.js"></script>
 </body>
 </html>
