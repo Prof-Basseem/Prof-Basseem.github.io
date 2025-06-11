@@ -1004,7 +1004,8 @@ function debounce(func, wait) {
     };
 }
 
-// Dark mode toggle (optional feature)
+// Dark mode toggle functionality removed
+/*
 function initializeDarkMode() {
     const darkModeBtn = document.getElementById('darkModeToggle');
     if (!darkModeBtn) return;
@@ -1038,6 +1039,7 @@ function updateDarkModeBtn(isDark) {
         darkModeBtn.title = 'Switch to Dark Mode';
     }
 }
+*/
 
 // Add loading states for navigation
 document.addEventListener('click', function(e) {

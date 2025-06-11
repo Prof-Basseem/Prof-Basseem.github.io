@@ -3,14 +3,12 @@
  * Handles dark/light mode switching and accessibility features
  */
 
-class ThemeManager {
-    constructor() {
-        this.currentTheme = this.getStoredTheme() || this.getPreferredTheme();
+class ThemeManager {    constructor() {
+        // Default to light theme since toggle is removed
+        this.currentTheme = 'light';
         this.init();
-    }
-
-    init() {
-        this.createThemeToggle();
+    }init() {
+        // Theme toggle removed - no longer creating theme toggle button
         this.applyTheme(this.currentTheme);
         this.setupEventListeners();
         this.initAccessibilityFeatures();
@@ -25,18 +23,19 @@ class ThemeManager {
             return 'dark';
         }
         return 'light';
-    }
-
-    applyTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        this.currentTheme = theme;
-        localStorage.setItem('theme', theme);
-        this.updateThemeToggleIcon();
+    }    applyTheme(theme) {
+        // Force light theme since dark toggle is removed
+        const forcedTheme = 'light';
+        document.documentElement.setAttribute('data-theme', forcedTheme);
+        this.currentTheme = forcedTheme;
         
-        // Announce theme change to screen readers
-        this.announceToScreenReader(`Theme switched to ${theme} mode`);
-    }
-
+        // No longer storing theme preference since toggle is removed
+        // localStorage.setItem('theme', forcedTheme);
+        
+        // Announce theme to screen readers
+        this.announceToScreenReader(`Theme set to ${forcedTheme} mode`);
+    }// Theme toggle button creation removed - no longer needed
+    /*
     createThemeToggle() {
         const toggle = document.createElement('button');
         toggle.className = 'theme-toggle';
@@ -47,7 +46,8 @@ class ThemeManager {
         document.body.appendChild(toggle);
         this.themeToggle = toggle;
     }
-
+    */    // Theme toggle icon update removed - no longer needed
+    /*
     updateThemeToggleIcon() {
         const icon = this.themeToggle.querySelector('i');
         if (this.currentTheme === 'dark') {
@@ -58,33 +58,16 @@ class ThemeManager {
             this.themeToggle.setAttribute('aria-label', 'Switch to dark mode');
         }
     }
-
+    */    // Theme toggle functionality removed - no longer needed
+    /*
     toggleTheme() {
         const newTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
         this.applyTheme(newTheme);
     }
-
-    setupEventListeners() {
-        // Theme toggle click
-        this.themeToggle.addEventListener('click', () => {
-            this.toggleTheme();
-        });
-
-        // Keyboard support for theme toggle
-        this.themeToggle.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                this.toggleTheme();
-            }
-        });
-
-        // Listen for system theme changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (!this.getStoredTheme()) {
-                this.applyTheme(e.matches ? 'dark' : 'light');
-            }
-        });
-
+    */    setupEventListeners() {
+        // Theme toggle event listeners removed - no longer needed
+        // System theme change listener removed - sticking to light mode
+        
         // Handle reduced motion preference
         this.handleReducedMotion();
     }
