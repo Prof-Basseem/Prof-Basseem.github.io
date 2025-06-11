@@ -2,7 +2,7 @@
 
 /* CSS Custom Properties (Variables) */
 :root {
-    /* Modern Color Palette */
+    /* Modern Color Palette - Light Theme */
     --primary-color: #2D3436;
     --secondary-color: #00B894;
     --accent-color: #FDCB6E;
@@ -11,6 +11,9 @@
     --text-dark: #2D3436;
     --text-medium: #636E72;
     --text-light: #B2BEC3;
+    --border-color: #E9ECEF;
+    --card-background: #FFFFFF;
+    --nav-background: rgba(255, 255, 255, 0.95);
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, #00B894 0%, #2D3436 100%);
@@ -48,6 +51,144 @@
     --transition-slow: 0.5s ease;
 }
 
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --primary-color: #FFFFFF;
+    --secondary-color: #00B894;
+    --accent-color: #FDCB6E;
+    --background-light: #1A1D23;
+    --background-white: #242831;
+    --text-dark: #FFFFFF;
+    --text-medium: #B2BEC3;
+    --text-light: #636E72;
+    --border-color: #3A3D4A;
+    --card-background: #2D3039;
+    --nav-background: rgba(36, 40, 49, 0.95);
+    
+    /* Dark Mode Gradients */
+    --gradient-primary: linear-gradient(135deg, #00B894 0%, #FFFFFF 100%);
+    --gradient-accent: linear-gradient(135deg, #FDCB6E 0%, #E17055 100%);
+    --gradient-light: linear-gradient(135deg, #242831 0%, #2D3039 100%);
+    
+    /* Dark Mode Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.5);
+}
+
+/* Auto Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --primary-color: #FFFFFF;
+        --secondary-color: #00B894;
+        --accent-color: #FDCB6E;
+        --background-light: #1A1D23;
+        --background-white: #242831;
+        --text-dark: #FFFFFF;
+        --text-medium: #B2BEC3;
+        --text-light: #636E72;
+        --border-color: #3A3D4A;
+        --card-background: #2D3039;
+        --nav-background: rgba(36, 40, 49, 0.95);
+        
+        --gradient-primary: linear-gradient(135deg, #00B894 0%, #FFFFFF 100%);
+        --gradient-accent: linear-gradient(135deg, #FDCB6E 0%, #E17055 100%);
+        --gradient-light: linear-gradient(135deg, #242831 0%, #2D3039 100%);
+        
+        --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+        --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background: var(--card-background);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-md);
+    font-size: 1.2rem;
+    color: var(--text-dark);
+}
+
+.theme-toggle:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+.theme-toggle:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* Accessibility Improvements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Enhanced Focus Styles */
+*:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.8);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.8);
+        --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.8);
+        --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.8);
+    }
+    
+    .btn, .card, .navbar {
+        border: 2px solid var(--text-dark);
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 /* Global Styles */
 * {
     box-sizing: border-box;
@@ -82,6 +223,111 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-secondary-modern {
     color: var(--secondary-color) !important;
+}
+
+/* Enhanced Mobile Responsiveness & Typography */
+
+/* Base Typography with Fluid Scaling */
+h1, .h1 {
+    font-size: clamp(2.25rem, 4vw + 1rem, 4rem);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+h2, .h2 {
+    font-size: clamp(1.875rem, 3vw + 1rem, 3rem);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+h3, .h3 {
+    font-size: clamp(1.5rem, 2.5vw + 0.5rem, 2.25rem);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.25;
+}
+
+h4, .h4 {
+    font-size: clamp(1.25rem, 2vw + 0.25rem, 1.875rem);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.3;
+}
+
+h5, .h5 {
+    font-size: clamp(1.125rem, 1.5vw + 0.25rem, 1.5rem);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.35;
+}
+
+h6, .h6 {
+    font-size: clamp(1rem, 1vw + 0.25rem, 1.25rem);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.4;
+}
+
+/* Enhanced Lead Text */
+.lead {
+    font-size: clamp(1.125rem, 2vw + 0.5rem, 1.375rem);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.6;
+    color: var(--text-medium);
+}
+
+/* Section Titles */
+.section-title {
+    font-size: clamp(2rem, 3.5vw + 0.5rem, 3.5rem);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    margin-bottom: clamp(2rem, 4vw, 4rem);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+}
+
+/* Display Classes */
+.display-1 {
+    font-size: clamp(3rem, 6vw + 1rem, 6rem);
+    font-weight: var(--font-weight-extrabold);
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.display-2 {
+    font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+}
+
+.display-3 {
+    font-size: clamp(2rem, 4vw + 0.5rem, 4rem);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.display-4 {
+    font-size: clamp(1.75rem, 3.5vw + 0.5rem, 3.5rem);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+}
+
+/* Enhanced Body Text */
+body {
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+}
+
+p {
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
 }
 
 /* Modern Navigation */
@@ -1574,4 +1820,567 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes blink-caret {
     from, to { border-color: transparent; }
     50% { border-color: var(--secondary-color); }
+}
+
+/* Mobile-First Media Queries */
+
+/* Extra Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    :root {
+        --section-padding: clamp(2rem, 5vw, 3rem);
+        --container-padding: 1rem;
+    }
+    
+    .container {
+        padding-left: var(--container-padding);
+        padding-right: var(--container-padding);
+    }
+    
+    /* Navigation adjustments */
+    .navbar-brand {
+        font-size: 1.125rem;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+    
+    /* Hero section adjustments */
+    .hero-section {
+        padding: clamp(4rem, 8vw, 6rem) 0 clamp(2rem, 4vw, 3rem);
+    }
+    
+    .hero-section-small {
+        padding: clamp(3rem, 6vw, 4rem) 0 clamp(1.5rem, 3vw, 2rem);
+    }
+    
+    /* Card adjustments */
+    .custom-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+    
+    /* Button adjustments */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .btn-lg {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+    
+    /* Stats and counters */
+    .stat-number {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+    
+    /* Footer adjustments */
+    .footer-modern {
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-links li {
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .hero-section {
+        padding: clamp(5rem, 8vw, 7rem) 0 clamp(2.5rem, 4vw, 3.5rem);
+    }
+    
+    .section-padding {
+        padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+    
+    /* Card grid improvements */
+    .col-sm-6 .custom-card {
+        height: 100%;
+    }
+    
+    /* Navigation dropdown improvements */
+    .dropdown-menu-modern {
+        min-width: 280px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .hero-section {
+        padding: clamp(6rem, 8vw, 8rem) 0 clamp(3rem, 4vw, 4rem);
+    }
+    
+    /* Grid adjustments for tablets */
+    .publications-grid .col-md-6 {
+        margin-bottom: 2rem;
+    }
+    
+    /* Enhanced card spacing */
+    .custom-card {
+        margin-bottom: 2rem;
+    }
+    
+    /* Navigation improvements */
+    .navbar-nav .nav-link {
+        padding: 0.5rem 1rem;
+    }
+    
+    /* Statistics layout */
+    .stats-section .row {
+        gap: 1.5rem 0;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .hero-section {
+        padding: clamp(7rem, 8vw, 9rem) 0 clamp(3.5rem, 4vw, 4.5rem);
+    }
+    
+    /* Optimize card layouts */
+    .col-lg-4 .custom-card,
+    .col-lg-6 .custom-card {
+        height: 100%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .hero-section {
+        padding: clamp(8rem, 8vw, 10rem) 0 clamp(4rem, 4vw, 5rem);
+    }
+    
+    /* Maximum container optimization */
+    .container {
+        max-width: 1320px;
+    }
+    
+    /* Enhanced spacing for large screens */
+    .section-padding {
+        padding: clamp(5rem, 6vw, 8rem) 0;
+    }
+    
+    /* Grid enhancements */
+    .row.g-5 {
+        --bs-gutter-x: 3rem;
+        --bs-gutter-y: 3rem;
+    }
+}
+
+/* Touch-Friendly Improvements */
+@media (hover: none) and (pointer: coarse) {
+    /* Enhanced touch targets */
+    .btn,
+    .nav-link,
+    .dropdown-item {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .custom-card:hover {
+        transform: none;
+        box-shadow: var(--shadow-md);
+    }
+    
+    /* Enhanced button touch feedback */
+    .btn:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+    
+    /* Improved dropdown touch handling */
+    .dropdown-menu {
+        border-radius: var(--radius-lg);
+        padding: 1rem 0.5rem;
+    }
+    
+    .dropdown-item {
+        padding: 0.75rem 1rem;
+        border-radius: var(--radius-md);
+        margin-bottom: 0.25rem;
+    }
+}
+
+/* Enhanced Focus States for Accessibility */
+.btn:focus,
+.nav-link:focus,
+.dropdown-item:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid rgba(0, 184, 148, 0.3);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.1);
+}
+
+/* Improved Text Contrast for Accessibility */
+.text-muted {
+    color: #5a6c7d !important;
+}
+
+.bg-dark .text-muted {
+    color: #a8b3c1 !important;
+}
+
+/* Enhanced Loading States */
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Print Optimizations */
+@media print {
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    .navbar,
+    .footer,
+    .btn,
+    .scroll-progress {
+        display: none !important;
+    }
+    
+    .container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+    
+    .custom-card {
+        page-break-inside: avoid;
+        border: 1px solid #ddd !important;
+        margin-bottom: 1rem !important;
+    }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .parallax-element {
+        transform: none !important;
+    }
+}
+
+/* Enhanced Performance & Accessibility Styles */
+
+/* Image Optimization & Lazy Loading */
+img {
+    max-width: 100%;
+    height: auto;
+    transition: opacity var(--transition-normal);
+}
+
+img[loading="lazy"] {
+    opacity: 0;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* WebP Support with Fallbacks */
+.picture-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+}
+
+.picture-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.picture-container:hover img {
+    transform: scale(1.02);
+}
+
+/* Loading Skeletons */
+.skeleton {
+    background: linear-gradient(90deg, var(--background-light) 25%, var(--border-color) 50%, var(--background-light) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.skeleton-text {
+    height: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: var(--radius-sm);
+}
+
+.skeleton-title {
+    height: 1.5rem;
+    width: 60%;
+    margin-bottom: 1rem;
+    border-radius: var(--radius-sm);
+}
+
+.skeleton-card {
+    height: 200px;
+    border-radius: var(--radius-md);
+    margin-bottom: 1rem;
+}
+
+/* Enhanced Accessibility - ARIA Live Regions */
+.aria-live-polite {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Skip Links Enhancement */
+.skip-nav {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--secondary-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    z-index: 1001;
+    transition: top var(--transition-fast);
+}
+
+.skip-nav:focus {
+    top: 6px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Enhanced Form Accessibility */
+.form-label {
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 184, 148, 0.25);
+}
+
+.form-control:invalid {
+    border-color: #dc3545;
+}
+
+.form-control:invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Error and Success States */
+.field-error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.field-success {
+    color: #28a745;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Enhanced Button States */
+.btn {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    transition: all var(--transition-normal);
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 184, 148, 0.5);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Loading States */
+.btn-loading {
+    color: transparent;
+}
+
+.btn-loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Card Accessibility Enhancements */
+.custom-card {
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-normal);
+}
+
+.custom-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.custom-card:focus-within {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* Navbar Accessibility */
+.navbar-modern {
+    background: var(--nav-background);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-nav .nav-link:focus {
+    background-color: rgba(0, 184, 148, 0.1);
+    border-radius: var(--radius-sm);
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .theme-toggle,
+    .scroll-progress,
+    .skip-nav,
+    footer {
+        display: none !important;
+    }
+    
+    .container {
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .card {
+        break-inside: avoid;
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+    
+    .btn {
+        border: 1px solid #000 !important;
+    }
+}
+
+/* Performance Optimizations */
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-scroll {
+    will-change: scroll-position;
+}
+
+/* GPU Acceleration for Smooth Animations */
+.gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+}
+
+/* Intersection Observer Loading States */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Content Visibility for Performance */
+.offscreen {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 400px;
 }

@@ -102,51 +102,62 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-modern">
         <div class="container">
-            <a class="navbar-brand" href="../index.html">
-                <i class="fas fa-graduation-cap me-2"></i>Dr. Mahmoud Basseem
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-graduation-cap me-2"></i>
+                <span class="brand-text">Dr. Mahmoud Basseem</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Home</a>
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../about.html">About</a>
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-user me-1"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="researchDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-microscope me-1"></i>Research
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="researchDropdown">
+                            <li><a class="dropdown-item" href="research.html"><i class="fas fa-flask me-2"></i>Research Areas</a></li>
+                            <li><a class="dropdown-item" href="publications.html"><i class="fas fa-file-alt me-2"></i>Publications</a></li>
+                            <li><a class="dropdown-item" href="projects.html"><i class="fas fa-project-diagram me-2"></i>Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-chalkboard-teacher me-1"></i>Academic
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="academicDropdown">
+                            <li><a class="dropdown-item" href="teaching.html"><i class="fas fa-book me-2"></i>Teaching</a></li>
+                            <li><a class="dropdown-item" href="youtube-courses.html"><i class="fab fa-youtube me-2"></i>YouTube Courses</a></li>
+                            <li><a class="dropdown-item" href="lab-members.html"><i class="fas fa-users me-2"></i>Lab Members</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../research.html">Research</a>
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../publications.html">Publications</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../teaching.html">Teaching</a>
-                    </li>                    <li class="nav-item">
-                        <a class="nav-link" href="../projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../lab-members.html">Lab Members</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../youtube-courses.html">YouTube Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../assets/files/CV/CV.pdf" target="_blank">
+                        <a class="nav-link btn btn-cv ms-2" href="assets/files/CV/CV.pdf" target="_blank">
                             <i class="fas fa-file-pdf me-1"></i>CV
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>    <!-- Publication Header -->
+    </nav>     
+    <!-- Publication Header -->
     <section class="publication-header">
         <div class="container">
             <div class="row">

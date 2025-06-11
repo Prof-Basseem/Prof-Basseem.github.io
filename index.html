@@ -98,7 +98,8 @@
                 </ul>
             </div>
         </div>
-    </nav>    <!-- Hero Section -->
+    </nav>    
+    <!-- Hero Section -->
     <main id="main-content">
     <section class="hero-section-modern">
         <div class="hero-background">
@@ -149,15 +150,23 @@
                         
                         <!-- Action Buttons -->
                         <div class="hero-actions">
-                            <a href="about.html" class="btn btn-primary-modern btn-lg me-3">
-                                <i class="fas fa-user me-2"></i>Learn More
-                            </a>
-                            <a href="research.html" class="btn btn-outline-modern btn-lg me-3">
-                                <i class="fas fa-microscope me-2"></i>My Research
-                            </a>
-                            <a href="assets/files/CV/CV.pdf" target="_blank" class="btn btn-cv-download">
-                                <i class="fas fa-download me-2"></i>Download CV
-                            </a>
+                            <div class="row g-3">
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <a href="about.html" class="btn btn-primary-modern btn-lg w-100">
+                                        <i class="fas fa-user me-2"></i>Learn More
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <a href="research.html" class="btn btn-outline-modern btn-lg w-100">
+                                        <i class="fas fa-microscope me-2"></i>My Research
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-12">
+                                    <a href="assets/files/CV/CV.pdf" target="_blank" class="btn btn-cv-download w-100">
+                                        <i class="fas fa-download me-2"></i>Download CV
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         
                         <!-- Contact Info -->
@@ -175,10 +184,13 @@
                 </div>
                 
                 <div class="col-lg-5 order-1 order-lg-2 text-center">
-                    <div class="hero-image-container">
+                    <div class="hero-image-container">                        
                         <div class="profile-frame">
-                            <img src="assets/img/dr-mahmoud.jpg" alt="Dr. Mahmoud Basseem I. Mohamed" class="profile-img-modern" 
-                                 onerror="this.src='https://via.placeholder.com/300x300/2D3436/ffffff?text=Dr.+Mahmoud+Basseem'">
+                            <img src="assets/img/dr-mahmoud.jpg" 
+                                 alt="Professional headshot of Dr. Mahmoud Basseem I. Mohamed, Assistant Professor of Applied Organic Chemistry at Al-Azhar University" 
+                                 class="profile-img-modern" 
+                                 loading="lazy"
+                                 onerror="this.src='https://via.placeholder.com/300x300/2D3436/ffffff?text=Dr.+Mahmoud+Basseem'">>
                             <div class="profile-overlay">
                                 <div class="achievement-float achievement-1">
                                     <i class="fas fa-microscope"></i>
@@ -199,126 +211,126 @@
             </div>
         </div>
     </section>    <!-- Featured Areas Section -->
-    <section class="section-padding bg-light-modern">
+    <section class="section-padding bg-light-modern" aria-labelledby="areas-heading">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-title-modern">Areas of Excellence</h2>
+                    <h2 id="areas-heading" class="section-title-modern">Areas of Excellence</h2>
                     <p class="section-subtitle">Advancing the frontiers of applied organic chemistry through innovative research, dedicated teaching, and impactful scientific contributions.</p>
                 </div>
             </div>
               <div class="row g-4 mt-4">
                 <div class="col-lg-4 col-md-6" data-animation="slide-in-left">
-                    <div class="feature-card modern-card">
-                        <div class="card-icon">
+                    <article class="feature-card modern-card">
+                        <div class="card-icon" aria-hidden="true">
                             <i class="fas fa-microscope"></i>
                         </div>
                         <div class="card-content">
-                            <h4 class="card-title">Research Excellence</h4>
+                            <h3 class="card-title">Research Excellence</h3>
                             <p class="card-description">Pioneering research in chemosensors, supramolecular interactions, and AI applications in chemistry.</p>
-                            <ul class="feature-list">
-                                <li>Chemosensors Development</li>
-                                <li>AI in Chemistry Applications</li>
-                                <li>Nanomaterials Synthesis</li>
-                                <li>Supramolecular Chemistry</li>
+                            <ul class="feature-list" role="list">
+                                <li role="listitem">Chemosensors Development</li>
+                                <li role="listitem">AI in Chemistry Applications</li>
+                                <li role="listitem">Nanomaterials Synthesis</li>
+                                <li role="listitem">Supramolecular Chemistry</li>
                             </ul>
-                            <a href="research.html" class="btn btn-feature-link">
-                                Explore Research <i class="fas fa-arrow-right ms-2"></i>
+                            <a href="research.html" class="btn btn-feature-link" aria-label="Explore Dr. Basseem's research areas">
+                                Explore Research <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
                             </a>
                         </div>
-                    </div>
+                    </article>
                 </div>
                 
                 <div class="col-lg-4 col-md-6" data-animation="scale-in">
-                    <div class="feature-card modern-card">
-                        <div class="card-icon">
+                    <article class="feature-card modern-card">
+                        <div class="card-icon" aria-hidden="true">
                             <i class="fas fa-chalkboard-teacher"></i>
                         </div>
                         <div class="card-content">
-                            <h4 class="card-title">Teaching Excellence</h4>
+                            <h3 class="card-title">Teaching Excellence</h3>
                             <p class="card-description">Dedicated to educating the next generation of chemists through innovative teaching methods.</p>
-                            <ul class="feature-list">
-                                <li>Applied Organic Chemistry</li>
-                                <li>Advanced Analytical Methods</li>
-                                <li>Research Methodology</li>
-                                <li>Laboratory Techniques</li>
+                            <ul class="feature-list" role="list">
+                                <li role="listitem">Applied Organic Chemistry</li>
+                                <li role="listitem">Advanced Analytical Methods</li>
+                                <li role="listitem">Research Methodology</li>
+                                <li role="listitem">Laboratory Techniques</li>
                             </ul>
-                            <a href="teaching.html" class="btn btn-feature-link">
-                                View Teaching <i class="fas fa-arrow-right ms-2"></i>
+                            <a href="teaching.html" class="btn btn-feature-link" aria-label="View Dr. Basseem's teaching activities">
+                                View Teaching <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
                             </a>
                         </div>
-                    </div>
+                    </article>
                 </div>
                 
                 <div class="col-lg-4 col-md-6" data-animation="slide-in-right">
-                    <div class="feature-card modern-card">
-                        <div class="card-icon">
+                    <article class="feature-card modern-card">
+                        <div class="card-icon" aria-hidden="true">
                             <i class="fas fa-award"></i>
                         </div>
                         <div class="card-content">
-                            <h4 class="card-title">Professional Impact</h4>
+                            <h3 class="card-title">Professional Impact</h3>
                             <p class="card-description">Contributing to the scientific community through publications, patents, and academic leadership.</p>
-                            <ul class="feature-list">
-                                <li>20+ Research Publications</li>
-                                <li>1 Patent Awarded</li>
-                                <li>7 Students Supervised</li>
-                                <li>International Recognition</li>
+                            <ul class="feature-list" role="list">
+                                <li role="listitem">20+ Research Publications</li>
+                                <li role="listitem">1 Patent Awarded</li>
+                                <li role="listitem">7 Students Supervised</li>
+                                <li role="listitem">International Recognition</li>
                             </ul>
-                            <a href="about.html" class="btn btn-feature-link">
-                                Learn More <i class="fas fa-arrow-right ms-2"></i>
+                            <a href="about.html" class="btn btn-feature-link" aria-label="Learn more about Dr. Basseem's professional achievements">
+                                Learn More <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
                             </a>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
-    </section>    <!-- Statistics Section -->
-    <section class="stats-section-modern">
+    </section><!-- Statistics Section -->
+    <section class="stats-section-modern" aria-labelledby="stats-heading">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center mb-5">
-                    <h2 class="section-title-light">Academic Impact</h2>
+                    <h2 id="stats-heading" class="section-title-light">Academic Impact</h2>
                     <p class="section-subtitle-light">Measuring success through research excellence and academic contributions</p>
                 </div>
             </div>            <div class="row g-4">
                 <div class="col-lg-3 col-md-6" data-animation="fade-in">
-                    <div class="stat-card-modern">
-                        <div class="stat-icon">
+                    <div class="stat-card-modern" role="img" aria-labelledby="experience-stat" aria-describedby="experience-desc">
+                        <div class="stat-icon" aria-hidden="true">
                             <i class="fas fa-calendar-alt"></i>
                         </div>
-                        <div class="stat-number stats-number" data-count="15" data-suffix="+">0</div>
+                        <div class="stat-number stats-number" data-count="15" data-suffix="+" id="experience-stat">0</div>
                         <div class="stat-label">Years Experience</div>
-                        <div class="stat-description">In academic research and teaching</div>
+                        <div class="stat-description" id="experience-desc">In academic research and teaching</div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6" data-animation="fade-in">
-                    <div class="stat-card-modern">
-                        <div class="stat-icon">
+                    <div class="stat-card-modern" role="img" aria-labelledby="students-stat" aria-describedby="students-desc">
+                        <div class="stat-icon" aria-hidden="true">
                             <i class="fas fa-user-graduate"></i>
                         </div>
-                        <div class="stat-number stats-number" data-count="7">0</div>
+                        <div class="stat-number stats-number" data-count="7" id="students-stat">0</div>
                         <div class="stat-label">Students Supervised</div>
-                        <div class="stat-description">Graduate and PhD students</div>
+                        <div class="stat-description" id="students-desc">Graduate and PhD students</div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6" data-animation="fade-in">
-                    <div class="stat-card-modern">
-                        <div class="stat-icon">
+                    <div class="stat-card-modern" role="img" aria-labelledby="publications-stat" aria-describedby="publications-desc">
+                        <div class="stat-icon" aria-hidden="true">
                             <i class="fas fa-file-alt"></i>
                         </div>
-                        <div class="stat-number stats-number" data-count="20" data-suffix="+">0</div>
+                        <div class="stat-number stats-number" data-count="20" data-suffix="+" id="publications-stat">0</div>
                         <div class="stat-label">Publications</div>
-                        <div class="stat-description">Peer-reviewed research papers</div>
+                        <div class="stat-description" id="publications-desc">Peer-reviewed research papers</div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6" data-animation="fade-in">
-                    <div class="stat-card-modern">
-                        <div class="stat-icon">
+                    <div class="stat-card-modern" role="img" aria-labelledby="patent-stat" aria-describedby="patent-desc">
+                        <div class="stat-icon" aria-hidden="true">
                             <i class="fas fa-award"></i>
                         </div>
-                        <div class="stat-number stats-number" data-count="1">0</div>
+                        <div class="stat-number stats-number" data-count="1" id="patent-stat">0</div>
                         <div class="stat-label">Patent Awarded</div>
-                        <div class="stat-description">Innovative research recognition</div>
+                        <div class="stat-description" id="patent-desc">Innovative research recognition</div>
                     </div>
                 </div>
             </div>
@@ -399,12 +411,15 @@
                 </div>
             </div>
         </div>
-    </footer>    <!-- Bootstrap JS -->
+    </footer>    
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Modern Custom JS -->
-    <script src="js/main-modern.js"></script>
+    <!-- Theme and Accessibility Manager -->
+    <script src="js/theme-accessibility.js"></script>
     <!-- Enhanced Image Loader -->
     <script src="js/enhanced-image-loader.js"></script>
+    <!-- Modern Custom JS -->
+    <script src="js/main-modern.js"></script>
     
     <!-- Counter Animation Script -->
     <script>
