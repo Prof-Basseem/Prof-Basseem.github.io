@@ -109,21 +109,7 @@ class ThemeManager {    constructor() {
                     e.preventDefault();
                     dropdown.click();
                 }
-            });
-        });
-
-        // Skip link functionality
-        const skipLink = document.querySelector('.skip-nav');
-        if (skipLink) {
-            skipLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector('#main-content');
-                if (target) {
-                    target.focus();
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        }
+            });        });
     }
 
     setupFocusManagement() {

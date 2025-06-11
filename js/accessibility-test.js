@@ -38,16 +38,10 @@ class AccessibilityTester {
             {
                 test: 'Navigation landmark exists',
                 element: 'nav',
-                required: true
-            },
+                required: true            },
             {
                 test: 'Heading hierarchy',
                 element: 'h1, h2, h3, h4, h5, h6',
-                required: true
-            },
-            {
-                test: 'Skip navigation link',
-                element: '.skip-nav',
                 required: true
             }
         ];

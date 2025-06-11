@@ -269,14 +269,10 @@ class ProjectPageEnhancer {
         // Insert breadcrumb if not already present
         if (!breadcrumbContainer.querySelector('.project-breadcrumb')) {
             breadcrumbContainer.appendChild(breadcrumb);
-        }
-    }
+        }    }
 
     // Accessibility features
     setupAccessibilityFeatures() {
-        // Add skip links
-        this.addSkipLinks();
-        
         // Enhance focus management
         this.enhanceFocusManagement();
         
@@ -285,17 +281,6 @@ class ProjectPageEnhancer {
         
         // Add keyboard shortcuts
         this.setupKeyboardShortcuts();
-    }
-
-    addSkipLinks() {
-        const skipLinks = document.createElement('div');
-        skipLinks.className = 'skip-links';
-        skipLinks.innerHTML = `
-            <a href="#main-content" class="skip-link">Skip to main content</a>
-            <a href="#project-navigation" class="skip-link">Skip to project navigation</a>
-        `;
-        
-        document.body.insertBefore(skipLinks, document.body.firstChild);
     }
 
     enhanceFocusManagement() {
