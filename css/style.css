@@ -471,6 +471,12 @@ p {
     overflow: hidden !important;
 }
 
+.btn-cv i,
+.btn-cv .fas,
+.btn-cv .fa {
+    color: white !important;
+}
+
 .btn-cv::before {
     content: '';
     position: absolute;
@@ -486,6 +492,33 @@ p {
 .btn-cv:hover {
     transform: translateY(-2px) !important;
     box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3) !important;
+    color: white !important;
+}
+
+.btn-cv:hover i,
+.btn-cv:hover .fas,
+.btn-cv:hover .fa {
+    color: white !important;
+}
+
+/* Ensure CV button with ripple effect maintains white text and icon */
+.btn-cv.btn-ripple {
+    color: white !important;
+}
+
+.btn-cv.btn-ripple i,
+.btn-cv.btn-ripple .fas,
+.btn-cv.btn-ripple .fa {
+    color: white !important;
+}
+
+.btn-cv.btn-ripple:hover {
+    color: white !important;
+}
+
+.btn-cv.btn-ripple:hover i,
+.btn-cv.btn-ripple:hover .fas,
+.btn-cv.btn-ripple:hover .fa {
     color: white !important;
 }
 
