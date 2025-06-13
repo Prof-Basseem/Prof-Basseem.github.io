@@ -3792,3 +3792,140 @@ p {
     box-shadow: 0 20px 40px rgba(0, 188, 212, 0.15);
     border-color: rgba(0, 188, 212, 0.3);
 }
+
+/* Lab Members Styles */
+.member-photo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.member-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid transparent;
+    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+    background-clip: padding-box;
+    box-shadow: 
+        0 8px 25px rgba(59, 130, 246, 0.2),
+        0 4px 10px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all var(--transition-normal);
+    position: relative;
+    z-index: 2;
+}
+
+.member-img::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color), #e74c3c, #9b59b6);
+    z-index: -1;
+    transition: all var(--transition-normal);
+    opacity: 0;
+}
+
+.member-img:hover {
+    transform: translateY(-5px) rotateY(10deg) scale(1.1);
+    box-shadow: 
+        0 15px 35px rgba(59, 130, 246, 0.3),
+        0 8px 20px rgba(0, 0, 0, 0.15),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.member-img:hover::before {
+    opacity: 0.3;
+    transform: scale(1.1);
+}
+
+/* Alternative rounded designs for different student types */
+.card:nth-child(odd) .member-img {
+    border-radius: 35% 65% 70% 30% / 35% 30% 70% 65%;
+    animation: morphShape 8s ease-in-out infinite;
+}
+
+.card:nth-child(even) .member-img {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: morphShape 8s ease-in-out infinite reverse;
+}
+
+@keyframes morphShape {
+    0%, 100% {
+        border-radius: 35% 65% 70% 30% / 35% 30% 70% 65%;
+    }
+    25% {
+        border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+    }
+    50% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    75% {
+        border-radius: 70% 30% 60% 40% / 70% 60% 40% 30%;
+    }
+}
+
+/* Glowing effect for PhD students */
+.col-lg-6 .member-img {
+    box-shadow: 
+        0 8px 25px rgba(102, 126, 234, 0.25),
+        0 4px 10px rgba(0, 0, 0, 0.1),
+        0 0 20px rgba(102, 126, 234, 0.1);
+}
+
+.col-lg-6 .member-img:hover {
+    box-shadow: 
+        0 15px 35px rgba(102, 126, 234, 0.35),
+        0 8px 20px rgba(0, 0, 0, 0.15),
+        0 0 30px rgba(102, 126, 234, 0.2);
+}
+
+/* Green glow for Master's students */
+.col-lg-4 .member-img {
+    box-shadow: 
+        0 8px 25px rgba(40, 167, 69, 0.25),
+        0 4px 10px rgba(0, 0, 0, 0.1),
+        0 0 20px rgba(40, 167, 69, 0.1);
+}
+
+.col-lg-4 .member-img:hover {
+    box-shadow: 
+        0 15px 35px rgba(40, 167, 69, 0.35),
+        0 8px 20px rgba(0, 0, 0, 0.15),
+        0 0 30px rgba(40, 167, 69, 0.2);
+}
+
+/* Loading state */
+.member-img.loading {
+    opacity: 0.7;
+    filter: blur(1px);
+}
+
+/* Error state fallback */
+.member-img[src*="ui-avatars.com"] {
+    border: 2px solid var(--border-color);
+    background: var(--background-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .member-img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .member-img {
+        width: 70px;
+        height: 70px;
+    }
+}
