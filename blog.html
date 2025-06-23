@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mahmoud Basseem - Blog</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Dr. Mahmoud Basseem - Blog">
+    <meta property="og:description" content="Latest insights, research updates, and thoughts on applied organic chemistry, chemosensors, and academic life.">
+    <meta property="og:image" content="assets/img/dr-mahmoud.jpg">
+    <meta property="og:url" content="https://mahmoudbasseem.com/blog.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dr. Mahmoud Basseem - Blog">
+    <meta name="twitter:description" content="Latest insights, research updates, and thoughts on applied organic chemistry">
+    <meta name="twitter:image" content="assets/img/dr-mahmoud.jpg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+      <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-modern">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-graduation-cap me-2"></i>
+                <span class="brand-text">Dr. Mahmoud Basseem</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-user me-1"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="researchDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-microscope me-1"></i>Research
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="researchDropdown">
+                            <li><a class="dropdown-item" href="research.html"><i class="fas fa-flask me-2"></i>Research Areas</a></li>
+                            <li><a class="dropdown-item" href="publications.html"><i class="fas fa-file-alt me-2"></i>Publications</a></li>
+                            <li><a class="dropdown-item" href="projects.html"><i class="fas fa-project-diagram me-2"></i>Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-chalkboard-teacher me-1"></i>Academic
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="academicDropdown">
+                            <li><a class="dropdown-item" href="teaching.html"><i class="fas fa-book me-2"></i>Teaching</a></li>
+                            <li><a class="dropdown-item" href="youtube-courses.html"><i class="fab fa-youtube me-2"></i>YouTube Courses</a></li>
+                            <li><a class="dropdown-item" href="lab-members.html"><i class="fas fa-users me-2"></i>Lab Members</a></li>
+                        </ul>
+                    </li>                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">
+                            <i class="fas fa-blog me-1"></i>Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>                    <li class="nav-item">
+                        <a class="nav-link btn btn-cv ms-2" href="assets/files/CV/CV.pdf" target="_blank">
+                            <i class="fas fa-file-pdf me-1"></i>CV
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>  
+    <!-- Main Content -->    <main id="main-content">
+        <!-- Blog Header Section -->
+        <section class="hero-section-modern">
+            <div class="hero-background">
+                <div class="hero-pattern"></div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center text-center min-vh-100 py-5 align-items-center">
+                    <div class="col-lg-8">
+                        <div class="hero-content">
+                            <div class="hero-badge mb-3">
+                                <span class="badge badge-academic">
+                                    <i class="fas fa-blog me-2"></i>Blog & Insights
+                                </span>
+                            </div>
+                            <h1 class="hero-title mb-4">
+                                <span class="text-primary-modern" style="text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);">Latest Thoughts</span>
+                                <span class="hero-subtitle d-block">& Research Updates</span>
+                            </h1>
+                            <p class="hero-description mb-4">
+                                Insights from the world of <strong>Applied Organic Chemistry</strong>, 
+                                <span class="highlight">chemosensors</span>, and <span class="highlight">academic research</span> 
+                                at Al-Azhar University, Cairo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        <!-- Blog Categories Section -->
+        <section class="section-padding" style="background-color: var(--background-light);">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="section-title" style="color: var(--text-dark);">Categories</h2>
+                        <div class="blog-categories">
+                            <button class="btn btn-outline-primary active me-2 mb-2" data-category="all">
+                                <i class="fas fa-th me-2"></i>All Posts
+                            </button>
+                            <button class="btn btn-outline-primary me-2 mb-2" data-category="research">
+                                <i class="fas fa-flask me-2"></i>Research
+                            </button>
+                            <button class="btn btn-outline-primary me-2 mb-2" data-category="teaching">
+                                <i class="fas fa-chalkboard-teacher me-2"></i>Teaching
+                            </button>
+                            <button class="btn btn-outline-primary me-2 mb-2" data-category="technology">
+                                <i class="fas fa-microchip me-2"></i>Technology
+                            </button>
+                            <button class="btn btn-outline-primary me-2 mb-2" data-category="academic">
+                                <i class="fas fa-graduation-cap me-2"></i>Academic Life
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+        <!-- Blog Posts Section -->
+        <section class="section-padding" style="background-color: var(--background-white);">
+            <div class="container">
+                <div class="row g-4" id="blog-posts">
+                    <!-- Blog Post 1 -->
+                    <!-- Blog Post - Chemistry First Closing Forum Announcement -->
+                    <div class="col-lg-4 col-md-6" data-category="academic">
+                        <article class="blog-card card h-100">
+                            <div class="blog-image">
+                                <img src="assets/img/blog/Post-001.png" 
+                                    class="card-img-top" alt="Chemistry graduation ceremony">
+                                <div class="blog-category">
+                                    <span class="badge bg-success">Academic Event</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="blogs/chemistry-first-closing-forum-2025.html" class="text-decoration-none">
+                                        Celebrating Excellence: Chemistry First Closing Forum 2025
+                                    </a>
+                                </h5>
+                                <p class="card-text text-muted">
+                                    Join us for an inspiring celebration of scientific achievement at CFCF–01, where our outstanding 
+                                    undergraduate students will present their graduation projects and we honor academic excellence...
+                                </p>
+                                <div class="blog-meta">
+                                    <small class="text-muted">
+                                        <i class="fas fa-calendar me-2"></i>June 20, 2025
+                                        <span class="ms-3">
+                                            <i class="fas fa-clock me-2"></i>3 min read
+                                        </span>
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent">
+                                <a href="blogs/chemistry-first-closing-forum-2025.html" class="btn btn-outline-success">
+                                    <i class="fas fa-arrow-right me-2"></i>Read More
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    
+
+                   
+                </div>
+
+                <!-- Load More Button -->
+                <div class="row mt-5">
+                    <div class="col-12 text-center">
+                        <button class="btn btn-primary btn-lg" id="load-more-btn">
+                            <i class="fas fa-plus me-2"></i>Load More Posts
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>        <!-- Newsletter Subscription Section -->
+        <section class="section-padding" style="background: var(--gradient-primary); color: white;">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h2 class="mb-4" style="color: white;">Stay Updated</h2>
+                        <p class="lead mb-4" style="color: white; opacity: 0.9;">
+                            Subscribe to receive the latest research insights and blog updates directly in your inbox.
+                        </p>
+                        <form class="newsletter-form">
+                            <div class="input-group input-group-lg justify-content-center">
+                                <input type="email" class="form-control" placeholder="Enter your email address" 
+                                       aria-label="Email address" style="max-width: 400px;">
+                                <button class="btn btn-light" type="submit" style="color: var(--text-dark);">
+                                    <i class="fas fa-paper-plane me-2"></i>Subscribe
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="row g-4">                
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <h5><i class="fas fa-graduation-cap me-2"></i>Dr. Mahmoud Basseem</h5>
+                        <p class="footer-description">Assistant Professor of Applied Organic Chemistry at Al-Azhar University, pioneering research in chemosensors, AI applications, and nanomaterials.</p>
+                        <div class="social-links-modern">
+                            <a href="mailto:mahmoudbasseem@azhar.edu.eg" title="Email" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/mahmoud-basseem-i-mohamed-38a77293" title="LinkedIn" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.researchgate.net/profile/Mahmoud_Basseem3" title="ResearchGate" target="_blank" class="social-link">
+                                <i class="fab fa-researchgate"></i>
+                            </a>
+                            <a href="https://orcid.org/0000-0001-5558-6342" title="ORCID" target="_blank" class="social-link">
+                                <i class="fab fa-orcid"></i>
+                            </a>
+                            <a href="https://scholar.google.com.eg/citations?user=V6_4ZtcAAAAJ&hl" title="Google Scholar" target="_blank" class="social-link">
+                                <i class="fas fa-graduation-cap"></i>
+                            </a>
+                            <a href="https://www.youtube.com/c/MahmoudBasseem" title="YouTube Channel" target="_blank" class="social-link">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">Navigation</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="teaching.html">Teaching</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="footer-title">Research Areas</h6>
+                    <ul class="footer-links">
+                        <li><a href="research.html">Chemosensors</a></li>
+                        <li><a href="research.html">AI in Chemistry</a></li>
+                        <li><a href="research.html">Nanomaterials</a></li>
+                        <li><a href="research.html">Supramolecular Chemistry</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="footer-title">Contact Information</h6>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-envelope me-2"></i>mahmoudbasseem@azhar.edu.eg</p>
+                        <p><i class="fas fa-phone me-2"></i>+2 01123781102</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i>Al-Azhar University<br>Cairo, Egypt</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; 2025 Dr. Mahmoud Basseem I. Mohamed. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>Made with <i class="fas fa-heart text-danger"></i> for advancing science</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>    
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Theme and Accessibility Manager -->
+    <script src="js/theme-accessibility.js"></script>
+    <!-- Enhanced Image Loader -->
+    <script src="js/enhanced-image-loader.js"></script>
+    <!-- Modern Custom JS -->
+    <script src="js/main-modern.js"></script>
+    <!-- Blog specific JS -->
+    <script src="js/blog.js"></script>
+</body>
+</html>
