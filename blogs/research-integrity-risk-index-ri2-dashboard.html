@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة معلومات مؤشر مخاطر النزاهة البحثية (RI2) - Dr. Mahmoud Basseem</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="manifest" href="../site.webmanifest">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Research Integrity Risk Index (RI2) Dashboard">
+    <meta property="og:description" content="Interactive dashboard for understanding research integrity risks beyond traditional productivity metrics.">
+    <meta property="og:image" content="../assets/img/dr-mahmoud.jpg">
+    <meta property="og:url" content="https://mahmoudbasseem.com/blogs/research-integrity-risk-index-ri2-dashboard.html">
+    <meta property="og:type" content="article">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Chart.js and Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .main-container {
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1rem;
+            padding-top: 2rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border: 1px solid #e2e8f0; /* slate-200 */
+        }
+        .nav-button {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #f1f5f9; /* slate-100 */
+            color: #334155; /* slate-700 */
+        }
+        .nav-button:hover, .nav-button.active {
+            background-color: #0d9488; /* teal-600 */
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(13, 148, 136, 0.3);
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 350px;
+            width: 100%;
+            max-width: 500px;
+        }
+        .large-chart-container {
+            position: relative;
+            margin: auto;
+            height: 700px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .flowchart-step {
+            background-color: #f1f5f9; /* slate-100 */
+            border: 2px dashed #94a3b8; /* slate-400 */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        .pyramid-level {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            margin: 0 auto;
+            clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-modern" style="direction: ltr;">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="fas fa-graduation-cap me-2"></i>
+                <span class="brand-text">Dr. Mahmoud Basseem</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">
+                            <i class="fas fa-user me-1"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="researchDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-microscope me-1"></i>Research
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="researchDropdown">
+                            <li><a class="dropdown-item" href="../research.html"><i class="fas fa-flask me-2"></i>Research Areas</a></li>
+                            <li><a class="dropdown-item" href="../publications.html"><i class="fas fa-file-alt me-2"></i>Publications</a></li>
+                            <li><a class="dropdown-item" href="../projects.html"><i class="fas fa-project-diagram me-2"></i>Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-chalkboard-teacher me-1"></i>Academic
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="academicDropdown">
+                            <li><a class="dropdown-item" href="../teaching.html"><i class="fas fa-book me-2"></i>Teaching</a></li>
+                            <li><a class="dropdown-item" href="../youtube-courses.html"><i class="fab fa-youtube me-2"></i>YouTube Courses</a></li>
+                            <li><a class="dropdown-item" href="../lab-members.html"><i class="fas fa-users me-2"></i>Lab Members</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../blog.html">
+                            <i class="fas fa-blog me-1"></i>Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-cv ms-2" href="../assets/files/CV/CV.pdf" target="_blank">
+                            <i class="fas fa-file-pdf me-1"></i>CV
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back to Blog Button -->
+    <div class="container" style="padding-top: 100px;">
+        <div class="row">
+            <div class="col-12">
+                <a href="../blog.html" class="btn btn-outline-primary mb-4">
+                    <i class="fas fa-arrow-left me-2"></i>العودة إلى المدونة
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        
+        <header class="text-center py-8">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3">لوحة معلومات مؤشر مخاطر النزاهة البحثية (RI2)</h1>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">أداة تفاعلية لاستكشاف وفهم كيفية قياس نزاهة البحث المؤسسي بعيدًا عن مقاييس الإنتاجية التقليدية.</p>
+        </header>
+
+        <nav id="app-nav" class="flex flex-wrap justify-center gap-2 md:gap-4 mb-10 p-2 bg-white rounded-full shadow-inner sticky top-4 z-50">
+            <button class="nav-button active" data-target="section-why">لماذا RI2؟</button>
+            <button class="nav-button" data-target="section-what">ما هو RI2؟</button>
+            <button class="nav-button" data-target="section-how">مستويات المخاطر</button>
+            <button class="nav-button" data-target="section-who">النتائج العالمية</button>
+            <button class="nav-button" data-target="section-next">الخطوات التالية</button>
+        </nav>
+
+        <main id="app-content">
+
+            <section id="section-why" class="app-section mb-12">
+                <div class="card">
+                    <h2 class="text-3xl font-bold text-teal-700 mb-4 text-center">لماذا نحتاج إلى مؤشر RI2؟ الفجوة في التقييم الحالي</h2>
+                    <p class="text-slate-600 text-lg mb-8 text-center max-w-4xl mx-auto">
+                        لعقود، هيمنت مقاييس الإنتاجية مثل عدد الأبحاث والاستشهادات على تقييم المؤسسات الأكاديمية. هذا التركيز، ورغم أهميته، قد يدفع أحيانًا إلى إهمال جودة ونزاهة البحث. يأتي مؤشر RI2 ليسد هذه الفجوة، مقدماً رؤية متوازنة تركز على "موثوقية" المخرجات البحثية وليس فقط "كميتها".
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="chart-container">
+                            <canvas id="traditionalMetricsChart"></canvas>
+                        </div>
+                        <div class="text-center md:text-right">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-3">خلل في التوازن</h3>
+                            <p class="text-lg text-slate-600">
+                                يوضح الرسم البياني كيف أن التقييمات التقليدية قد تعطي وزنًا أكبر بكثير للإنتاجية على حساب مؤشرات النزاهة المباشرة. يهدف RI2 إلى تصحيح هذا المسار من خلال توفير أداة مخصصة لقياس المخاطر المتعلقة بالنزاهة.
+                            </p>
+                            <div class="mt-6 p-4 bg-teal-50 border-r-4 border-teal-500 rounded">
+                                <p class="font-semibold text-teal-800">"عندما يصبح المقياس هدفًا، فإنه يتوقف عن كونه مقياسًا جيدًا."</p>
+                                <p class="text-sm text-teal-700 mt-1">- قانون جودارت</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-what" class="app-section mb-12 hidden">
+                 <div class="card">
+                    <h2 class="text-3xl font-bold text-teal-700 mb-4 text-center">ما هو مؤشر RI2؟ فهم المنهجية</h2>
+                    <p class="text-slate-600 text-lg mb-8 text-center max-w-4xl mx-auto">
+                        RI2 هو مؤشر مركب يقيّم مخاطر النزاهة بناءً على بعدين أساسيين. يتم تصنيف المؤسسات في كل بعد، ثم يتم جمع الترتيبين للحصول على درجة نهائية. الدرجة الأقل تشير إلى مخاطر أعلى. تم تصميم هذه المنهجية لتكون مقاومة للتلاعب وتعكس نقاط الضعف الهيكلية.
+                    </p>
+                    <div class="flex flex-col md:flex-row items-stretch justify-center gap-4 md:gap-2 text-slate-800">
+                        <div class="flowchart-step w-full md:w-1/3 flex flex-col justify-center">
+                             <div class="text-5xl mb-2">📄</div>
+                             <h3 class="text-xl font-bold">مخاطر سحب المقالات</h3>
+                             <p>عدد المقالات المسحوبة بسبب سوء سلوك لكل 1000 منشور.</p>
+                        </div>
+                         <div class="text-4xl self-center font-bold text-teal-600 mx-4">+</div>
+                        <div class="flowchart-step w-full md:w-1/3 flex flex-col justify-center">
+                             <div class="text-5xl mb-2">🗑️</div>
+                             <h3 class="text-xl font-bold">مخاطر المجلات المحذوفة</h3>
+                             <p>نسبة الأبحاث في مجلات حُذفت من الفهارس العالمية (Scopus/WoS).</p>
+                        </div>
+                         <div class="text-4xl self-center font-bold text-teal-600 mx-4">=</div>
+                        <div class="w-full md:w-1/3 flex flex-col justify-center p-4 rounded-lg bg-teal-600 text-white text-center">
+                             <div class="text-5xl mb-2">🏆</div>
+                            <h3 class="text-xl font-bold">درجة RI2 النهائية</h3>
+                            <p class="font-mono text-lg">(ترتيب السحب) + (ترتيب الحذف)</p>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+
+            <section id="section-how" class="app-section mb-12 hidden">
+                <div class="card">
+                     <h2 class="text-3xl font-bold text-teal-700 mb-4 text-center">تفسير النتائج: مستويات المخاطر الخمسة</h2>
+                    <p class="text-slate-600 text-lg mb-8 text-center max-w-4xl mx-auto">
+                        لتسهيل فهم درجات RI2، يتم تصنيف المؤسسات ضمن خمسة مستويات مخاطر تعتمد على ترتيبها المئوي. هذا التصنيف النوعي يوفر لصناع القرار والممولين إشارة واضحة حول ملف مخاطر النزاهة لكل مؤسسة.
+                    </p>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="w-full max-w-md mx-auto flex flex-col-reverse">
+                            <div id="level-low" class="pyramid-level cursor-pointer" style="width: 100%; height: 50px; background-color: #10b981;">مخاطر منخفضة</div>
+                            <div id="level-normal" class="pyramid-level cursor-pointer" style="width: 85%; height: 50px; background-color: #a3e635; margin: -1px auto 0;">تباين طبيعي</div>
+                            <div id="level-watch" class="pyramid-level cursor-pointer" style="width: 70%; height: 50px; background-color: #facc15; margin: -1px auto 0; color: #44403c;">قائمة المراقبة</div>
+                            <div id="level-high" class="pyramid-level cursor-pointer" style="width: 55%; height: 50px; background-color: #fb923c; margin: -1px auto 0;">مخاطر عالية</div>
+                            <div id="level-red" class="pyramid-level cursor-pointer" style="width: 40%; height: 50px; background-color: #ef4444; margin: -1px auto 0;">علامة حمراء</div>
+                        </div>
+                        <div id="level-description" class="p-6 bg-slate-100 rounded-lg min-h-[250px] flex flex-col justify-center">
+                            <h3 id="desc-title" class="text-2xl font-bold text-slate-800 mb-2">انقر على مستوى لاكتشافه</h3>
+                            <p id="desc-text" class="text-lg text-slate-600">مرر مؤشر الفأرة أو انقر فوق أي مستوى من مستويات الهرم على اليسار لعرض تفاصيله والنسبة المئوية المرتبطة به.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-who" class="app-section mb-12 hidden">
+                 <div class="card">
+                    <h2 class="text-3xl font-bold text-teal-700 mb-4 text-center">النتائج العالمية: نظرة على المؤسسات الأعلى خطورة</h2>
+                    <p class="text-slate-600 text-lg mb-8 text-center max-w-4xl mx-auto">
+                        يكشف تطبيق المؤشر عن تركيز المؤسسات ذات المخاطر العالية في مناطق معينة، مما قد يرتبط بالنمو البحثي السريع والمحفز. يعرض المخطط التالي المؤسسات الـ 21 ذات أدنى درجات RI2 (أي الأعلى خطورة). مرر مؤشر الفأرة فوق أي شريط لعرض تفاصيل إضافية.
+                    </p>
+                    <div class="large-chart-container">
+                         <canvas id="institutionsChart"></canvas>
+                    </div>
+                 </div>
+            </section>
+
+             <section id="section-next" class="app-section mb-12 hidden">
+                <div class="card">
+                     <h2 class="text-3xl font-bold text-teal-700 mb-6 text-center">الخطوات التالية: توصيات لأصحاب المصلحة</h2>
+                     <p class="text-slate-600 text-lg mb-10 text-center max-w-4xl mx-auto">
+                        مؤشر RI2 ليس أداة للعقاب، بل للتشخيص والتحسين. إنه يقدم رؤى قيمة لمختلف الأطراف الفاعلة في النظام البيئي البحثي لتعزيز ثقافة النزاهة بشكل استباقي.
+                     </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-6 text-center border-2 border-slate-200 rounded-lg hover:bg-slate-50 hover:shadow-lg transition-all">
+                            <div class="text-5xl text-teal-600 mb-4">🏦</div>
+                            <h3 class="text-2xl font-bold text-slate-800 mb-3">المؤسسات البحثية</h3>
+                            <p class="text-slate-600">استخدام المؤشر للتقييم الذاتي، ومراجعة سياسات الترقية، وتعزيز تدريب الباحثين على الممارسات الأخلاقية وتجنب المجلات المفترسة.</p>
+                        </div>
+                        <div class="p-6 text-center border-2 border-slate-200 rounded-lg hover:bg-slate-50 hover:shadow-lg transition-all">
+                             <div class="text-5xl text-teal-600 mb-4">💰</div>
+                            <h3 class="text-2xl font-bold text-slate-800 mb-3">الممولون</h3>
+                            <p class="text-slate-600">تقييم مخاطر النزاهة عند تخصيص التمويل، وربط الدعم بخطط تحسين واضحة للمؤسسات ذات المخاطر العالية.</p>
+                        </div>
+                        <div class="p-6 text-center border-2 border-slate-200 rounded-lg hover:bg-slate-50 hover:shadow-lg transition-all">
+                             <div class="text-5xl text-teal-600 mb-4">🏛️</div>
+                            <h3 class="text-2xl font-bold text-slate-800 mb-3">صناع السياسات</h3>
+                            <p class="text-slate-600">دمج مقاييس النزاهة في أطر التقييم الوطنية، وتطوير استراتيجيات لدعم بناء القدرات المؤسسية في مجال النزاهة البحثية.</p>
+                        </div>
+                    </div>
+                </div>
+             </section>
+
+        </main>
+        
+        
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        const navButtons = document.querySelectorAll('.nav-button');
+        const sections = document.querySelectorAll('.app-section');
+
+        navButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-target');
+                
+                navButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                sections.forEach(section => {
+                    if (section.id === targetId) {
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        function wrapLabel(str, maxLen = 25) {
+            if (str.length <= maxLen) return str;
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxLen && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) lines.push(currentLine);
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) return label.join(' ');
+            return label;
+        };
+
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: { color: '#334155', font: { family: 'Tajawal', size: 14 } }
+                },
+                tooltip: {
+                    callbacks: { title: tooltipTitleCallback },
+                    titleFont: { family: 'Tajawal' },
+                    bodyFont: { family: 'Tajawal' },
+                    backgroundColor: '#0f172a',
+                    titleColor: '#f1f5f9',
+                    bodyColor: '#cbd5e1',
+                    padding: 10,
+                    cornerRadius: 4,
+                }
+            },
+            animation: {
+                duration: 1000,
+                easing: 'easeInOutCubic'
+            }
+        };
+        
+        const traditionalMetricsCtx = document.getElementById('traditionalMetricsChart').getContext('2d');
+        new Chart(traditionalMetricsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['التركيز على الإنتاجية', 'التركيز على النزاهة'],
+                datasets: [{
+                    data: [85, 15],
+                    backgroundColor: ['#475569', '#14b8a6'],
+                    borderColor: '#f8fafc',
+                    borderWidth: 4,
+                    hoverOffset: 8
+                }]
+            },
+            options: { ...commonChartOptions, cutout: '70%' }
+        });
+
+        const institutionsData = [
+            { name: 'جامعة جواهر لال نهرو التكنولوجية حيدر أباد', country: 'الهند', dRank: 3, rRank: 3, score: 6 },
+            { name: 'مؤسسة كونيرو لاكشمايا التعليمية', country: 'الهند', dRank: 2, rRank: 4, score: 6 },
+            { name: 'جامعة آنا', country: 'الهند', dRank: 8, rRank: 2, score: 10 },
+            { name: 'جامعة الدكتور أ.ب.ج. عبد الكلام التقنية', country: 'الهند', dRank: 5, rRank: 5, score: 10 },
+            { name: 'معهد سافيثا للعلوم الطبية والتقنية', country: 'الهند', dRank: 14, rRank: 1, score: 15 },
+            { name: 'جامعة فيسفيسفارايا التكنولوجية', country: 'الهند', dRank: 4, rRank: 16, score: 20 },
+            { name: 'جامعة الطائف', country: 'المملكة العربية السعودية', dRank: 20, rRank: 6, score: 26 },
+            { name: 'جامعة الأمير سطام بن عبد العزيز', country: 'المملكة العربية السعودية', dRank: 16, rRank: 12, score: 28 },
+            { name: 'جامعة بوني', country: 'الهند', dRank: 1, rRank: 33, score: 34 },
+            { name: 'جامعة شيتكارا', country: 'الهند', dRank: 27, rRank: 7, score: 34 },
+            { name: 'جامعة الجوف', country: 'المملكة العربية السعودية', dRank: 15, rRank: 24, score: 39 },
+            { name: 'جامعة جدة', country: 'المملكة العربية السعودية', dRank: 18, rRank: 25, score: 43 },
+            { name: 'جامعة GLA', country: 'الهند', dRank: 35, rRank: 9, score: 44 },
+            { name: 'جامعة شانديغار', country: 'الهند', dRank: 25, rRank: 20, score: 45 },
+            { name: 'جامعة الزراعة فيصل أباد', country: 'باكستان', dRank: 37, rRank: 17, score: 54 },
+            { name: 'جامعة الملك خالد', country: 'المملكة العربية السعودية', dRank: 33, rRank: 21, score: 54 },
+            { name: 'جامعة تبوك', country: 'المملكة العربية السعودية', dRank: 36, rRank: 18, score: 54 },
+            { name: 'جامعة لاهور', country: 'باكستان', dRank: 47, rRank: 11, score: 58 },
+            { name: 'جامعة الأميرة نورة بنت عبد الرحمن', country: 'المملكة العربية السعودية', dRank: 30, rRank: 28, score: 58 },
+            { name: 'معهد غاندي للتكنولوجيا والإدارة', country: 'الهند', dRank: 7, rRank: 52, score: 59 },
+        ].sort((a, b) => b.score - a.score); 
+
+        const institutionsCtx = document.getElementById('institutionsChart').getContext('2d');
+        new Chart(institutionsCtx, {
+            type: 'bar',
+            data: {
+                labels: institutionsData.map(d => wrapLabel(d.name, 35)),
+                datasets: [{
+                    label: 'درجة RI2',
+                    data: institutionsData.map(d => d.score),
+                    backgroundColor: '#0d9488',
+                    borderColor: '#0f766e',
+                    borderWidth: 1,
+                    borderRadius: 4,
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                indexAxis: 'y',
+                scales: {
+                    y: { ticks: { color: '#334155', font: { family: 'Tajawal', size: 12 } }, grid: { display: false } },
+                    x: { ticks: { color: '#334155', font: { family: 'Tajawal' } }, grid: { color: '#e2e8f0' }, title: { display: true, text: 'درجة RI2 (الأقل تعني مخاطر أعلى)', color: '#475569', font: { family: 'Tajawal', size: 14, weight: 'bold' } } }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                         ...commonChartOptions.plugins.tooltip,
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: (context) => `درجة RI2: ${context.parsed.x}`,
+                            afterBody: (tooltipItems) => {
+                                const dataIndex = tooltipItems[0].dataIndex;
+                                const item = institutionsData[dataIndex];
+                                return [
+                                    `الدولة: ${item.country}`,
+                                    `ترتيب مخاطر السحب (R): ${item.rRank}`,
+                                    `ترتيب المجلات المحذوفة (D): ${item.dRank}`
+                                ];
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const levelDetails = {
+            'level-red': { title: 'علامة حمراء', text: 'المؤسسات في أعلى 5% من المخاطر (النسبة المئوية ≥ 95). يشير إلى وجود مشكلات خطيرة ومنهجية تتطلب تحقيقًا وتدخلاً فوريًا.' },
+            'level-high': { title: 'مخاطر عالية', text: 'المؤسسات بين أعلى 5% و 10% من المخاطر (90 ≤ النسبة المئوية < 95). يشير إلى وجود مخاطر كبيرة تتطلب مراجعة وتدابير تصحيحية.' },
+            'level-watch': { title: 'قائمة المراقبة', text: 'المؤسسات بين أعلى 10% و 25% من المخاطر (75 ≤ النسبة المئوية < 90). يجب مراقبة هذه المؤسسات عن كثب.' },
+            'level-normal': { title: 'تباين طبيعي', text: 'المؤسسات بين أعلى 25% و 50% من المخاطر (50 ≤ النسبة المئوية < 75). تمثل القاعدة العامة لمعظم المؤسسات.' },
+            'level-low': { title: 'مخاطر منخفضة', text: 'المؤسسات في النصف الأدنى من المخاطر (النسبة المئوية < 50). تظهر هذه المؤسسات أقوى ممارسات النزاهة.' }
+        };
+
+        document.querySelectorAll('.pyramid-level').forEach(level => {
+            level.addEventListener('mouseover', () => {
+                const details = levelDetails[level.id];
+                document.getElementById('desc-title').textContent = details.title;
+                document.getElementById('desc-text').textContent = details.text;
+            });
+             level.addEventListener('click', () => {
+                const details = levelDetails[level.id];
+                document.getElementById('desc-title').textContent = details.title;
+                document.getElementById('desc-text').textContent = details.text;
+            });
+        });
+
+    });
+</script>
+
+    <!-- Footer -->
+    <footer class="footer-modern" style="direction: ltr;">
+        <div class="container">
+            <div class="row g-4">                
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <h5><i class="fas fa-graduation-cap me-2"></i>Dr. Mahmoud Basseem</h5>
+                        <p class="footer-description">Assistant Professor of Applied Organic Chemistry at Al-Azhar University, pioneering research in chemosensors, AI applications, and nanomaterials.</p>
+                        <div class="social-links-modern">
+                            <a href="mailto:mahmoudbasseem@azhar.edu.eg" title="Email" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/mahmoud-basseem-i-mohamed-38a77293" title="LinkedIn" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.researchgate.net/profile/Mahmoud_Basseem3" title="ResearchGate" target="_blank" class="social-link">
+                                <i class="fab fa-researchgate"></i>
+                            </a>
+                            <a href="https://orcid.org/0000-0001-5558-6342" title="ORCID" target="_blank" class="social-link">
+                                <i class="fab fa-orcid"></i>
+                            </a>
+                            <a href="https://scholar.google.com.eg/citations?user=V6_4ZtcAAAAJ&hl" title="Google Scholar" target="_blank" class="social-link">
+                                <i class="fas fa-graduation-cap"></i>
+                            </a>
+                            <a href="https://www.youtube.com/c/MahmoudBasseem" title="YouTube Channel" target="_blank" class="social-link">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">Navigation</h6>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../research.html">Research</a></li>
+                        <li><a href="../teaching.html">Teaching</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="footer-title">Research Areas</h6>
+                    <ul class="footer-links">
+                        <li><a href="../research.html">Chemosensors</a></li>
+                        <li><a href="../research.html">AI in Chemistry</a></li>
+                        <li><a href="../research.html">Nanomaterials</a></li>
+                        <li><a href="../research.html">Supramolecular Chemistry</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="footer-title">Contact Information</h6>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-envelope me-2"></i>mahmoudbasseem@azhar.edu.eg</p>
+                        <p><i class="fas fa-phone me-2"></i>+2 01123781102</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i>Al-Azhar University<br>Cairo, Egypt</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; 2025 Dr. Mahmoud Basseem I. Mohamed. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>Made with <i class="fas fa-heart text-danger"></i> for advancing science</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Theme and Accessibility Manager -->
+    <script src="../js/theme-accessibility.js"></script>
+    <!-- Enhanced Image Loader -->
+    <script src="../js/enhanced-image-loader.js"></script>
+    <!-- Modern Custom JS -->
+    <script src="../js/main-modern.js"></script>
+
+</body>
+</html>
