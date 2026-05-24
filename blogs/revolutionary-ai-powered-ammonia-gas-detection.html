@@ -477,6 +477,65 @@
             background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
         }
 
+        .app-access-panel {
+            background: linear-gradient(135deg, #f8fffb 0%, #eefaf7 100%);
+            border: 1px solid rgba(46, 139, 87, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 35px 0;
+            box-shadow: 0 12px 30px rgba(46, 139, 87, 0.08);
+        }
+
+        .app-link-box {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(46, 139, 87, 0.12);
+            height: 100%;
+        }
+
+        .app-link-box a {
+            word-break: break-word;
+            font-weight: 600;
+        }
+
+        .qr-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(46, 139, 87, 0.12);
+            text-align: center;
+            height: 100%;
+        }
+
+        .qr-image {
+            width: 220px;
+            max-width: 100%;
+            border-radius: 14px;
+            background: white;
+            padding: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .workflow-list {
+            padding-left: 1.25rem;
+        }
+
+        .app-screenshot {
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            margin-top: 30px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .app-screenshot-image {
+            max-width: 100%;
+            max-height: 780px;
+            object-fit: contain;
+        }
+
         .share-title {
             color: green;
         }
@@ -629,6 +688,94 @@
                         This project explores ammonia gas detection through color-responsive sensing materials supported by image analysis and artificial intelligence.
                         The goal is to translate visible color changes into reliable analytical signals that can be processed in a practical and accessible workflow.
                     </p>
+
+                    <h2><i class="fas fa-mobile-alt me-3"></i>Sensor Monitoring Application</h2>
+                    <p>
+                        A web-based application was developed for real-time analysis of the sensor response toward ammonia gas.
+                        The application can be accessed through the direct link below or by scanning the QR code.
+                    </p>
+
+                    <div class="app-access-panel">
+                        <div class="row g-4 align-items-stretch">
+                            <div class="col-lg-7">
+                                <div class="app-link-box">
+                                    <h4><i class="fas fa-link me-2"></i>Application Access</h4>
+                                    <p class="mb-3">
+                                        Direct link:
+                                        <a href="https://ammonia-gas-sensor.streamlit.app/" target="_blank" rel="noopener">
+                                            https://ammonia-gas-sensor.streamlit.app/
+                                        </a>
+                                    </p>
+                                    <a href="https://ammonia-gas-sensor.streamlit.app/" target="_blank" rel="noopener" class="demo-button mb-0">
+                                        <i class="fas fa-external-link-alt me-2"></i>Open Sensor Monitoring Application
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="qr-card">
+                                    <h4><i class="fas fa-qrcode me-2"></i>QR Code</h4>
+                                    <p class="mb-3">Scan to open the application on your phone.</p>
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fammonia-gas-sensor.streamlit.app%2F" alt="QR code for the ammonia gas sensor application" class="qr-image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Application Workflow</h3>
+                    <ol class="workflow-list">
+                        <li>Open the application using the direct link or QR code.</li>
+                        <li>Upload the captured sensor image.</li>
+                        <li>The application automatically analyzes the color and intensity change.</li>
+                        <li>The corresponding ammonia concentration is displayed directly in ppm.</li>
+                    </ol>
+
+                    <h3>Features of the Developed Application</h3>
+                    <div class="row g-4 my-4">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="feature-card text-center h-100">
+                                <div class="feature-icon mx-auto">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <h5>Automatic Prediction</h5>
+                                <p>Automatic concentration prediction from uploaded sensor images.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="feature-card text-center h-100">
+                                <div class="feature-icon mx-auto">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h5>Real-Time Analysis</h5>
+                                <p>Fast image-based analysis for immediate sensor response interpretation.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="feature-card text-center h-100">
+                                <div class="feature-icon mx-auto">
+                                    <i class="fas fa-gauge-high"></i>
+                                </div>
+                                <h5>ppm Output</h5>
+                                <p>Direct ammonia concentration display in ppm for practical use.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="feature-card text-center h-100">
+                                <div class="feature-icon mx-auto">
+                                    <i class="fas fa-hand-pointer"></i>
+                                </div>
+                                <h5>User-Friendly Interface</h5>
+                                <p>Simple workflow designed for easy access on desktop and mobile devices.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>
+                        The following screenshot illustrates the automatic determination of ammonia concentration through image-based analysis using the developed sensing application.
+                    </p>
+
+                    <div class="app-screenshot">
+                        <img src="../assets/img/blog/Post-004.png" alt="Screenshot of the ammonia gas sensor monitoring application" class="app-screenshot-image">
+                    </div>
 
                     <div class="highlight-box">
                         <h4><i class="fas fa-file-signature me-2"></i>Manuscript in Preparation</h4>
