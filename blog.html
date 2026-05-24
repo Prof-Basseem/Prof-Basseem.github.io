@@ -36,6 +36,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Temporary style for placeholder image -->
+    <style>
+        img[src="assets/img/blog/Post-004.png"] {
+            background: linear-gradient(135deg, #2E8B57 0%, #20B2AA 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 20px;
+            min-height: 200px;
+        }
+        
+        img[src="assets/img/blog/Post-004.png"]::before {
+            content: "🔬 AI-Powered Gas Sensing Technology";
+            position: absolute;
+            color: white;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
     <!-- Scroll Progress Indicator -->
@@ -129,7 +151,8 @@
                     </div>
                 </div>
             </div>
-        </section>        <!-- Blog Categories Section -->
+        </section>        
+        <!-- Blog Categories Section -->
         <section class="section-padding" style="background-color: var(--background-light);">
             <div class="container">
                 <div class="row justify-content-center mb-5">
@@ -160,7 +183,49 @@
         <section class="section-padding" style="background-color: var(--background-white);">
             <div class="container">
                 <div class="row g-4" id="blog-posts">
-                    <!-- Blog Post 1 - Chemical Sensors -->
+                    <!-- Blog Post 1 - AI-Powered Ammonia Gas Detection -->
+                    <div class="col-lg-4 col-md-6" data-category="technology research">
+                        <article class="blog-card card h-100">
+                            <div class="blog-image">
+                                <div class="placeholder-image" style="background: linear-gradient(135deg, #2E8B57 0%, #20B2AA 100%); color: white; display: flex; align-items: center; justify-content: center; height: 200px; border-radius: 8px 8px 0 0; font-weight: 600; text-align: center; padding: 20px;">
+                                    <div>
+                                    <img src="assets/img/blog/Post-004.png"> 
+                                        AI-Powered Gas Sensing<br>
+                                        <small>Technology Innovation</small>
+                                    </div>
+                                </div>
+                                <div class="blog-category">
+                                    <span class="badge bg-warning text-dark">Upcoming Publication</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="blogs/revolutionary-ai-powered-ammonia-gas-detection.html" class="text-decoration-none">
+                                        AI-Assisted Ammonia Gas Detection: Preview of an Upcoming Publication
+                                    </a>
+                                </h5>
+                                <p class="card-text text-muted">
+                                    A short preview of a manuscript in preparation on AI-assisted ammonia sensing, image-based analysis,
+                                    and practical colorimetric detection workflows for future submission...
+                                </p>
+                                <div class="blog-meta">
+                                    <small class="text-muted">
+                                        <i class="fas fa-calendar me-2"></i>May 24, 2026
+                                        <span class="ms-3">
+                                            <i class="fas fa-clock me-2"></i>3 min read
+                                        </span>
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent">
+                                <a href="blogs/revolutionary-ai-powered-ammonia-gas-detection.html" class="btn btn-outline-success">
+                                    <i class="fas fa-arrow-right me-2"></i>Read Preview
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Blog Post 2 - Chemical Sensors -->
                     <div class="col-lg-4 col-md-6" data-category="research">
                         <article class="blog-card card h-100">
                             <div class="blog-image">
@@ -197,7 +262,7 @@
                         </article>
                     </div>
 
-                    <!-- Blog Post 2 - Chemistry First Closing Forum Announcement -->
+                    <!-- Blog Post 3 - Chemistry First Closing Forum Announcement -->
                     <div class="col-lg-4 col-md-6" data-category="academic">
                         <article class="blog-card card h-100">
                             <div class="blog-image">
@@ -234,7 +299,7 @@
                         </article>
                     </div>
 
-                    <!-- Blog Post 3 - RI2 Dashboard -->
+                    <!-- Blog Post 4 - RI2 Dashboard -->
                     <div class="col-lg-4 col-md-6" data-category="research">
                         <article class="blog-card card h-100">
                             <div class="blog-image">

@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Assisted Ammonia Gas Detection: Preview of an Upcoming Publication - Dr. Mahmoud Basseem</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="AI-Assisted Ammonia Gas Detection: Preview of an Upcoming Publication - Dr. Mahmoud Basseem">
+    <meta property="og:description" content="A concise preview of an upcoming manuscript on AI-assisted ammonia gas detection and image-based sensing.">
+    <meta property="og:image" content="../assets/img/blog/placeholder-ai-gas-sensing.png">
+    <meta property="og:url" content="https://mahmoudbasseem.com/blogs/revolutionary-ai-powered-ammonia-gas-detection.html">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI-Assisted Ammonia Gas Detection">
+    <meta name="twitter:description" content="Preview of an upcoming publication on AI-assisted ammonia gas detection">
+    <meta name="twitter:image" content="../assets/img/blog/placeholder-ai-gas-sensing.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Enhanced Blog Styles -->
+    <style>
+        .blog-hero {
+            background: linear-gradient(135deg, #2E8B57 0%, #20B2AA 100%);
+            color: white;
+            padding: 120px 0 80px;
+            margin-top: 76px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .blog-meta {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-meta span {
+            color: #2D3436;
+            font-weight: 500;
+        }
+        
+        .blog-meta i {
+            color: #3B82F6;
+        }
+        
+        .blog-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .blog-content p {
+            color: #444;
+            margin-bottom: 1.5rem;
+        }
+        
+        .blog-content ul li {
+            color: #444;
+            margin-bottom: 0.75rem;
+        }
+        
+        .blog-content strong {
+            color: #2E8B57;
+            font-weight: 600;
+        }
+        
+        .blog-content h2 {
+            color: #2E8B57;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .blog-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, #2E8B57 0%, #20B2AA 100%);
+            border-radius: 2px;
+        }
+        
+        .blog-content h3 {
+            color: #20B2AA;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #2E8B57 0%, #20B2AA 100%);
+            border-left: 4px solid #ffffff;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+        
+        .highlight-box p,
+        .highlight-box ul li {
+            color: #ffffff !important;
+            margin-bottom: 0.75rem;
+        }
+        
+        .highlight-box h4,
+        .highlight-box h5 {
+            color: #ffffff !important;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(46, 139, 87, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .feature-card h5,
+        .feature-card h6 {
+            color: #2E8B57;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .feature-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2E8B57 0%, #20B2AA 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .demo-button {
+            background: linear-gradient(135deg, #2E8B57 0%, #20B2AA 100%);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(46, 139, 87, 0.3);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .demo-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(46, 139, 87, 0.4);
+            color: white;
+            text-decoration: none;
+            background: linear-gradient(135deg, #20B2AA 0%, #2E8B57 100%);
+        }
+        
+        .demo-button:active {
+            transform: translateY(0px);
+            box-shadow: 0 3px 15px rgba(46, 139, 87, 0.3);
+        }
+        
+        .demo-button:focus {
+            outline: 2px solid #ffffff;
+            outline-offset: 2px;
+        }
+        
+        .tech-stack {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .tech-stack h4,
+        .tech-stack h6 {
+            color: #2E8B57;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .tech-badge {
+            background: linear-gradient(135deg, #2E8B57 0%, #20B2AA 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 5px;
+            display: inline-block;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid #2E8B57;
+        }
+        
+        .stat-card .text-muted {
+            color: #5a6268 !important;
+            font-weight: 500;
+        }
+        
+        /* Improve contrast for all text-muted elements */
+        .text-muted {
+            color: #5a6268 !important;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2E8B57;
+            margin-bottom: 10px;
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, #2E8B57 0%, #20B2AA 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            position: relative;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+        
+        .breadcrumb-nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 0;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .social-share {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .share-btn {
+            background: #2E8B57;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .share-btn:hover {
+            background: #20B2AA;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Additional navbar styling for consistency */
+        .navbar-modern {
+            background: rgba(255, 255, 255, 0.95) !important;
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(45, 52, 54, 0.1);
+            box-shadow: 0 2px 4px rgba(45, 52, 54, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #2D3436 !important;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            color: #3B82F6 !important;
+            transform: translateY(-1px);
+        }
+        
+        .brand-text {
+            background: linear-gradient(135deg, #3B82F6 0%, #2D3436 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: #2D3436 !important;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: #3B82F6 !important;
+            background-color: rgba(59, 130, 246, 0.1);
+            transform: translateY(-1px);
+        }
+        
+        .navbar-nav .nav-link.active {
+            color: #3B82F6 !important;
+            background-color: rgba(59, 130, 246, 0.15);
+        }
+        
+        .navbar-nav .nav-link i {
+            margin-right: 0.25rem;
+            font-size: 0.9rem;
+        }
+        
+        .btn-cv {
+            background: linear-gradient(135deg, #3B82F6 0%, #2D3436 100%) !important;
+            border: none !important;
+            color: white !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 16px !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            text-decoration: none !important;
+        }
+        
+        .btn-cv:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3) !important;
+            color: white !important;
+        }
+        
+        .btn-cv::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .btn-cv:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .dropdown-menu-modern {
+            border: none;
+            box-shadow: 0 8px 32px rgba(45, 52, 54, 0.15);
+            border-radius: 12px;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            margin-top: 0.5rem;
+        }
+        
+        .dropdown-menu-modern .dropdown-item {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+            color: #2D3436;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dropdown-menu-modern .dropdown-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(59, 130, 246, 0.1);
+            transition: left 0.2s ease;
+        }
+        
+        .dropdown-menu-modern .dropdown-item:hover {
+            background-color: transparent;
+            color: #3B82F6;
+            transform: translateX(4px);
+        }
+        
+        .dropdown-menu-modern .dropdown-item:hover::before {
+            left: 0;
+        }
+        
+        .dropdown-menu-modern .dropdown-item:focus {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #3B82F6;
+            outline: 2px solid #3B82F6;
+            outline-offset: -2px;
+        }
+
+        .breadcrumb-fixed {
+            top: 76px;
+            z-index: 1020;
+        }
+
+        .secondary-demo-button {
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+        }
+
+        .share-title {
+            color: green;
+        }
+
+        .author-section {
+            background-color: #f8f9fa;
+        }
+
+        .author-image {
+            max-width: 120px;
+        }
+
+        .author-text {
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-modern">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="fas fa-graduation-cap me-2"></i>
+                <span class="brand-text">Dr. Mahmoud Basseem</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">
+                            <i class="fas fa-user me-1"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="researchDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-microscope me-1"></i>Research
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="researchDropdown">
+                            <li><a class="dropdown-item" href="../research.html"><i class="fas fa-flask me-2"></i>Research Areas</a></li>
+                            <li><a class="dropdown-item" href="../publications.html"><i class="fas fa-file-alt me-2"></i>Publications</a></li>
+                            <li><a class="dropdown-item" href="../projects.html"><i class="fas fa-project-diagram me-2"></i>Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-chalkboard-teacher me-1"></i>Academic
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="academicDropdown">
+                            <li><a class="dropdown-item" href="../teaching.html"><i class="fas fa-book me-2"></i>Teaching</a></li>
+                            <li><a class="dropdown-item" href="../youtube-courses.html"><i class="fab fa-youtube me-2"></i>YouTube Courses</a></li>
+                            <li><a class="dropdown-item" href="../lab-members.html"><i class="fas fa-users me-2"></i>Lab Members</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../blog.html">
+                            <i class="fas fa-blog me-1"></i>Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-cv ms-2" href="../assets/files/CV/CV.pdf" target="_blank">
+                            <i class="fas fa-file-pdf me-1"></i>CV
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-nav breadcrumb-fixed fixed-top">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="../index.html" title="Home"><i class="fas fa-home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="../blog.html">Blog</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Upcoming Publication Preview</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="text-center">
+                        <span class="badge bg-white text-primary mb-3 px-3 py-2 shadow-sm">
+                            <i class="fas fa-file-alt me-2"></i>Upcoming Publication
+                        </span>
+                        <h1 class="display-4 fw-bold mb-4">
+                            AI-Assisted Ammonia Gas Detection: Preview of an Upcoming Publication
+                        </h1>
+                        <p class="lead mb-4">
+                            This page now serves as a short research note for a manuscript in preparation on ammonia gas detection,
+                            combining color-responsive sensing materials with image analysis and artificial intelligence.
+                        </p>
+                        <div class="blog-meta">
+                            <div class="row align-items-center">
+                                <div class="col-md-6 text-md-start text-center">
+                                    <span class="me-4">
+                                        <i class="fas fa-calendar me-2"></i>May 24, 2026
+                                    </span>
+                                    <span>
+                                        <i class="fas fa-clock me-2"></i>3 min read
+                                    </span>
+                                </div>
+                                <div class="col-md-6 text-md-end text-center mt-3 mt-md-0">
+                                    <span class="me-3">
+                                        <i class="fas fa-tags me-2"></i>Upcoming Publication, AI, Gas Sensing
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a href="../contact.html" class="demo-button">
+                                <i class="fas fa-envelope me-2"></i>Contact for Updates
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <article class="blog-content">
+                    <h2><i class="fas fa-lightbulb me-3"></i>Project Overview</h2>
+                    <p>
+                        This project explores ammonia gas detection through color-responsive sensing materials supported by image analysis and artificial intelligence.
+                        The goal is to translate visible color changes into reliable analytical signals that can be processed in a practical and accessible workflow.
+                    </p>
+
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-file-signature me-2"></i>Manuscript in Preparation</h4>
+                        <p class="mb-0">
+                            This article is now a brief preview of a research manuscript that will be submitted soon. Full experimental details, performance data,
+                            and the final citation will be added after submission and publication.
+                        </p>
+                    </div>
+
+                    <h2><i class="fas fa-list-check me-3"></i>What the Upcoming Paper Will Cover</h2>
+                    <ul>
+                        <li>Design of a sensing workflow for ammonia recognition based on color variation.</li>
+                        <li>AI-assisted analysis for converting image features into concentration-related predictions.</li>
+                        <li>Calibration and validation steps for improving reproducibility and analytical usability.</li>
+                        <li>Potential applications in environmental monitoring, laboratory practice, and smart sensing platforms.</li>
+                    </ul>
+
+                    <h2><i class="fas fa-microscope me-3"></i>Why This Work Matters</h2>
+                    <p>
+                        The work aims to bridge chemistry, sensing materials, and digital analysis in a format that supports faster interpretation and broader accessibility.
+                        It also reflects an ongoing research direction that connects classical analytical chemistry with modern AI tools.
+                    </p>
+
+                    <h2><i class="fas fa-hourglass-half me-3"></i>Current Status</h2>
+                    <p>
+                        The study is being prepared for submission. Until then, this page remains intentionally concise and serves as a short research update rather than a full technical article.
+                    </p>
+
+                    <div class="text-center my-5">
+                        <a href="../publications.html" class="demo-button me-3">
+                            <i class="fas fa-book me-2"></i>Browse Publications
+                        </a>
+                        <a href="../contact.html" class="demo-button secondary-demo-button">
+                            <i class="fas fa-envelope me-2"></i>Contact for Collaboration
+                        </a>
+                    </div>
+
+                    <div class="social-share">
+                        <h5 class="mb-4 share-title">
+                            <i class="fas fa-share-alt me-2"></i>
+                            Share This Research Update
+                        </h5>
+                        <p class="mb-4">Share this preview of the upcoming ammonia sensing publication.</p>
+                        <div class="social-buttons">
+                            <button class="share-btn" onclick="shareOnTwitter()">
+                                <i class="fab fa-twitter me-2"></i>Twitter
+                            </button>
+                            <button class="share-btn" onclick="shareOnLinkedIn()">
+                                <i class="fab fa-linkedin me-2"></i>LinkedIn
+                            </button>
+                            <button class="share-btn" onclick="shareOnFacebook()">
+                                <i class="fab fa-facebook me-2"></i>Facebook
+                            </button>
+                            <button class="share-btn" onclick="copyLink()">
+                                <i class="fas fa-link me-2"></i>Copy Link
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <h6 class="text-muted mb-3">Tags:</h6>
+                        <span class="badge bg-primary me-2 mb-2 px-3 py-2">#UpcomingPublication</span>
+                        <span class="badge bg-primary me-2 mb-2 px-3 py-2">#AI</span>
+                        <span class="badge bg-primary me-2 mb-2 px-3 py-2">#GasSensing</span>
+                        <span class="badge bg-primary me-2 mb-2 px-3 py-2">#AmmoniaDetection</span>
+                        <span class="badge bg-primary me-2 mb-2 px-3 py-2">#AnalyticalChemistry</span>
+                    </div>
+
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Author Bio -->
+    <section class="py-5 author-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 text-center mb-3 mb-md-0">
+                                    <img src="../assets/img/dr-mahmoud.jpg" alt="Dr. Mahmoud Basseem" 
+                                         class="rounded-circle img-fluid author-image">
+                                </div>
+                                <div class="col-md-9">
+                                    <h5 class="card-title mb-3">About the Author</h5>
+                                    <h6 class="text-primary">Dr. Mahmoud Basseem</h6>
+                                    <p class="card-text author-text">
+                                        Assistant Professor of Applied Organic Chemistry at Al-Azhar University, Cairo. 
+                                        Dr. Basseem specializes in chemosensors, polymer science, and AI applications in 
+                                        analytical chemistry. His research focuses on developing accessible technologies 
+                                        that bridge the gap between advanced scientific research and real-world applications.
+                                    </p>
+                                    <div class="social-links">
+                                        <a href="../contact.html" class="btn btn-outline-primary btn-sm me-2">
+                                            <i class="fas fa-envelope me-1"></i>Contact
+                                        </a>
+                                        <a href="../research.html" class="btn btn-outline-success btn-sm">
+                                            <i class="fas fa-flask me-1"></i>Research
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Posts -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h3 class="text-center mb-5">Related Articles</h3>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <img src="../assets/img/blog/Post-002.png" class="card-img-top" alt="Chemical Sensors">
+                                <div class="card-body">
+                                    <h6 class="card-title">
+                                        <a href="beyond-the-naked-eye-next-generation-chemical-sensors.html" class="text-decoration-none">
+                                            Beyond the Naked Eye: Next-Generation Chemical Sensors
+                                        </a>
+                                    </h6>
+                                    <p class="card-text text-muted small">
+                                        Explore the fundamental principles behind modern chemical sensing technology...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <img src="../assets/img/blog/Post-003.png" class="card-img-top" alt="Research Analytics">
+                                <div class="card-body">
+                                    <h6 class="card-title">
+                                        <a href="research-integrity-risk-index-ri2-dashboard.html" class="text-decoration-none">
+                                            Research Integrity Risk Index (RI2) Dashboard
+                                        </a>
+                                    </h6>
+                                    <p class="card-text text-muted small">
+                                        Innovative tools for maintaining research integrity and data analytics...
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5><i class="fas fa-graduation-cap me-2"></i>Dr. Mahmoud Basseem</h5>
+                    <p class="text-light">
+                        Assistant Professor of Applied Organic Chemistry<br>
+                        Al-Azhar University, Cairo, Egypt
+                    </p>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <div class="social-links">
+                        <a href="../contact.html" class="text-white me-3" title="Contact">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="../research.html" class="text-white me-3" title="Research">
+                            <i class="fas fa-flask"></i>
+                        </a>
+                        <a href="../publications.html" class="text-white" title="Publications">
+                            <i class="fas fa-book"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <p class="mb-0">&copy; 2025 Dr. Mahmoud Basseem. All rights reserved.</p>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <a href="../index.html" class="text-white text-decoration-none">
+                        <i class="fas fa-home me-1"></i>Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Scroll progress indicator
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const maxHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrolled / maxHeight) * 100;
+            document.querySelector('.scroll-progress-bar').style.width = progress + '%';
+        });
+
+        // Social sharing functions
+        function shareOnTwitter() {
+            const url = window.location.href;
+            const text = "AI-Assisted Ammonia Gas Detection: Preview of an Upcoming Publication";
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+            window.open(twitterUrl, '_blank');
+        }
+
+        function shareOnLinkedIn() {
+            const url = window.location.href;
+            const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+            window.open(linkedInUrl, '_blank');
+        }
+
+        function shareOnFacebook() {
+            const url = window.location.href;
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            window.open(facebookUrl, '_blank');
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                // Show a temporary notification
+                const btn = event.target.closest('button');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check me-2"></i>Copied!';
+                btn.style.background = '#28a745';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                }, 2000);
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.feature-card, .stat-card, .highlight-box').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
