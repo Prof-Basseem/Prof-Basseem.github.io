@@ -3,19 +3,13 @@
  * Provides offline functionality and performance optimizations
  */
 
-const CACHE_NAME = 'dr-basseem-v1.0';
-const STATIC_CACHE = 'dr-basseem-static-v1.0';
-const DYNAMIC_CACHE = 'dr-basseem-dynamic-v1.0';
+const CACHE_NAME = 'dr-basseem-v1.1';
+const STATIC_CACHE = 'dr-basseem-static-v1.1';
+const DYNAMIC_CACHE = 'dr-basseem-dynamic-v1.1';
 
 // Files to cache immediately
 const STATIC_FILES = [
     '/',
-    '/index.html',
-    '/about.html',
-    '/research.html',
-    '/publications.html',
-    '/teaching.html',
-    '/contact.html',
     '/css/style.css',
     '/js/main-modern.js',
     '/js/theme-accessibility.js',
@@ -84,6 +78,12 @@ self.addEventListener('fetch', event => {
         request.url.startsWith('devtools://')) {
         return;
     }
+
+    // Always prefer fresh HTML from the network to avoid stale page content.
+    if (request.mode === 'navigate' || isHtmlRequest(request)) {
+        event.respondWith(networkFirst(request));
+        return;
+    }
     
     event.respondWith(
         caches.match(request)
@@ -115,6 +115,30 @@ self.addEventListener('fetch', event => {
             })
     );
 });
+
+async function networkFirst(request) {
+    try {
+        const response = await fetch(request);
+
+        if (response.status === 200) {
+            const responseClone = response.clone();
+            caches.open(DYNAMIC_CACHE)
+                .then(cache => cache.put(request, responseClone))
+                .catch(error => {
+                    console.warn('Service Worker: Failed to update HTML cache', error);
+                });
+        }
+
+        return response;
+    } catch (error) {
+        const cachedResponse = await caches.match(request);
+        if (cachedResponse) {
+            return cachedResponse;
+        }
+
+        return createOfflineResponse();
+    }
+}
 
 // Fetch from network and cache the response
 async function fetchAndCache(request) {
@@ -170,6 +194,11 @@ function isStaticFile(url) {
     
     return staticExtensions.some(ext => url.includes(ext)) ||
            staticDomains.some(domain => url.includes(domain));
+}
+
+function isHtmlRequest(request) {
+    const acceptHeader = request.headers.get('accept') || '';
+    return acceptHeader.includes('text/html');
 }
 
 // Create offline response
