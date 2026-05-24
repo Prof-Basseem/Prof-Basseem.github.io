@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ammonia Gas Sensor Monitoring App - Dr. Mahmoud Basseem</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ammonia Gas Sensor Monitoring App - Dr. Mahmoud Basseem">
+    <meta property="og:description" content="Web-based app for real-time image-based ammonia concentration estimation in ppm.">
+    <meta property="og:image" content="../../assets/img/blog/Post-004.png">
+    <meta property="og:url" content="https://profbasseem.com/apps/ammonia-gas-sensor/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ammonia Gas Sensor Monitoring App">
+    <meta name="twitter:description" content="Image-based ammonia sensing and ppm prediction tool.">
+    <meta name="twitter:image" content="../../assets/img/blog/Post-004.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <style>
+        .app-hero {
+            background: linear-gradient(135deg, #14532d 0%, #059669 55%, #0ea5e9 100%);
+            color: white;
+            padding: 120px 0 80px;
+            margin-top: 76px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 15% 25%, rgba(255,255,255,0.2), transparent 35%),
+                        radial-gradient(circle at 85% 20%, rgba(255,255,255,0.15), transparent 30%);
+        }
+
+        .app-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .app-panel {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 14px 38px rgba(0,0,0,0.1);
+            padding: 2rem;
+            height: 100%;
+        }
+
+        .app-screen {
+            border-radius: 16px;
+            background: #f8fafc;
+            padding: 18px;
+            box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
+        }
+
+        .app-screen img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.8rem;
+            color: var(--text-medium);
+        }
+
+        .feature-list i {
+            color: #10b981;
+        }
+
+        .app-link-box {
+            background: #effbf6;
+            border: 1px solid #c7f0df;
+            border-radius: 14px;
+            padding: 1rem;
+            word-break: break-word;
+        }
+
+        .qr-image {
+            width: 180px;
+            max-width: 100%;
+            border-radius: 12px;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-modern">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.html">
+                <i class="fas fa-graduation-cap me-2"></i>
+                <span class="brand-text">Dr. Mahmoud Basseem</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="../../index.html"><i class="fas fa-home me-1"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../about.html"><i class="fas fa-user me-1"></i>About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="researchDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-microscope me-1"></i>Research</a>
+                        <ul class="dropdown-menu dropdown-menu-modern" aria-labelledby="researchDropdown">
+                            <li><a class="dropdown-item" href="../../research.html"><i class="fas fa-flask me-2"></i>Research Areas</a></li>
+                            <li><a class="dropdown-item" href="../../publications.html"><i class="fas fa-file-alt me-2"></i>Publications</a></li>
+                            <li><a class="dropdown-item" href="../../projects.html"><i class="fas fa-project-diagram me-2"></i>Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="../../apps/"><i class="fas fa-th-large me-1"></i>Apps</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../blog.html"><i class="fas fa-blog me-1"></i>Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../contact.html"><i class="fas fa-envelope me-1"></i>Contact</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-cv ms-2" href="../../assets/files/CV/CV.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf me-1"></i>CV</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="app-hero">
+            <div class="container text-center">
+                <span class="badge bg-light text-dark mb-3 px-3 py-2">App Route</span>
+                <h1 class="display-5 fw-bold mb-3">Ammonia Gas Sensor Monitoring Application</h1>
+                <p class="lead mb-0">A dedicated app page under the apps route for image-based ammonia sensing and concentration prediction.</p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-lg-7">
+                        <div class="app-panel">
+                            <h2 class="h4 mb-3">Overview</h2>
+                            <p class="text-muted">
+                                This web application analyzes captured sensor images and estimates ammonia concentration directly in ppm using image-based processing.
+                                It is designed for fast and practical usage in sensing workflows.
+                            </p>
+
+                            <div class="app-link-box mb-4">
+                                <strong>Application Link:</strong>
+                                <a href="https://ammonia-gas-sensor.streamlit.app/" target="_blank" rel="noopener">https://ammonia-gas-sensor.streamlit.app/</a>
+                            </div>
+
+                            <h3 class="h5">Workflow</h3>
+                            <ol class="text-muted mb-4">
+                                <li>Open the application from the direct link or QR code.</li>
+                                <li>Upload the captured sensor image.</li>
+                                <li>Automatic analysis detects color and intensity response.</li>
+                                <li>The predicted ammonia concentration is shown in ppm.</li>
+                            </ol>
+
+                            <h3 class="h5">Key Features</h3>
+                            <ul class="list-unstyled feature-list mb-4">
+                                <li><i class="fas fa-check-circle me-2"></i>Automatic concentration prediction</li>
+                                <li><i class="fas fa-check-circle me-2"></i>Real-time analysis</li>
+                                <li><i class="fas fa-check-circle me-2"></i>Direct ppm output display</li>
+                                <li><i class="fas fa-check-circle me-2"></i>User-friendly interface</li>
+                            </ul>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="https://ammonia-gas-sensor.streamlit.app/" target="_blank" rel="noopener" class="btn btn-primary">
+                                    <i class="fas fa-external-link-alt me-2"></i>Open App
+                                </a>
+                                <a href="../../apps/" class="btn btn-outline-primary">
+                                    <i class="fas fa-arrow-left me-2"></i>Back to Apps
+                                </a>
+                                <a href="../../blogs/revolutionary-ai-powered-ammonia-gas-detection.html" class="btn btn-outline-secondary">
+                                    <i class="fas fa-file-alt me-2"></i>Related Blog Post
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="app-panel mb-4">
+                            <h3 class="h5 mb-3">Application Screenshot</h3>
+                            <div class="app-screen">
+                                <img src="../../assets/img/blog/Post-004.png" alt="Ammonia sensor monitoring app screenshot">
+                            </div>
+                        </div>
+
+                        <div class="app-panel text-center">
+                            <h3 class="h5 mb-3">Quick Access QR</h3>
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fammonia-gas-sensor.streamlit.app%2F" alt="QR code for ammonia gas sensor app" class="qr-image mb-3">
+                            <p class="text-muted mb-0">Scan to open the app on your phone.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <h5><i class="fas fa-graduation-cap me-2"></i>Dr. Mahmoud Basseem</h5>
+                        <p class="footer-description">Assistant Professor of Applied Organic Chemistry at Al-Azhar University, pioneering research in chemosensors, AI applications, and nanomaterials.</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="footer-title">Navigation</h6>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="../../research.html">Research</a></li>
+                        <li><a href="../../apps/">Apps</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="footer-title">Research Areas</h6>
+                    <ul class="footer-links">
+                        <li><a href="../../research.html">Chemosensors</a></li>
+                        <li><a href="../../research.html">AI in Chemistry</a></li>
+                        <li><a href="../../research.html">Nanomaterials</a></li>
+                        <li><a href="../../research.html">Supramolecular Chemistry</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="footer-title">Contact Information</h6>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-envelope me-2"></i>mahmoudbasseem@azhar.edu.eg</p>
+                        <p><i class="fas fa-phone me-2"></i>+2 01123781102</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i>Al-Azhar University<br>Cairo, Egypt</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; 2025 Dr. Mahmoud Basseem I. Mohamed. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>Made with <i class="fas fa-heart text-danger"></i> for advancing science</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/theme-accessibility.js"></script>
+    <script src="../../js/enhanced-image-loader.js"></script>
+    <script src="../../js/main-modern.js"></script>
+</body>
+</html>
